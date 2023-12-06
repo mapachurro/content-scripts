@@ -1,0 +1,548 @@
+I am working on implementing Docusaurus' internationalization framework on my site.
+
+There are a number of different tasks involved, and I would like your help on specific things within your abilities as a Large Language Model.
+
+I do *not* need your help translating Markdown files; I am looking for assistance with implementing the i18n framework in the code.
+
+I will provide you, below, with some of Docusaurus' documentation on how the i18n process works. You should use this as a basis for the tasks I will ask you to perform.
+
+When you have received this information and have it ready to apply, please tell me "Ready to work".
+
+I will then provide you with a second file, for example, one of the pages in the `/src` directory of a Docusaurus app, which is written in React; I would want you to apply the instructions below, and wrap all applicable strings correctly in JSX.
+
+I may have additional questions for you about how I implement the resulting pages in my application.
+
+Docusaurus documentation follows:
+
+
+# Docusaurus i18n Documentation
+
+## Translation workflow
+Overview
+Overview of the workflow to create a translated Docusaurus website:
+
+Configure: declare the default locale and alternative locales in docusaurus.config.js
+Translate: put the translation files at the correct filesystem location
+Deploy: build and deploy your site using a single or multi-domain strategy
+Translation files
+You will work with three kinds of translation files.
+
+## Markdown files
+This is the main content of your Docusaurus website.
+
+Markdown and MDX documents are translated as a whole, to fully preserve the translation context, instead of splitting each sentence as a separate string.
+
+J## SON files
+JSON is used to translate:
+
+Your React code: standalone React pages in src/pages, or other components
+Layout labels provided through themeConfig: navbar, footer
+Layout labels provided through plugin options: docs sidebar category labels, blog sidebar title...
+The JSON format used is called Chrome i18n:
+
+{
+  "myTranslationKey1": {
+    "message": "Translated message 1",
+    "description": "myTranslationKey1 is used on the homepage"
+  },
+  "myTranslationKey2": {
+    "message": "Translated message 2",
+    "description": "myTranslationKey2 is used on the FAQ page"
+  }
+}
+
+The choice was made for 2 reasons:
+
+Description attribute: to help translators with additional context
+Widely supported: Chrome extensions, Crowdin, Transifex, Phrase, Applanga, etc.
+Data files
+Some plugins may read from external data files that are localized as a whole. For example, the blog plugin uses an authors.yml file that can be translated by creating a copy under i18n/[locale]/docusaurus-plugin-content-blog/authors.yml.
+
+## Translation files location
+The translation files should be created at the correct filesystem location.
+
+Each locale and plugin has its own i18n subfolder:
+
+website/i18n/[locale]/[pluginName]/...
+
+### NOTE
+For multi-instance plugins, the path is website/i18n/[locale]/[pluginName]-[pluginId]/....
+
+Translating a very simple Docusaurus site in French would lead to the following tree:
+
+website/i18n
+└── fr
+    ├── code.json  # Any text label present in the React code
+    │              # Includes text labels from the themes' code
+    ├── docusaurus-plugin-content-blog # translation data the blog plugin needs
+    │   └── 2020-01-01-hello.md
+    │
+    ├── docusaurus-plugin-content-docs # translation data the docs plugin needs
+    │   ├── current
+    │   │   ├── doc1.md
+    │   │   └── doc2.mdx
+    │   └── current.json
+    │
+    └── docusaurus-theme-classic # translation data the classic theme needs
+        ├── footer.json   # Text labels in your footer theme config
+        └── navbar.json   # Text labels in your navbar theme config
+
+The JSON files are initialized with the docusaurus write-translations CLI command. Each plugin sources its own translated content under the corresponding folder, while the code.json file defines all text labels used in the React code.
+
+Each content plugin or theme is different, and defines its own translation files location:
+
+Docs i18n
+Blog i18n
+Pages i18n
+Themes i18n
+
+
+## <Translate/> Docusaurus API
+
+When localizing your site, the <Translate/> component will allow providing translation support to React components, such as your homepage. The <Translate> component supports interpolation.
+
+The translation strings will statically extracted from your code with the docusaurus write-translations CLI and a code.json translation file will be created in website/i18n/[locale].
+
+NOTE
+The <Translate/> props must be hardcoded strings.
+
+Apart from the values prop used for interpolation, it is not possible to use variables, or the static extraction wouldn't work.
+
+Props
+children: untranslated string in the default site locale (can contain interpolation placeholders)
+id: optional value to be used as the key in JSON translation files
+description: optional text to help the translator
+values: optional object containing interpolation placeholder values
+Example
+src/pages/index.js
+import React from 'react';
+import Layout from '@theme/Layout';
+
+import Translate from '@docusaurus/Translate';
+
+export default function Home() {
+  return (
+    <Layout>
+      <h1>
+        <Translate
+          id="homepage.title"
+          description="The homepage welcome message">
+          Welcome to my website
+        </Translate>
+      </h1>
+      <main>
+        <Translate values={{firstName: 'Sébastien'}}>
+          {'Welcome, {firstName}! How are you?'}
+        </Translate>
+      </main>
+    </Layout>
+  );
+}
+
+# Docusaurus i18n Tutorial
+This tutorial will walk you through the basics of the Docusaurus i18n system.
+
+We will add French translations to a newly initialized English Docusaurus website.
+
+Initialize a new site with npx create-docusaurus@latest website classic (like this one).
+
+## Configure your site
+Modify docusaurus.config.js to add the i18n support for the French language.
+
+## Site configuration
+Use the site i18n configuration to declare the i18n locales:
+
+docusaurus.config.js
+export default {
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'fr', 'fa'],
+    localeConfigs: {
+      en: {
+        htmlLang: 'en-GB',
+      },
+      // You can omit a locale (e.g. fr) if you don't need to override the defaults
+      fa: {
+        direction: 'rtl',
+      },
+    },
+  },
+};
+
+The locale names are used for the translation files' locations, as well as your translated locales' base URL. When building all locales, only the default locale will have its name omitted in the base URL.
+
+Docusaurus uses the locale names to provide sensible defaults: the <html lang="..."> attribute, locale label, calendar format, etc. You can customize these defaults with the localeConfigs.
+
+Theme configuration
+Add a navbar item of type localeDropdown so that users can select the locale they want:
+
+docusaurus.config.js
+export default {
+  themeConfig: {
+    navbar: {
+      items: [
+        {
+          type: 'localeDropdown',
+          position: 'left',
+        },
+      ],
+    },
+  },
+};
+
+TIP
+You can pass a query parameter that will be appended to the URL when a user changes the locale using the dropdown (e.g. queryString: '?persistLocale=true').
+
+This is useful for implementing an automatic locale detection on your server. For example, you can use this parameter to store the user's preferred locale in a cookie.
+
+## Start your site
+Start your localized site in dev mode, using the locale of your choice:
+
+npm
+Yarn
+pnpm
+npm run start -- --locale fr
+
+Your site is accessible at http://localhost:3000/fr/.
+
+We haven't provided any translation yet, so the site is mostly untranslated.
+
+TIP
+Docusaurus provides default translations for generic theme labels, such as "Next" and "Previous" for the pagination.
+
+Please help us complete those default translations.
+
+WARNING
+Each locale is a distinct standalone single-page application: it is not possible to start the Docusaurus sites in all locales at the same time.
+
+## Translate your site
+All translation data for the French locale is stored in website/i18n/fr. Each plugin sources its own translated content under the corresponding folder, while the code.json file defines all text labels used in the React code.
+
+NOTE
+After copying files around, restart your site with npm run start -- --locale fr. Hot-reload will work better when editing existing files.
+
+Translate your React code
+For any React code you've written yourself: React pages, React components, etc., you will use the translation APIs.
+
+Locate all text labels in your React code that will be visible to your users, and mark them with the translation APIs. There are two kinds of APIs:
+
+The <Translate> component wraps a string as a JSX element;
+The translate() callback takes a message and returns a string.
+Use the one that better fits the context semantically. For example, the <Translate> can be used as React children, while for props that expect a string, the callback can be used.
+
+WARNING
+A JSX element is an object, not a string. Using it in contexts expecting strings (such as the children of <option>) would coerce it to a string, which returns "[object Object]". While we encourage you to use <Translate> as JSX children, only use the element form when it actually works.
+
+### Before
+src/pages/index.js
+import React from 'react';
+import Layout from '@theme/Layout';
+import Link from '@docusaurus/Link';
+
+export default function Home() {
+  return (
+    <Layout>
+      <h1>Welcome to my website</h1>
+      <main>
+        You can also visit my
+        <Link to="https://docusaurus.io/blog">blog</Link>
+        <img
+          src="/img/home.png"
+          alt="Home icon"
+        />
+      </main>
+    </Layout>
+  );
+}
+
+
+### After
+src/pages/index.js
+import React from 'react';
+import Layout from '@theme/Layout';
+import Link from '@docusaurus/Link';
+
+import Translate, {translate} from '@docusaurus/Translate';
+
+export default function Home() {
+  return (
+    <Layout>
+      <h1>
+        <Translate>Welcome to my website</Translate>
+      </h1>
+      <main>
+        <Translate
+          id="homepage.visitMyBlog"
+          description="The homepage message to ask the user to visit my blog"
+          values={{
+            blogLink: (
+              <Link to="https://docusaurus.io/blog">
+                <Translate
+                  id="homepage.visitMyBlog.linkLabel"
+                  description="The label for the link to my blog">
+                  blog
+                </Translate>
+              </Link>
+            ),
+          }}>
+          {'You can also visit my {blogLink}'}
+        </Translate>
+
+        <img
+          src="/img/home.png"
+          alt={
+            translate({
+              message: 'Home icon',
+              description: 'The homepage icon alt message',
+            })
+          }
+        />
+      </main>
+    </Layout>
+  );
+}
+
+INFO
+Docusaurus provides a very small and lightweight translation runtime on purpose, and only supports basic placeholders interpolation, using a subset of the ICU Message Format.
+
+Most documentation websites are generally static and don't need advanced i18n features (plurals, genders, etc.). Use a library like react-intl for more advanced use-cases.
+
+The docusaurus write-translations command will statically analyze all React code files used in your site, extract calls to these APIs, and aggregate them in the code.json file. The translation files will be stored as maps from IDs to translation message objects (including the translated label and the description of the label). In your calls to the translation APIs (<Translate> or translate()), you need to specify either the default untranslated message or the ID, in order for Docusaurus to correctly correlate each translation entry to the API call.
+
+TEXT LABELS MUST BE STATIC
+The docusaurus write-translations command only does static analysis of your code. It doesn't actually run your site. Therefore, dynamic messages can't be extracted, as the message is an expression, not a string:
+
+const items = [
+  {id: 1, title: 'Hello'},
+  {id: 2, title: 'World'},
+];
+
+function ItemsList() {
+  return (
+    <ul>
+      {/* DON'T DO THIS: doesn't work with the write-translations command */}
+      {items.map((item) => (
+        <li key={item.id}>
+          <Translate>{item.title}</Translate>
+        </li>
+      ))}
+    <ul>
+  );
+}
+
+This still behaves correctly at runtime. However, in the future, we may provide a "no-runtime" mechanism, allowing the translations to be directly inlined in the React code through Babel transformations, instead of calling the APIs at runtime. Therefore, to be future-proof, you should always prefer statically analyzable messages. For example, we can refactor the code above to:
+
+const items = [
+  {id: 1, title: <Translate>Hello</Translate>},
+  {id: 2, title: <Translate>World</Translate>},
+];
+
+function ItemsList() {
+  return (
+    <ul>
+      {/* The titles are now already translated when rendering! */}
+      {items.map((item) => (
+        <li key={item.id}>{item.title}</li>
+      ))}
+    <ul>
+  );
+}
+
+You can see the calls to the translation APIs as purely markers that tell Docusaurus that "here's a text label to be replaced with a translated message".
+
+## Pluralization
+When you run write-translations, you will notice that some labels are pluralized:
+
+i18n/en/code.json
+{
+  // ...
+  "theme.blog.post.plurals": "One post|{count} posts"
+  // ...
+}
+
+Every language will have a list of possible plural categories. Docusaurus will arrange them in the order of ["zero", "one", "two", "few", "many", "other"]. For example, because English (en) has two plural forms ("one" and "other"), the translation message has two labels separated by a pipe (|). For Polish (pl) which has three plural forms ("one", "few", and "many"), you would provide three labels in that order, joined by pipes.
+
+You can pluralize your own code's messages as well:
+
+import {translate} from '@docusaurus/Translate';
+import {usePluralForm} from '@docusaurus/theme-common';
+
+function ItemsList({items}) {
+  // `usePluralForm` will provide the plural selector for the current locale
+  const {selectMessage} = usePluralForm();
+  // Select the appropriate pluralized label based on `items.length`
+  const message = selectMessage(
+    items.length,
+    translate(
+      {message: 'One item|{count} items'},
+      {count: items.length},
+    ),
+  );
+  return (
+    <>
+      <h2>{message}</h2>
+      <ul>{items.map((item) => <li key={item.id}>{item.title}</li>)}<ul>
+    </>
+  );
+}
+
+NOTE
+Docusaurus uses Intl.PluralRules to resolve and select plural forms. It is important to provide the right number of plural forms in the right order for selectMessage to work.
+
+## Translate plugin data
+JSON translation files are used for everything that is interspersed in your code:
+
+React code, including the translated labels you have marked above
+Navbar and footer labels in theme config
+Docs sidebar category labels in sidebars.js
+Blog sidebar title in plugin options
+...
+Run the write-translations command:
+
+npm
+Yarn
+pnpm
+npm run write-translations -- --locale fr
+
+It will extract and initialize the JSON translation files that you need to translate. The code.json file at the root includes all translation API calls extracted from the source code, which could either be written by you or provided by the themes, some of which may already be translated by default.
+
+i18n/fr/code.json
+{
+  // No ID for the <Translate> component: the default message is used as ID
+  "Welcome to my website": {
+    "message": "Welcome to my website"
+  },
+  "home.visitMyBlog": {
+    "message": "You can also visit my {blog}",
+    "description": "The homepage message to ask the user to visit my blog"
+  },
+  "homepage.visitMyBlog.linkLabel": {
+    "message": "Blog",
+    "description": "The label for the link to my blog"
+  },
+  "Home icon": {
+    "message": "Home icon",
+    "description": "The homepage icon alt message"
+  }
+}
+
+Plugins and themes will also write their own JSON translation files, such as:
+
+i18n/fr/docusaurus-theme-classic/navbar.json
+{
+  "title": {
+    "message": "My Site",
+    "description": "The title in the navbar"
+  },
+  "item.label.Docs": {
+    "message": "Docs",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.Blog": {
+    "message": "Blog",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}
+
+Translate the message attribute in the JSON files of i18n/fr, and your site layout and homepage should now be translated.
+
+## Translate Markdown files
+Official Docusaurus content plugins extensively use Markdown/MDX files and allow you to translate them.
+
+## Translate the docs
+Copy your docs Markdown files from docs/ to i18n/fr/docusaurus-plugin-content-docs/current, and translate them:
+
+mkdir -p i18n/fr/docusaurus-plugin-content-docs/current
+cp -r docs/** i18n/fr/docusaurus-plugin-content-docs/current
+
+INFO
+Notice that the docusaurus-plugin-content-docs plugin always divides its content by versions. The data in ./docs folder will be translated in the current subfolder and current.json file. See the doc versioning guide for more information about what "current" means.
+
+## Translate the blog
+Copy your blog Markdown files to i18n/fr/docusaurus-plugin-content-blog, and translate them:
+
+mkdir -p i18n/fr/docusaurus-plugin-content-blog
+cp -r blog/** i18n/fr/docusaurus-plugin-content-blog
+
+## Translate the pages
+Copy your pages Markdown files to i18n/fr/docusaurus-plugin-content-pages, and translate them:
+
+mkdir -p i18n/fr/docusaurus-plugin-content-pages
+cp -r src/pages/**.md i18n/fr/docusaurus-plugin-content-pages
+cp -r src/pages/**.mdx i18n/fr/docusaurus-plugin-content-pages
+
+WARNING
+We only copy .md and .mdx files, as React pages are translated through JSON translation files already.
+
+## USE EXPLICIT HEADING IDS
+By default, a Markdown heading ### Hello World will have a generated ID hello-world. Other documents can link it with [link](#hello-world). However, after translation, the heading becomes ### Bonjour le Monde, with ID bonjour-le-monde.
+
+Generated IDs are not always a good fit for localized sites, as it requires you to localize all the anchor links:
+
+- [link](#hello-world).
++ [link](#bonjour-le-monde)
+
+For localized sites, it is recommended to use explicit heading IDs.
+
+## Deploy your site
+You can choose to deploy your site under a single domain or use multiple (sub)domains.
+
+Single-domain deployment
+Run the following command:
+
+npm
+Yarn
+pnpm
+npm run build
+
+#### Docusaurus will build one single-page application per locale:
+
+website/build: for the default, English language
+website/build/fr: for the French language
+You can now deploy the build folder to the static hosting solution of your choice.
+
+NOTE
+The Docusaurus website uses this strategy:
+
+https://docusaurus.io
+https://docusaurus.io/fr
+TIP
+Static hosting providers generally redirect /unknown/url to /404.html by convention, always showing an English 404 page.
+
+Localize your 404 pages by configuring your host to redirect /fr/* to /fr/404.html.
+
+This is not always possible, and depends on your host: GitHub Pages can't do this, Netlify can.
+
+#### Multi-domain deployment
+You can also build your site for a single locale:
+
+npm
+Yarn
+pnpm
+npm run build -- --locale fr
+
+Docusaurus will not add the /fr/ URL prefix.
+
+#### On your static hosting provider:
+
+create one deployment per locale
+configure the appropriate build command, using the --locale option
+configure the (sub)domain of your choice for each deployment
+WARNING
+This strategy is not possible with GitHub Pages, as it is only possible to have a single deployment.
+
+#### Hybrid
+It is possible to have some locales using sub-paths, and others using subdomains.
+
+It is also possible to deploy each locale as a separate subdomain, assemble the subdomains in a single unified domain at the CDN level:
+
+Deploy your site as fr.docusaurus.io
+Configure a CDN to serve it from docusaurus.io/fr
+Managing translations
+Docusaurus doesn't care about how you manage your translations: all it needs is that all translation files (JSON, Markdown, or other data files) are available in the file system during building. However, as site creators, you would need to consider how translations are managed so your translation contributors could collaborate well.
+
+We will share two common translation collaboration strategies: using git and using Crowdin.
