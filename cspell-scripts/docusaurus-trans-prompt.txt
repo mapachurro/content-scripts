@@ -1,7 +1,3 @@
-First, give ChatGPT this prompt:
-
-
-
 I am working on implementing Docusaurus' internationalization framework on my site.
 
 There are a number of different tasks involved, and I would like your help on specific things within your abilities as a Large Language Model.
@@ -15,12 +11,6 @@ When you have received this information and have it ready to apply, please tell 
 I will then provide you with a second file, for example, one of the pages in the `/src` directory of a Docusaurus app, which is written in React; I would want you to apply the instructions below, and wrap all applicable strings correctly in JSX.
 
 I may have additional questions for you about how I implement the resulting pages in my application.
-
-Can you help with this?
-
-
-When it says "yes", give it context:
-
 
 Docusaurus documentation follows:
 

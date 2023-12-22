@@ -32,11 +32,18 @@ Please render it like:
 
 ### Preferred image link format
 
-Docusaurus has a number of ways to link to images; please use this format:
+Replace any link to an image, regardless of its original format, with this format, retaining the name and path, if available, of the original image file:
 
 ```
-<img src={require('@site/static/img/troubleshooting/error--undefined-is-not-an-object/metamask-undefined-is-not-an-object.png').default}></img>
-<br/>
+<div class="center-container">
+  <div class="img-medium">
+    <img
+      src="/img/path"
+      alt=""
+    />
+  </div>
+</div>
+
 ```
 Additionally, make sure that the file names of the images do not contain whitespace or capital letters; each word should be separated by a dash. For example, not like this:
 
@@ -66,7 +73,7 @@ import Tabs from '@theme/Tabs';
 </Tabs>
 ```
 ### Front matter
-If the article provided to you has an H1 title, please take that title and make front matter out of it, according to Docusaurus' specifications below. Here is an example:
+If the article provided to you has an H1 title, please take that title and make front matter out of it, according to Docusaurus' specifications below. **Do not include an 'id' field**. Here is an example:
 
 ```
 # MetaMask Swaps
