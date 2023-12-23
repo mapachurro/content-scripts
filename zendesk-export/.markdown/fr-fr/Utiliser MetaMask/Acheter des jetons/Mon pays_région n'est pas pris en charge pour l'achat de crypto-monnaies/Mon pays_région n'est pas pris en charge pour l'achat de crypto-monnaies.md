@@ -1,0 +1,14 @@
+Bien que nous souhaitions rendre les fonctionnalités de MetaMask accessibles au plus grand nombre de personnes dans le monde, l'achat de crypto-monnaies dans MetaMask (également appelé on-ramp) n'est pas universellement disponible.
+
+
+En effet, les entreprises avec lesquelles nous collaborons ne peuvent pas opérer dans toutes les juridictions, car leurs activités sont soumises à des lois et réglementations différentes. 
+
+
+Si votre pays/région n'est pas pris en charge, vous pouvez toujours obtenir des jetons dans votre portefeuille par d'autres moyens. Une solution, par exemple, consisterait à **a****cheter des jetons sur un exchange centralisé (CEX) et à les déposer dans MetaMask**. Consultez [notre guide](https://support.metamask.io/hc/en-us/articles/360028141672) pour plus d'informations. N'oubliez pas non plus que cette solution, comme les on-ramps à proprement parler, nécessite généralement des étapes KYC (Know Your Customer, Connaissance du client), telles que la justification de votre identité, et que la disponibilité peut également varier selon les régions. Les CEX diffèrent également de MetaMask en ce sens qu'ils sont dépositaires, ce qui signifie que vous n'avez pas le contrôle de votre [clé privée](https://support.metamask.io/hc/en-us/articles/4404722782107).
+
+
+Vous pouvez également organiser un dépôt P2P (Peer-to-Peer) dans votre portefeuille en envoyant de simples transactions.
+
+
+Quelle que soit la méthode que vous choisissez, faites vos propres recherches avant de transférer de l'argent et assurez-vous que la plateforme que vous utilisez est sûre. Adoptez toujours de [bonnes habitudes en matière de sécurité web3](https://support.metamask.io/hc/en-us/articles/360060826432).
+

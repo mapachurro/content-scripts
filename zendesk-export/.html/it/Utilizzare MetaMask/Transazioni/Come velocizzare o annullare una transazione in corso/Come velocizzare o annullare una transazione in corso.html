@@ -1,0 +1,86 @@
+<p>Quando invii una transazione su Ethereum o su una rete compatibile, una parte del gas che paghi è un'offerta alla rete per elaborare prima la tua transazione, questo elemento è noto come tassa di priorità. Anche se MetaMask ti assiste calcolando un costo totale in gas che probabilmente farà accettare la tua transazione, puoi finire per aspettare a lungo se invii con un prezzo del gas basso. Per consigli sui prezzi del gas necessari per completare una transazione in un lasso di tempo ragionevole, usa come riferimento fonti tipo <a href="https://etherscan.io/gastracker" target="_self" rel="undefined">Etherscan Gas Tracker</a> o un tracker simile a seconda della rete che stai utilizzando.</p>
+<p>Inoltre, a volte si verificano circostanze in cui qualcosa non va a buon fine e una transazione è semplicemente bloccata o resta in corso da molto tempo.</p>
+<p>Non importa come si arriva a questa situazione, ma esistono vari modi per affrontarla.</p>
+<p> </p>
+<h3>Prima di intraprendere qualsiasi altra azione, il primo passo dovrebbe essere quello di uscire e chiudere completamente il browser, riaprirlo e sbloccare MetaMask (sul dispositivo mobile basta chiudere l'app e riaprirla). Se il problema persiste, segui le istruzioni riportate di seguito.</h3>
+<p> </p>
+<h2><strong>Velocizzare una transazione</strong></h2>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927043481371" alt="Transazione velocizzata da MetaMask" width="315" height="533"></p>
+<p>Prova una delle seguenti opzioni:</p>
+<ul>
+<li>Attendi finché la rete non è disposta a elaborare le transazioni a questo prezzo</li>
+<li>Se non l'hai già fatto, fai clic sul pulsante che dice <strong>Velocizza</strong>. In questo modo potrai inviare nuovamente la stessa transazione, ma con un costo in gas superiore che dovrebbe consentire un'elaborazione più rapida della transazione. Poiché questo processo riutilizza lo stesso numero della transazione dell'originale, non dovrai pagare il gas due volte.</li>
+</ul>
+<p>Tieni presente che <strong>velocizzare la transazione aumenterà l'importo che spenderai per la transazione</strong>.</p>
+<p> </p>
+<h2><strong>Annullamento di una transazione - Metodo 1: annullamento in app</strong></h2>
+<p>Se non l'hai già fatto, per annullare la transazione, seleziona semplicemente <strong>Annulla</strong>, come nello screenshot precedente. Tieni presente che <strong>l'annullamento può essere <em>tentato</em> solo se la transazione sulla rete è ancora in corso. </strong> Le transazioni già confermate non possono essere annullate.</p>
+<p> </p>
+<h2><strong>Annullare una transazione - Metodo 2: numero di transazione personalizzato</strong></h2>
+<p>Questo processo prevede l'invio di una transazione con lo stesso numero della transazione (un numero identificativo per ogni transazione, derivato dalla frase "numero usato solo una volta"). La transazione in realtà non deve avere alcun valore, ad esempio potresti inviare 0 ETH. L'importante è pagare un costo in gas sufficiente per far sì che la rete le dia la priorità. </p>
+<p>Quando utilizzi questo metodo, <strong>dovrai procedere a ritroso partendo dalla transazione in attesa meno recente nella coda che vuoi annullare</strong>. Ad esempio, non puoi tentare di annullare una transazione con un numero di transazione 10 prima di annullarne una con numero di transazione 9. </p>
+<p><em>Gli screenshot qui sotto sono stati realizzati in momenti diversi, quindi i costi in gas mostrati possono variare, anche da una passo dall'altro. Non lasciarti scoraggiare da questo! Quando lo fai di persona, MetaMask si aggiorna automaticamente in tempo reale per mostrare tariffe di mercato.</em></p>
+<div class="tabs tabs--colored-1">
+<div class="tabs-menu">
+<span class="tabs-link is-active">Estensione</span> <span class="tabs-link">App mobile</span>
+</div>
+<div class="tab">
+<ol>
+<li>
+<p>Nelle impostazioni avanzate, attiva <strong>Customize transaction nonce</strong> e <strong>Controlli gas avanzati</strong>. Con questi controlli puoi gestire il costo in gas che paghi e assicurarti che la transazione di annullamento venga elaborata prima di quella originale che vuoi annullare.</p>
+<div class="callout callout--info">
+<h4 class="callout__title">Nota:</h4>
+<p>Estensione MetaMask dispone attualmente di una funzione sperimentale chiamata <a href="https://metamask.io/1559/">Enhanced Gas Fee UI</a> (da non confondere con <a href="https://support.metamask.io/hc/en-us/articles/360022895972" target="_self">controlli avanzati del gas</a>). Puoi eseguire questi passaggi indipendentemente dal fatto che sia attivata, ma tieni presente che avranno un aspetto diverso. I passaggi di seguito non utilizzato Enhanced Gas UI. Tieni presente:</p>
+<ul>
+<li>Se hai attivato la funzione Enhanced Gas UI, dovrai comunque attivare anche la funzione "Customize transaction nonce".</li>
+<li>Se non hai attivato Enhanced Gas UI, dovrai attivare sia "Advanced gas controls" che "Customize transaction nonce".</li>
+</ul>
+</div>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927064113947" alt="Impostazioni avanzate MetaMask" width="640" height="329"></p>
+</li>
+<li>
+<p><strong>Invia una nuova transazione</strong>. In nuova transazione, invia <strong>A</strong> te stesso, ossia al tuo indirizzo MetaMask pubblico. <strong>Compila "Personalizza il numero della transazione" con lo stesso numero della transazione ancora in corso</strong>:</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927064259483" alt="Metamask_custom_transaction_nonce_Extension.png" width="315" height="529"></p>
+</li>
+<li>
+<p>Ora premi "Modifica" accanto a "Costo di annullamento in gas" (se la funzionalità sperimentale <a href="https://support.metamask.io/hc/en-us/articles/360022895972-Using-advanced-gas-controls#:~:text=%C2%A0-,Enhanced%20Gas%20UI,-Since%20the%20introduction" target="_self">Interfaccia utente migliorata per gas</a> è attiva, verrà visualizzata come "Market"). Verranno visualizzate le seguenti opzioni:</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927065407515" alt="Estensione MetaMask per controlli avanzati del gas" width="315" height="529"></p>
+<p>Per assicurarti che la tua richiesta di annullamento venga presa in considerazione in via prioritaria e prima della transazione originale, <strong>devi pagare di più come costo in gas</strong>. Segui queste istruzioni:</p>
+<ul>
+<li>Imposta un tuo <strong>gas limit</strong> <em>simile o leggermente superiore</em> rispetto alla transazione originale.</li>
+<li>Imposta il <strong>costo per priorità massimo</strong> su <em>almeno il 10% in più</em> (in Gwei) rispetto al costo in gas della transazione originale (in corso). Ad esempio, se tale transazione prevedeva un costo in gas di 30 Gwei, imposta il costo per priorità massimo nella transazione di sostituzione/annullamento su 33-35 Gwei.</li>
+<li>Assicurati che il tuo costo massimo sia almeno del 30% superiore rispetto al costo massimo della transazione che stai sostituendo. Ad esempio, se il tuo costo precedente era di 150 Gwei, questa volta scegli qualcosa di più vicino a 200 Gwei. </li>
+</ul>
+<p><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Consulta un gas tracker tipo </span><a style="background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;" href="https://etherscan.io/gastracker" target="_self">Etherscan</a><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"> o </span><a style="background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;" href="https://ethgasstation.info/" target="_self" rel="undefined">ETH Gas Station</a><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"> per indicazioni sui costi massimi consigliati. </span></p>
+</li>
+</ol>
+</div>
+<div class="tab is-hidden">
+<ol>
+<li>
+<p><strong>In Impostazioni &gt; Avanzate, attiva "Customize transaction nonce".</strong></p>
+</li>
+<li>
+<p><strong>Invia una nuova transazione.</strong> In nuova transazione, invia A te stesso, ossia al tuo indirizzo MetaMask pubblico. <strong>Compila "Personalizza il numero della transazione" con lo stesso numero della transazione ancora in corso</strong>:</p>
+<p>Per trovare l'impostazione Personalizza il numero della transazione nell'app, vai alla schermata di conferma della transazione, che verrà visualizzata dopo aver inserito la quantità di token e il destinatario. Tocca su "Modifica" per modificarla:</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927068442907" alt="Personalizza il numero della transazione MetaMask mobile" width="315" height="631"></p>
+</li>
+<li>
+<p>Ora devi assicurarti che le impostazione del gas siano configurate in modo che la transazione di sostituzione venga elaborata. Nella schermata di conferma della transazione, tocca il valore del gas evidenziato:</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927041593755" alt="Controlli del gas avanzati MetaMask mobile" width="476" height="190"></p>
+<p>Ora vai su "Opzioni avanzate" dal menu che viene visualizzato.</p>
+</li>
+<li>
+<p>Da qui, puoi regolare con precisione il gas per assicurarti che la tua transazione venga accettata. Ora vedrai una schermata simile a questa:</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927063201691" alt="Controlli del gas avanzati MetaMask mobile" width="315" height="554"></p>
+<p>Da qui, modifica le impostazioni del gas. Segui queste istruzioni per assicurarti che la transazione venga accettata:</p>
+<ul>
+<li>Imposta un tuo <strong>gas limit</strong> <em>simile o leggermente superiore</em> rispetto alla transazione originale.</li>
+<li>Imposta il <strong>costo per priorità massimo</strong> su <em>almeno il 10% in più</em> (in Gwei) rispetto al costo in gas della transazione originale (in corso). Ad esempio, se tale transazione prevedeva un costo in gas di 30 Gwei, imposta il costo per priorità massimo nella transazione di sostituzione/annullamento su 33-35 Gwei.</li>
+<li>Assicurati che il <strong>tuo costo massimo</strong> sia <em>almeno del 30% superiore</em> rispetto al costo massimo della transazione che stai sostituendo. Ad esempio, se il tuo costo precedente era di 150 Gwei, questa volta scegli qualcosa di più vicino a 200 Gwei.</li>
+</ul>
+<p>Consulta un gas tracker tipo <a href="https://etherscan.io/gastracker" target="_self">Etherscan</a> o <a href="https://ethgasstation.info/" target="_self">ETH Gas Station</a> per indicazioni sui costi massimi consigliati.</p>
+</li>
+</ol>
+</div>
+</div>

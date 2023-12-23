@@ -1,0 +1,58 @@
+<div class="callout callout--success">
+<h4 id="01GRVFH3WQZAEN1PPJ4PTRJNH1">Nouveau dans le domaine de la crypto et du web3 ?</h4>
+<p>Rendez-vous sur <a href="https://learn.metamask.io/">MetaMask Learn</a> pour une expérience d'apprentissage simple conçue spécifiquement pour les nouveaux arrivants dans le domaine du web3. Entièrement gratuite, elle est disponible en plusieurs langues et comprend des outils utiles tels que des simulations pour vous aider à trouver vos marques avec MetaMask.</p>
+</div>
+
+<h4 id="01GRVFZVD9WXPHNGSGH5X5AD96"><em>Cet article se comporte une explication et des liens vers des ressources concernant les transactions et les raisons de leur échec, et plus loin, des liens vers des scénarios courants d'échec de transaction et la façon d'y remédier :</em></h4>
+<ul>
+<li><a href="#h_01G79J04D0EN1VD8VS7C7J7KD1" target="_self">Anatomie d'une transaction de blockchain</a></li>
+<li><a href="#h_01G79J09NWA8CGR4VYC2PT5B6Y" target="_self">Problèmes fréquents</a></li>
+<li><a href="#h_01G79J0J8JTRPM9MRB76EN1GPP" target="_self">Principales corrections</a></li>
+<li><a href="#h_01G79J0RP8ZMZ1V1SKQY70TXCT" target="_self">Ressources supplémentaires et prochaines étapes</a></li>
+<li><a href="#h_01G79J18RBK27GZCF10CGN9GKP" target="_self">FAQ</a></li>
+</ul>
+<p> </p>
+<h2 id="h_01G79J04D0EN1VD8VS7C7J7KD1"><strong>Anatomie d'une transaction de blockchain</strong></h2>
+<p>Lorsque nous parlons de « transactions » sur un réseau public de blockchain, nous parlons habituellement des interactions entre deux adresses ; en d'autres termes, des jetons, qu'ils soient fongibles ou non, ou d'autres crypto-actifs étant « envoyés » d'une adresse à une autre. Il existe également des transactions appelées « transactions internes », qui sont des interactions qui se produisent entre des contrats intelligents, et qui, pour la plupart, sortent du cadre de cet article.</p>
+<div class="note note--info">
+<h4 id="01GRVFZVD9JJ5G8Z7S4AE9G1ME" class="note-title">Vous voulez plus d'informations ?</h4>
+<p>Pour plus d'informations sur les réseaux de blockchain et la façon dont ils fonctionnent en général, consultez notre <a href="https://metamask.zendesk.com/hc/en-us/articles/360015489611-Learn-the-basics-of-blockchains-and-Ethereum-miners-and-validators-gas-cryptocurrencies-and-NFTs-block-explorer-networks-etc-">article d'introduction ici</a>, et si vous êtes bloqué sur des mots inconnus, notre <a href="https://consensys.net/knowledge-base/a-blockchain-glossary-for-beginners/">glossaire est toujours disponible</a>.</p>
+</div>
+<p>Par souci de clarté, rien n'est réellement <em>envoyé</em> où que ce soit. Un réseau blockchain basé sur des contrats intelligents, comme Ethereum, comporte un certain nombre de composants, ou fonctions, différents. L'un d'entre eux est ce que nous appellerions un « ordinateur » : la machine virtuelle Ethereum, ou EVM, qui est capable d'exécuter des programmes (« contrats intelligents »). Cependant, le squelette du système est un <em>grand livre distribué</em> : <strong>imaginez une feuille de calcul qui contient, d'un côté, chaque adresse de portefeuille Ethereum unique, et chaque adresse a une colonne pour chaque type de crypto-actifs qu'elle détient.</strong></p>
+<p>Utilisons un exemple pour l'illustration. Disons que Guillaume veut envoyer une transaction à Dolores. Guillaume a 1,36 ETH dans son compte, et il prévoit d'envoyer à Dolores 0,5 ETH. C'est une bonne journée pour Dolores, même dans un marché baissier.</p>
+<p>Guillaume ouvre son portefeuille MetaMask, entre l'adresse de Dolores, configure les paramètres du gaz qu'il est prêt à payer et appuie sur « envoyer ».</p>
+<p>À ce stade, la transaction entre dans un état d'attente temporaire local, connu comme <em>le pool de mémoire</em> local ou <em>le mempool local</em>. La transaction sera ensuite récupérée par le nœud le plus proche du réseau ; selon les <a href="https://metamask.zendesk.com/hc/en-us/articles/360022895972-Using-advanced-gas-controls">paramètres de gaz</a> de Guillaume, sa transaction sera priorisée (<strong>plus Guillaume est prêt à payer par <a href="https://metamask.zendesk.com/hc/en-us/articles/4404600179227-User-Guide-Gas">unité de gaz</a>, plus sa transaction sera rapidement traitée</strong>), et propagée à d'autres nœuds dans le réseau. Les nœuds se chargeront de vérifier que Guillaume a les ETH à dépenser, puis effectueront effectivement la « transaction » : <strong>le grand livre sera modifié, 0,5 sera débité du solde de Guillaume et 0,5 sera crédité sur le compte de Dolores. </strong></p>
+<p><em>« La main qui bouge, ayant écrit, avance » :</em> ETH n'a pas transité par un réseau à proprement parler ; ce n'était pas un e-mail envoyé de l'ordinateur de Guillaume à la boîte de réception MetaMask de Dolorès ou quoi que ce soit de ce genre. Guillaume a envoyé une demande, <strong>authentifiée par ses <a href="https://metamask.zendesk.com/hc/en-us/articles/4404722782107-User-guide-Secret-Recovery-Phrase-password-and-private-keys">clés privées via MetaMask</a></strong>, au réseau pour débiter son compte et créditer celui de Dolores, et après le processus de vérification programmé dans les protocoles du réseau, cela était fait.</p>
+<h4 id="01GRVFZVD9GG3MHV265Q5QBB9S"><em>C'est tout ce qu'il y a à faire pour une transaction : une demande au grand livre de réaffecter quelque chose d'une adresse à une autre.</em></h4>
+<p> </p>
+<h2 id="h_01G79J09NWA8CGR4VYC2PT5B6Y"><strong>Lorsque les choses vont mal</strong></h2>
+<p>Les choses peuvent mal tourner pour un certain nombre de raisons. Souvent, il sont de « nature logicielle » : MetaMask a un bug ou quelque chose a été mal configuré concernant le réseau que vous essayez d'utiliser ; il y a une erreur de connectivité.</p>
+<p>Un <strong>problème commun est que l'utilisateur, dans une tentative de payer moins pour sa transaction, définit une limite de gaz très faible</strong>, et les conditions de réseau sont si encombrées qu'il n'y a pas d'espace dans des blocs pour une telle transaction « bon marché », parfois pendant très longtemps. Finalement, cette transaction deviendra « périmée » et devra être annulée par l'utilisateur.</p>
+<p><strong>Si vous avez envoyé une transaction et qu'elle n'a pas été finalisée</strong>, son état sera affiché comme « en attente » dans MetaMask.</p>
+<p><strong>Si vous avez envoyé une transaction et qu'elle a échoué, la cause la plus probable est un manque de gaz</strong>. En d'autres termes, vous « n'avez plus de gaz » et la transaction avait un coût en essence qui, lorsqu'il était multiplié par le prix de l'essence, donnait un montant total de la monnaie native du réseau supérieur à ce que vous aviez dans votre portefeuille. </p>
+<div class="note note--info">
+<h4 id="01GRVFZVD9GH1B7F94WN13F3BH" class="note-title">Info</h4>
+<p>Pour plus d'informations sur le calcul du gaz, consultez notre <a href="https://metamask.zendesk.com/hc/en-us/articles/4404600179227-User-Guide-Gas">guide sur le gaz ici</a>.</p>
+</div>
+<p>Cela peut se produire pour un certain nombre de raisons, mais une chose à considérer est la nature de la transaction que vous essayez d'effectuer. Frapper un NFT pendant les heures de pointe du trafic réseau peut être très gourmand en gaz ; si vous essayez une transaction nouvelle ou expérimentale, il peut être intéressant de l'essayer sur un réseau de test avant de payer des frais de réseau réels.</p>
+<p> </p>
+<h2 id="h_01G79J0J8JTRPM9MRB76EN1GPP"><strong>Corriger le problème</strong></h2>
+<h3 id="01GRVFZVD9D3PVW0CHP2JYRM1A"><strong>Facteur clé n° 1 : local ou diffusion vers le réseau</strong></h3>
+<p>Lorsque vous diagnostiquez votre problème de transaction, en particulier lorsqu'il s'agit d'une transaction en attente, vous devez vérifier si la transaction est toujours dans votre pool de mémoire local ou si elle a atteint le réseau et y est bloquée pour une raison quelconque. Si c'est seulement dans votre mempool local, la solution pourrait être aussi simple que le verrouillage et le déverrouillage de votre portefeuille MetaMask (<strong>assurez-vous de connaître votre mot de passe et que votre phrase de récupération secrète est sauvegardée avant de le faire</strong>). Si elle est parvenue jusqu'au réseau, la solution pourrait être plus compliquée.</p>
+<p>Pour plus d'informations sur la résolution de ces problèmes, consultez les liens ci-dessous.<br><br></p>
+<h3 id="01GRVFZVD9J3NB03974CZWTT8A"><strong>Facteur clé n° 2 : nonce</strong></h3>
+<p>Ce mot peut avoir plusieurs significations. Il s'agit d'une contraction de « numéro utilisé une seule fois » et, dans ce contexte, il signifie approximativement « numéro de transaction », à partir de la première transaction effectuée par l'adresse d'envoi. Vous pouvez vous mettre dans une situation délicate si, par exemple, vous initiez simultanément deux transactions différentes à partir de différentes instances de MetaMask avec la même adresse de portefeuille. <strong>Les transactions de votre adresse doivent être classées par ordre croissant en fonction de leur nonce. </strong>Cependant, tout comme les nonces sont capables de provoquer le blocage d'une transaction, ils peuvent être la clé pour débloquer une transaction.</p>
+<p>Pour plus d'informations sur cette technique, <a href="https://metamask.zendesk.com/hc/en-us/articles/360015489251-How-to-Speed-Up-or-Cancel-a-Pending-Transaction">rendez-vous ici</a>.</p>
+<p> </p>
+<h2 id="h_01G79J0RP8ZMZ1V1SKQY70TXCT"><strong>Prochaines étapes</strong></h2>
+<h3 id="01GRVFZVD9Q63NF0SYR69AWPG6"><em>Si votre transaction a échoué ou est en attente, consultez les ressources suivantes pour obtenir de l'aide.</em></h3>
+<h4 id="01GRVFZVD9NFGVSXR55JG8EYQK"><a href="https://metamask.zendesk.com/hc/en-us/articles/360015488931">Comment envoyer des jetons de votre portefeuille MetaMask ?</a></h4>
+<h4 id="01GRVFZVD9N387HEW5ZJ53MK5Z"><a href="https://metamask.zendesk.com/hc/en-us/articles/360015489251-How-to-Speed-Up-or-Cancel-a-Pending-Transaction">Comment accélérer ou annuler une transaction en attente ?</a></h4>
+<h4 id="01GRVFZVD9TWRFF00FPPWFFYSD" class="article-title" title="Pourquoi ma transaction a-t-elle échoué en raison d'une erreur « manque de gaz » ? Comment puis-je la corriger ?"><a href="https://metamask.zendesk.com/hc/en-us/articles/360038849792-Why-did-my-transaction-fail-with-an-Out-of-Gas-error-How-can-I-fix-it-">Pourquoi ma transaction a-t-elle échoué en raison d'une erreur « manque de gaz » ?</a></h4>
+<h4 id="01GRVFZVD9XJVVHQK3J9F5Q4Z8"><a href="https://metamask.zendesk.com/hc/en-us/articles/360053394291-Uniswap-support-and-troubleshooting-tips">Dépannage d'Uniswap</a></h4>
+<h4 id="01GRVFZVD9V5KZ7999CR0DHGGZ"><a href="https://metamask.zendesk.com/hc/en-us/articles/4404600179227-User-Guide-Gas">Guide de l'utilisateur : gaz</a></h4>
+<h4 id="01GRVFZVD9RDMNCVPMRVY7ZVGP"><a href="https://metamask.zendesk.com/hc/en-us/articles/360059957352-Can-I-reverse-an-already-confirmed-transaction-">Puis-je annuler une transaction déjà confirmée ?</a></h4>
+<p> </p>
+<h2 id="h_01G79J18RBK27GZCF10CGN9GKP"><strong>FAQ</strong></h2>
+<h4 id="01GRVFZVD9XESKW1CA31WM5PWS">
+<em>Q : Un compte de mon portefeuille a une transaction en attente ou en file d'attente. Puis-je commencer une autre transaction à partir d'un compte différent dans le même portefeuille ?<br></em> R : Oui, vous pouvez. Le nonce est compté par compte et non par portefeuille.</h4>

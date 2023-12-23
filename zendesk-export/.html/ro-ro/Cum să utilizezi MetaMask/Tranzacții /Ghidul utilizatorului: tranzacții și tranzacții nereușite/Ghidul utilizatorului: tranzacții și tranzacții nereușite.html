@@ -1,0 +1,57 @@
+<div class="callout callout--success">
+<h4 id="01GRVFH3WQZAEN1PPJ4PTRJNH1">Ești nou în spațiul crypto și web3?</h4>
+<p><span style="background-color: transparent; color: #000000;" class="wysiwyg-font-size-medium">Accesează </span><a href="https://learn.metamask.io/"><span style="background-color: transparent; color: #1155cc;" class="wysiwyg-font-size-medium"><span class="wysiwyg-underline">MetaMask Learn</span></span></a><span style="background-color: transparent; color: #000000;" class="wysiwyg-font-size-medium"> pentru o experiență de învățare simplă, concepută special pentru nou-veniți în web3. Este complet gratuit, disponibil în mai multe limbi și include instrumente utile cum ar fi simulări, pentru a te ajuta să capeți încredere în tine în timp ce utilizezi MetaMask. </span></p>
+</div>
+<h4 id="01GRVFZVD9WXPHNGSGH5X5AD96"><em>Acest articol cuprinde explicații și linkuri către resurse despre tranzacții și de ce acestea eșuează; mai jos includem linkuri către scenarii comune de tranzacții nereușite și cum să le abordăm:</em></h4>
+<ul>
+<li><a href="#h_01G79J04D0EN1VD8VS7C7J7KD1" target="_self">Anatomia tranzacțiilor pe blockchain</a></li>
+<li><a href="#h_01G79J09NWA8CGR4VYC2PT5B6Y" target="_self">Probleme comune</a></li>
+<li><a href="#h_01G79J0J8JTRPM9MRB76EN1GPP" target="_self">Remedieri principale</a></li>
+<li><a href="#h_01G79J0RP8ZMZ1V1SKQY70TXCT" target="_self">Resurse adiționale și următorii pași</a></li>
+<li><a href="#h_01G79J18RBK27GZCF10CGN9GKP" target="_self">Întrebări frecvente</a></li>
+</ul>
+<p> </p>
+<h2 id="h_01G79J04D0EN1VD8VS7C7J7KD1"><strong>Anatomia tranzacțiilor pe blockchain</strong></h2>
+<p>Când vorbim despre "tranzacțiile" dintr-o rețea publică blockchain, de obicei vorbim despre interacțiunile dintre două adrese; cu alte cuvinte, despre tokeni (fungibili sau non-fungibil) sau despre alte fonduri crypto care sunt "trimise" de la o adresă la alta. De asemena, există și "tranzacții interne", care reprezintă interacțiunile ce au loc între contractele smart și, în cea mai mare parte, nu intră în scopul acestui articol.</p>
+<div class="note note--info">
+<h4 id="01GRVFZVD9JJ5G8Z7S4AE9G1ME" class="note-title">Vrei mai multe informații?</h4>
+<p>Pentru mai multe informații despre rețele blockchain și despre modul în care acestea funcționează în general, consultă <a href="https://support.metamask.io/hc/en-us/articles/360015489611-Learn-the-basics-of-blockchains-and-Ethereum-miners-and-validators-gas-cryptocurrencies-and-NFTs-block-explorer-networks-etc-">articolul introductiv de aici</a> și dacă identifici cuvinte necunoscute <a href="https://consensys.net/knowledge-base/a-blockchain-glossary-for-beginners/">glosarul nostru este mereu disponibil</a>.</p>
+</div>
+<p>Să clarificăm: de fapt nimic nu este <em>trimis </em>nicăieri. O rețea blockchain compatibilă cu contractele smart, precum Ethereum, are o serie de componente sau funcții. Una dintre acestea este ceea ce am numi un "computer": mașina virtuală Ethereum sau EVM, care este capabilă să ruleze programe ("contracte smart"). Cu toate acestea, pilonul sistemului este un <em>registru distribuit</em>: <strong>imaginează-ți o foaie de calcul care conține fiecare adresă a portofelului Ethereum, unde fiecare adresă are o coloană pentru fiecare tip de fond crypto pe care îl deține.</strong> </p>
+<p>Să ilustram printr-un exemplu: să zicem că Guillaume dorește să trimită o tranzacție către Dolores. Guillaume are 1.36 ETH în cont și plănuiește să îi trimită lui Dolores 0.5 ETH. Este o zi bună pentru Dolores, chiar și într-o piață în scădere. </p>
+<p>Guillaume deschide portofelul MetaMask, introduce adresa lui Dolores, configurează parametrii cu care este confortabil pentru plata gas-ului, și apasă pe "trimite".</p>
+<p>În acest punct, tranzacția intră într-o stare temporară locală de așteptare, cunoscută sub numele de <em>local memory pool </em>sau <em>local mempool</em>. Tranzacția va fi apoi "preluată" de cel mai apropiat nod din rețea; în funcție de <a href="https://support.metamask.io/hc/en-us/articles/360022895972-Using-advanced-gas-controls">setările de gas</a>, ale lui Guillaume, tranzacția sa va fi prioritară (<strong>cu cât Guillaume este mai dispus să plătească pe <a href="https://support.metamask.io/hc/en-us/articles/4404600179227-User-Guide-Gas">unitatea de gas</a>, cu atât tranzacția sa va fi procesată mai repede) </strong>), și propagată la alte noduri din rețea. Nodurile vor face munca de a verifica dacă Guillaume are ETH de cheltuit, iar apoi vor efectua efectiv "tranzacția": <strong>registrul va fi modificat; va fi debitat 0,5 din soldul lui Guillaume și creditat lui Dolores. </strong></p>
+<p>Tokenii ETH nu trec în sine prin rețea; nu există un email trimis de la computerul lui Guillaume către inboxul MetaMask al lui Dolores sau nimic de acest gen. Guillaume a trimis o cerere către rețea, <strong>autentificat cu <a href="https://support.metamask.io/hc/en-us/articles/4404722782107-User-guide-Secret-Recovery-Phrase-password-and-private-keys">cheile lui private, prin MetaMask</a></strong>, pentru a se debita din contul lui și a-l credita pe cel al lui Dolores; acest lucru s-a întamplat după ce procesul de verificare programat în protocoalele rețelei s-a încheiat. </p>
+<h4 id="01GRVFZVD9GG3MHV265Q5QBB9S"><em>Asta reprezintă o tranzacție: o cerere către registru pentru a realoca ceva de la o adresă la alta.</em></h4>
+<p> </p>
+<h2 id="h_01G79J09NWA8CGR4VYC2PT5B6Y"><strong>Când lucrurile dau greș</strong></h2>
+<p>Lucrurile dau greș din mai multe motive. De multe ori, ele sunt probleme "software": MetaMask are un bug, sau ceva a fost configurat greșit la rețeaua pe care încerci să o utilizezi; a existat o eroare de conectivitate.</p>
+<p>O <strong>problemă comună este că utilizatorul, în încercarea de a plăti mai puțin pentru tranzacție, stabilește o limită de gas foarte scăzută</strong>, iar starea rețelei este atât de aglomerată încât nu există spațiu în nici un bloc pentru o astfel de tranzacție "ieftină", uneori pentru o perioadă foarte lungă de timp: în cele din urmă, această tranzacție va deveni "învechită" și va trebui să fie anulată de utilizator. </p>
+<p><strong>Dacă ai efectuat o tranzacție și nu a fost finalizată</strong>, starea ei va fi afișată în MetaMask ca "în așteptarare” (pending). </p>
+<p><strong>Dacă ai efectuat o tranzacție și a eșuat, cauza cea mai probabilă este lipsa de gas</strong>: "ai rămas fără gas"; cu alte cuvinte, tranzacția a avut un cost de gas care, multiplicat cu prețul gas-ului, a rezultat o cantitate totală de monedă nativă mai mare decât ce ai avut tu în portofel. </p>
+<div class="note note--info">
+<h4 id="01GRVFZVD9GH1B7F94WN13F3BH" class="note-title">Info</h4>
+<p>Pentru mai multe informații despre calcul de gas, consultă <a href="https://support.metamask.io/hc/en-us/articles/4404600179227-User-Guide-Gas"> aici ghidul nostru despre gas</a>.</p>
+</div>
+<p>Acest lucru se poate întâmpla din mai multe motive, dar un lucru de luat în considerare este ce fel de tranzacție încerci să efectuezi. Emiterea unui NFT în timpul orelor de vârf cu trafic în rețea pot fi foarte consumatoare de gas; dacă încerci o tranzacție nouă sau experimentală, poate merită să încerci pe o rețea de testare înainte de a plăti taxele dintr-o rețea în timp real.</p>
+<p> </p>
+<h2 id="h_01G79J0J8JTRPM9MRB76EN1GPP"><strong>Remedierea problemei</strong></h2>
+<h3 id="01GRVFZVD9D3PVW0CHP2JYRM1A"><strong>Factorul cheie #1: Local sau apare pe rețea</strong></h3>
+<p>Pe măsură ce diagnostichezi problema tranzacției, mai ales când vine vorba de o tranzacție în așteptare, trebuie să verifici dacă tranzacția este încă în mempool-ul local sau dacă a ajuns în rețea și este blocată acolo din orice motiv. Dacă este doar în mempool local, soluția ar putea fi simpla blocare și deblocare a portofelului MetaMask (<strong>înainte de a face ceva asigură-te că îți cunoști parola și că ai salvat fraza secretă de recuperare</strong>). Dacă este blocată pe rețea, soluția ar putea fi mai complicată.</p>
+<p>Pentru mai multe informații despre remedierea acestor probleme, consultă linkurile de mai jos.<br><br></p>
+<h3 id="01GRVFZVD9J3NB03974CZWTT8A"><strong>Factorul cheie #2: Nonce</strong></h3>
+<p>Acest cuvânt are diferite înțelesuri. Este o prescurtare pentru "număr folosit o singură dată" ("number only used once"), iar în acest context, înseamnă aproximativ "numărul tranzacției", începând de la prima tranzacție efectuată de adresa de trimitere. Poți să întâmpini o problemă serioasă dacă, spre exemplu, trimiți de la aceeași adresă din portofelul MetaMask două tranzacții diferite din instanțe MetaMask diferite, în același timp. <strong>Tranzacțiile adresei tale trebuie să fie în ordine crescătoare în funcție de nonce-ul lor. </strong>Cu toate acestea, așa cum nonce-urile sunt capabile să cauzeze blocarea unei tranzacții, pot fi și cheia care o deblochează.</p>
+<p>Pentru mai multe informații despre această tehnică <a href="https://support.metamask.io/hc/en-us/articles/360015489251-How-to-Speed-Up-or-Cancel-a-Pending-Transaction">vezi aici</a>.</p>
+<p> </p>
+<h2 id="h_01G79J0RP8ZMZ1V1SKQY70TXCT"><strong>Următorii pași</strong></h2>
+<h3 id="01GRVFZVD9Q63NF0SYR69AWPG6"><em>Dacă ai tranzacții eșuate sau tranzacții în așteptare, consultă următoarele resurse pentru asistență.</em></h3>
+<h4 id="01GRVFZVD9NFGVSXR55JG8EYQK"><a href="https://support.metamask.io/hc/en-us/articles/360015488931">Cum să trimiți tokeni din portofelul MetaMask</a></h4>
+<h4 id="01GRVFZVD9N387HEW5ZJ53MK5Z"><a href="https://support.metamask.io/hc/en-us/articles/360015489251-How-to-Speed-Up-or-Cancel-a-Pending-Transaction">Cum să accelerezi sau să anulezi o tranzacție în așteptare</a></h4>
+<h4 id="01GRVFZVD9TWRFF00FPPWFFYSD" class="article-title" title='Why did my transaction fail with an "Out of Gas" error? How can I fix it?'><a href="https://support.metamask.io/hc/en-us/articles/360038849792-Why-did-my-transaction-fail-with-an-Out-of-Gas-error-How-can-I-fix-it-">De ce a eșuat tranzacția mea cu eroarea "fără gas" ("out of gas")? </a></h4>
+<h4 id="01GRVFZVD9XJVVHQK3J9F5Q4Z8"><a href="https://support.metamask.io/hc/en-us/articles/360053394291-Uniswap-support-and-troubleshooting-tips">Troubleshooting Uniswap</a></h4>
+<h4 id="01GRVFZVD9V5KZ7999CR0DHGGZ"><a href="https://support.metamask.io/hc/en-us/articles/4404600179227-User-Guide-Gas">Ghidul utilizatorului: Gas</a></h4>
+<h4 id="01GRVFZVD9RDMNCVPMRVY7ZVGP"><a href="https://support.metamask.io/hc/en-us/articles/360059957352-Can-I-reverse-an-already-confirmed-transaction-">Pot anula o tranzacție deja confirmată?</a></h4>
+<p> </p>
+<h2 id="h_01G79J18RBK27GZCF10CGN9GKP"><strong>Întrebări frecvente</strong></h2>
+<h4 id="01GRVFZVD9XESKW1CA31WM5PWS">
+<em>Î: Un cont din portofelul meu are o tranzacție în așteptare. Pot iniția o altă tranzacție dintr-un cont diferit în același portofel?<br></em>R: Da, poți. Nonce-ul se calculează per cont, nu per portofel.</h4>

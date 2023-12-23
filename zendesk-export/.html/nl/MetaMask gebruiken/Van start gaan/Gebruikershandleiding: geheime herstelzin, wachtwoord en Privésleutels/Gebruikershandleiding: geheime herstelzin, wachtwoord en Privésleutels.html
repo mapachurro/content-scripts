@@ -1,0 +1,89 @@
+<div class="callout callout--success">
+<h4 id="01GRVFH3WQZAEN1PPJ4PTRJNH1">Nieuw bij crypto en web3?</h4>
+<p>Ga naar <a href="https://learn.metamask.io/">MetaMask Learn</a> voor een eenvoudige leerervaring, speciaal ontworpen voor nieuwkomers in web3. Het is volkomen gratis, beschikbaar in meerdere talen, en bevat nuttige hulpmiddelen zoals simulaties om je te helpen je weg te vinden met MetaMask.</p>
+</div>
+<h3 id="01GRVGEW4EQZ7VT1237VC9BKE3">In dit artikel:</h3>
+<ul>
+<li><a href="#h_01FYVAXCSH95CQ08Q0P2VJA5HV" target="_self">Hoe de beveiliging van MetaMask verschilt van traditionele webaccounts</a></li>
+<li><a href="#h_01FYVAXJQT914HCHEYFPNMEJEA" target="_self">Wat is een geheime herstelzin?</a></li>
+<li><a href="#h_01FYVAXSE5C9E4YBCSWT2F2RBQ" target="_self">Geheime herstelzin do's en don'ts</a></li>
+<li><a href="#h_01FYVAXZYWJENFWG9K9CJTQFK7" target="_self">Geheime herstelzin veelgestelde vragen</a></li>
+<li><a href="#h_01FYVAY5K22PX6926537V8B4SX" target="_self">Wachtwoorden en MetaMask</a></li>
+<li><a href="#h_01FYVAYH3ZZ8VW8BPDDADWRC8E" target="_self">Privésleutels veelgestelde vragen</a></li>
+</ul>
+<h2 id="01GRVGEW4E7099BPXHWT90NE3Z"> </h2>
+<h2 id="h_01FYVAXCSH95CQ08Q0P2VJA5HV">
+<strong>MetaMask: een ander model van accountbeveiliging</strong><strong></strong>
+</h2>
+<p><a href="https://metamask.zendesk.com/hc/en-us/articles/360015489611">Openbare blockchaintechnologie</a> gebruikt heel andere tools om gebruikersgegevens te beveiligen dan traditionele online technologieën. De meesten van ons zijn gewend om een account aan te maken bij een app, of service en bijvoorbeeld naar de ondersteuning te kunnen schrijven om ons wachtwoord of gebruikersnaam opnieuw in te stellen. We zijn gewend dat de app onze gegevens bewaart, vermoedelijk op een soort computer van het bedrijf.</p>
+<p>Nou ... MetaMask werkt zo niet. MetaMask heeft drie verschillende soorten <strong>geheim</strong> die op verschillende manieren worden gebruikt om je wallet, en je accounts, privé en veilig te houden: de geheime herstelzin, het wachtwoord en de privésleutels. We zullen je één voor één door deze geheimen leiden.</p>
+<p> </p>
+<h2 id="h_01FYVAXJQT914HCHEYFPNMEJEA"><strong>Inleiding tot geheime herstelzinnen</strong></h2>
+<p>Een van de sleutel (je zult zien wat ik daar deed) -technologieën die ten grondslag liggen aan MetaMask, en de meeste gebruikersaccount-gerelateerde tools in de cryptoruimte is de <em>seed phrase,</em> of zoals het wordt genoemd in MetaMask, je <em>geheime herstelzin</em>.</p>
+<h4 id="01GRVGEW4EJKM4MWCW27PZP6FV"><strong>Al je accounts zijn wiskundig afgeleid van je geheime herstelzin. Je kunt de SRP zien als een sleutelhanger, die zoveel privésleutels bevat als je maar wilt: en elk van die sleutels beheert een account.</strong></h4>
+<p>Als je een technische uitleg wilt: seed-phrases zoals we die nu kennen zijn gecodificeerd voor gebruik in Bitcoin, volgens een standaard die Bitcoin Improvement Proposal 39 heet, oftewel <a href="https://en.bitcoin.it/wiki/BIP_0039">BIP-39</a>. Eenvoudig gezegd wordt een reeks woorden met een hoge mate van willekeur geselecteerd uit een specifieke <a href="https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt">lijst van woorden</a>. In MetaMask en vele andere Ethereum-compatibele technologieën zijn er 12 woorden in een seed phrase. Sommige oudere seeds die door de Brave-browser worden gegenereerd, en sommige hardware wallets, gebruiken 24-woorden zinnen.</p>
+<p>Elk van deze woorden komt overeen met een reeks getallen, en wanneer ze geplaatst worden in <strong>een specifieke volgorde</strong>, vertegenwoordigen ze een veel gebruiksvriendelijkere manier om een heel, heel lang nummer te onthouden. Dat getal wordt dan gebruikt om <em>deterministisch</em> je accounts te genereren, en je hoort mensen misschien verwijzen naar deterministische wallets. In de computerwetenschap wordt deterministisch gebruikt om een proces te beschrijven (meestal een of ander algoritme) dat <em>altijd</em> hetzelfde resultaat oplevert. Met andere woorden, <strong>je geheime herstelzin zal altijd dezelfde set accounts genereren die ervan zijn afgeleid</strong>.</p>
+<p> </p>
+<h3 id="01GRVGEW4ETY4B98KWX25FAQXR">Er zijn hier een aantal belangrijke functies aan te wijzen:</h3>
+<ul>
+<li>De <strong>geheime herstelzin is het geheim dat de wallet beheert</strong>. Als iemand dit geheim heeft, hebben ze volledige toegang tot de wallet. <strong>MetaMask bewaart je SRP niet: </strong><strong><a href="https://metamask.zendesk.com/hc/en-us/articles/360059952212">jij bent de beheerder van je wallet.</a></strong> MetaMask-vertegenwoordigers zullen <strong>nooit</strong> om je geheime herstelzin vragen, zelfs niet in een klantenservice scenario. Als iemand er wel om vraagt, proberen ze je waarschijnlijk op te lichten of je geld te stelen.</li>
+<li>Je SRP wordt <strong>lokaal gebruikt om privésleutels af te leiden</strong>, één per account/adres. Accounts worden opgeslagen op de blockchain, en deze privésleutels ontgrendelen die accounts.</li>
+<li>
+<strong>Als je de app</strong> of de extensie verwijdert, dan is de lokale versie van de gegevens verdwenen (met uitzondering van de <a href="https://metamask.zendesk.com/hc/en-us/articles/360018766351">vault</a>), maar alle transacties die je hebt uitgevoerd met die lokale versie van MetaMask zijn vastgelegd op de blockchain. Daarom moeten de transacties zowel op een <a href="https://metamask.zendesk.com/hc/en-us/articles/360057536611">block explorer</a> en in een andere instantie van MetaMask, zolang je <a href="https://metamask.zendesk.com/hc/en-us/articles/360015289612">herstelt met dezelfde geheime herstelzin</a> (<strong>met de woorden in dezelfde volgorde</strong>). Dit betekent dat zolang je je geheime herstelzin hebt, je MetaMask altijd kunt verwijderen en je wallet kunt herstellen.</li>
+<li>
+<strong>Binnen je wallet kun je een heel groot aantal afzonderlijke accounts hebben.</strong> Wanneer MetaMask je wallet creëert of herstelt vanuit de geheime herstelzin, produceert het in eerste instantie alleen de eerste account. Echter, elke <a href="https://metamask.zendesk.com/hc/en-us/articles/360015489271">extra accounts die je aanmaakt kunnen opnieuw worden aangemaakt</a> in een toekomstige versie van MetaMask. <strong>Omdat de wallet <em>deterministisch</em> is, zal het altijd dezelfde accounts opnieuw aanmaken, in dezelfde volgorde. Zie de onderstaande veelgestelde vragen voor meer informatie over deze kwestie.</strong> Hou er echter rekening mee dat de extra accounts (naast de eerste, automatisch gelabeld als 'account 1') <strong><em>niet</em></strong> onder alle omstandigheden automatisch opnieuw aan je account worden toegevoegd. Zie onze uitleg <a href="https://metamask.zendesk.com/hc/en-us/articles/360015489271-How-to-add-missing-accounts-after-restoring-with-Secret-Recovery-Phrase#:~:text=If%20you%20have,automatically%20re%2Dadded." target="_self">hier</a> voor meer informatie.</li>
+<li>
+<strong>Het is mogelijk om <a href="https://metamask.zendesk.com/hc/en-us/articles/360015489331">accounts</a> van andere Ethereum-compatibele technologieën te importeren in een MetaMask-wallet.</strong> Om dit te doen, wordt de <em>privésleutel</em> van die specifieke account gebruikt. <strong>Deze account wordt echter niet automatisch hersteld door MetaMask in een andere versie; je moet het handmatig opnieuw toevoegen</strong>. Daarom, als je handmatig accounts hebt geïmporteerd, <strong>noteer dan hun privésleutels, op dezelfde manier als je seed phrase</strong>, om ze in de toekomst opnieuw te kunnen importeren.</li>
+</ul>
+<p> </p>
+<h2 id="h_01FYVAXSE5C9E4YBCSWT2F2RBQ"><strong>MetaMask geheime herstelzin: Do's en don'ts</strong></h2>
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Do:</strong></div>
+<div class="accordion__item-content">
+<ul>
+<li>
+<strong>Noteer je geheime herstelzin ergens veilig</strong>. We kunnen je niet precies vertellen waar, dat hangt af van je omstandigheden.<ul>
+<li>Het belang van het met de hand schrijven van je geheime herstelzin is dat deze niet online kan worden gestolen. Als je het bijvoorbeeld opslaat in een bestand in een aan internet gekoppelde map voor cloud-opslag, kan het in theorie worden gestolen.</li>
+</ul>
+</li>
+<li>Controleer je spelling en of je elk woord in dezelfde volgorde hebt opgeschreven.</li>
+<li>Neem contact op met de <a href="https://metamask.zendesk.com/hc/en-us/articles/360058230211" target="_self">officiële kanalen</a> van MetaMask Support als je hulp nodig hebt.</li>
+</ul>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Don't:</strong></div>
+<div class="accordion__item-content">
+<ul>
+<li>Het op een gemakkelijk te ontdekken of gemakkelijk te hacken plaats bewaren; bijvoorbeeld in een in de cloud opgeslagen document of e-mail met de titel 'Seed Phrase'; op een post-it briefje dat op je computer is geplakt.</li>
+<li>Je geheime herstelzin aan iemand geven, zelfs als ze zeggen dat ze van MetaMask Support zijn.</li>
+<li>De volgorde van de woorden wijzigen.</li>
+</ul>
+</div>
+</div>
+</div>
+<p> </p>
+<h2 id="h_01FYVAXZYWJENFWG9K9CJTQFK7"><strong>Geheime herstelzinnen: veelgestelde vragen</strong></h2>
+<h3 id="01GRVGEW4EZ5K54JBY75E9VJSZ">Mijn seed phrase heeft een ander account hersteld!<strong><br></strong>
+</h3>
+<p>Raadpleeg <a href="https://metamask.zendesk.com/hc/en-us/articles/360058120992" target="_self">hier</a> een artikel in de kennisbank over dit onderwerp. Zie ook de community-conversatie <a href="https://community.metamask.io/t/restored-metamask-no-coins-are-showing/878/107?u=jacob.cantele">hier</a> voor meer context en achtergrondinformatie.</p>
+<h3 id="01GRVGEW4EWBN34MEMP09CHQF0">Andere veelgestelde vragen over de geheime herstelzin:</h3>
+<p><a href="https://metamask.zendesk.com/hc/en-us/articles/360015290032">Je geheime herstelzin onthullen</a></p>
+<p><a href="https://metamask.zendesk.com/hc/en-us/articles/360018766351" target="_self" rel="undefined">Je geheime herstelzin herstellen</a></p>
+<p><a href="https://metamask.zendesk.com/hc/en-us/articles/360060331752">Importeren van een seed phrase uit een andere wallet software: afleidingspad</a></p>
+<p><a href="https://metamask.zendesk.com/hc/en-us/articles/4867408571803">Wallet migratiehandleiding</a></p>
+<p><a href="https://metamask.zendesk.com/hc/en-us/articles/360015489331">Een account importeren</a></p>
+<p><a href="https://metamask.zendesk.com/hc/en-us/articles/360057536611">Hoe bekijk ik mijn wallet-activiteit op de blockchain explorer</a></p>
+<p><a href="https://metamask.zendesk.com/hc/en-us/articles/360060826432">Wat is een geheime herstelzin en hoe houd ik mijn wallet veilig?</a></p>
+<p> </p>
+<h2 id="h_01FYVAY5K22PX6926537V8B4SX"><strong>Wachtwoorden en MetaMask</strong></h2>
+<p>MetaMask gebruikt wachtwoorden voor één enkel doel: om de app zelf te beveiligen; met andere woorden, om de app te openen, of het nu de mobiele app is of de in-browser extensie. Als je eenmaal je wallet hebt hersteld of aangemaakt met je geheime herstelzin, heb je die niet meer regelmatig nodig (<strong>hoewel je er wel een back-up van moet maken</strong>), en gebruik je je wachtwoord (of vaker op Mobile, biometrische verificatie zoals gezichtsherkenning of je vingerafdruk) om de app te ontgrendelen. Zie ons artikel <a href="https://metamask.zendesk.com/hc/en-us/articles/4405451730331">hier</a> voor meer details.</p>
+<p> </p>
+<h2 id="h_01FYVAYH3ZZ8VW8BPDDADWRC8E"><strong>Privésleutels</strong></h2>
+<p>Terwijl een geheime herstelzin wordt gebruikt om je gehele MetaMask-wallet aan te maken en te herstellen, inclusief alle accounts die in die wallet zijn aangemaakt, heeft elke account een eigen <em>privésleutel</em>. Deze sleutel kan worden gebruikt om die account, en alleen die account, te importeren in een andere wallet. Op dezelfde manier kunnen afzonderlijke rekeningen van andere cryptotechnologieën worden geïmporteerd naar je MetaMask-wallet.</p>
+<h3 id="01GRVGEW4FFY9TB79BMN3M0B0H">Veelgestelde vragen over privésleutels:</h3>
+<p><a href="https://metamask.zendesk.com/hc/en-us/articles/360015289932">Wat zijn geïmporteerde accounts?</a></p>
+<p><a href="https://metamask.zendesk.com/hc/en-us/articles/360015489331">Een account importeren</a></p>
+<p><a href="https://metamask.zendesk.com/hc/en-us/articles/360015289632">De privésleutel van een account exporteren</a></p>
+<p><a href="https://metamask.zendesk.com/hc/en-us/articles/360058485292">Kan ik een Coinbase-wallet account importeren naar mijn MetaMask-wallet?</a></p>

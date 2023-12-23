@@ -1,0 +1,86 @@
+<p>Apabila anda menghantar transaksi ke Ethereum atau rangkaian yang sepadan, sebahagian daripada gas yang anda bayar adalah tawaran ke rangkaian untuk memproses transaksi anda lebih awal — elemen ini dikenali sebagai yuran utama. Walaupun MetaMask akan membantu anda dengan mengira jumlah bayaran gas yang berkemungkinan besar transaksi anda diambil, anda boleh menunggu lama jika anda menyerahkan dengan harga gas yang rendah. Untuk mendapat nasihat tentang harga gas yang akan mengakibatkan transaksi dimuktamadkan dalam jangka masa yang munasabah, sila rujuk kepada sumber seperti <a href="https://etherscan.io/gastracker" target="_self" rel="undefined">penjejak gas Etherscan</a>, atau penjejak yang serupa untuk sebarang rangkaian yang anda gunakan.</p>
+<p>Selain itu, kadang kala akan terdapat keadaan di mana kesilapan berlaku, dan transaksi tersekat, atau tidak diselesaikan untuk masa yang sangat lama.</p>
+<p>Tanpa mengira bagaimana anda sampai ke tahap ini, terdapat beberapa cara yang berlainan untuk menanganinya.</p>
+<p> </p>
+<h3>Sebelum anda mengambil tindakan selanjutnya, langkah pertama anda adalah untuk keluar dari pelayar anda sepenuhnya, buka semula, dan buka kunci MetaMask (di mudah alih, hanya tutup aplikasi dan buka semula). Jika langkah ini tidak menyelesaikan masalah tersebut, teruskan dengan yang berikut:</h3>
+<p> </p>
+<h2><strong>Mempercepatkan transaksi</strong></h2>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927043481371" alt="MetaMask mempercepatkan transaksi" width="315" height="533"></p>
+<p>Cuba salah satu pilihan di bawah:</p>
+<ul>
+<li>Tunggu sehingga rangkaian sanggup memproses transaksi pada harga ini</li>
+<li>Jika anda belum berbuat demikian, ketik pada butang yang menyatakan <strong>Mempercepatkan</strong>. Ini akan membolehkan anda menyerahkan semula transaksi yang sama, namun dengan yuran gas yang lebih tinggi, yang sepatutnya membolehkan transaksi diproses dengan lebih cepat. Memandangkan proses ini menggunakan semula nonce yang sama seperti yang asal, anda tidak perlu membayar untuk gas dua kali.</li>
+</ul>
+<p>Ingat bahawa <strong>mempercepatkan transaksi akan menambah amaun yang anda belanjakan untuk transaksi tersebut</strong>.</p>
+<p> </p>
+<h2><strong>Membatalkan transaksi - Kaedah 1: Pembatalan dalam aplikasi</strong></h2>
+<p>Jika anda belum melakukannya, untuk membatalkan transaksi, hanya pilih <strong>Batal</strong>, seperti yang ditunjukkan dalam tangkapan skrin di atas. Sila ambil perhatian, <strong>pembatalan hanya boleh <em>dicuba</em> jika transaksi masih belum diselesaikan di rangkaian.  </strong> Transaksi yang telah disahkan tidak boleh dibatalkan.</p>
+<p> </p>
+<h2><strong>Batalkan transaksi - Kaedah 2: Nonce tersuai</strong></h2>
+<p>Proses ini melibatkan penghantaran urus niaga baharu dengan nonce yang sama (nombor pengenalan untuk setiap urus niaga, berasal daripada frasa 'nombor hanya digunakan sekali'). Transaksi sebenarnya tidak perlu mengandungi sebarang nilai -- cth. anda boleh menghantar 0 ETH. Apa yang penting adalah anda membayar gas yang mencukupi untuk rangkaian mengutamakannya. </p>
+<p>Apabila menggunakan kaedah ini, <strong>anda akan perlu untuk bekerja ke belakang daripada transaksi tertunda tertua dalam baris gilir yang ingin anda batalkan.</strong> Sebagai contoh, anda tidak boleh cuba untuk membatalkan transaksi dengan nonce 10 sebelum membatalkan nonce 9. </p>
+<p><em>Tangkapan skrin di bawah diambil pada masa yang berbeza, jadi bayaran gas yang ditunjukkan di dalamnya boleh berbeza-beza, walaupun dari langkah ke langkah. Jangan biarkan ini menghalang anda! Apabila anda melakukan ini sendiri, MetaMask akan mengemas kini secara automatik dalam masa nyata untuk menunjukkan kadar pasaran.</em></p>
+<div class="tabs tabs--colored-1">
+<div class="tabs-menu">
+<span class="tabs-link is-active">Sambungan</span> <span class="tabs-link">Mudah Alih</span>
+</div>
+<div class="tab">
+<ol>
+<li>
+<p>Dalam tetapan lanjut, hidupkan <strong>Sesuaikan transaksi nonce</strong> dan <strong>Kawalan gas lanjutan.</strong> Kawalan gas lanjutan akan membolehkan anda memanipulasi gas yang dibayar dan memastikan transaksi pembatalan anda diproses sebelum transaksi asal yang ingin anda batalkan.</p>
+<div class="callout callout--info">
+<h4 class="callout__title">Nota:</h4>
+<p>Sambungan MetaMask buat masa kini mempunyai ciri eksperimen tersedia dipanggil <a href="https://metamask.io/1559/">Yuran Gas Dipertingkatkan UI</a> (bukan untuk dikelirukan dengan <a href="https://support.metamask.io/hc/en-us/articles/360022895972" target="_self">kawalan gas lanjutan</a>). Langkah-langkah ini boleh dilakukan sama ada anda telah menghidupkannya atau tidak, tetapi ingat bahawa ia akan kelihatan berbeza. Langkah-langkah di bawah tidak menggunakan Gas UI Dipertingkatkan. Ingatlah:</p>
+<ul>
+<li>Jika anda telah menghidupkan UI Gas Dipertingkat, anda masih perlu menghidupkan 'Sesuaikan transaksi sekali-kali' juga.</li>
+<li>Jika anda tidak menghidupkan UI Gas Dipertingkat, anda perlu menghidupkan kedua-dua 'Kawalan gas lanjutan' dan 'Sesuaikan transaksi sekali-kali'.</li>
+</ul>
+</div>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927064113947" alt="MetaMask tetapan lanjutan" width="640" height="329"></p>
+</li>
+<li>
+<p><strong>Hantar transaksi baharu</strong>. Dalam transaksi baharu, hantar <strong>KEPADA</strong> anda sendiri, maksudnya, alamat awam MetaMask anda. <strong>Isikan 'Nonce Tersuai' dengan nonce yang sama dengan transaksi yang masih belum diselesaikan</strong>:</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927064259483" alt="Metamask_tersuai_transaksi_nonce_Sambungan.png" width="315" height="529"></p>
+</li>
+<li>
+<p>Sekarang, tekan 'Edit' di sebelah 'Fi Gas' (jika anda telah menghidupkan <a href="https://support.metamask.io/hc/en-us/articles/360022895972-Using-advanced-gas-controls#:~:text=%C2%A0-,Enhanced%20Gas%20UI,-Since%20the%20introduction" target="_self">UI Gas Lanjutan uji kajiI</a>, ia akan muncul sebagai 'Pasaran'). Anda kini akan melihat pilihan di bawah:</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927065407515" alt="Sambungan kawalan gas termaju MetaMask" width="315" height="529"></p>
+<p>Untuk memastikan permintaan pembatalan anda diterima sebagai keutamaan, dan sebelum permintaan yang asal, <strong>anda akan perlu membayar lebih banyak untuk gas</strong>. Ikut arahan ini:</p>
+<ul>
+<li>Tetapkan <strong>had gas</strong> <em>anda setanding dengan atau lebih tinggi sedikit</em> daripada transaksi asal anda.</li>
+<li>Tetapkan <strong>fi keutamaan maksimum</strong> anda kepada <em>sekurang-kurangnya 10% lebih tinggi</em> (dalam Gwei) daripada fi gas transaksi asal (belum selesai) (cth. jika transaksi tersebut mempunyai fi gas sebanyak 30 Gwei, tetapkan fi keutamaan maksimum pada transaksi penggantian/pembatalan kepada 33-35 Gwei).</li>
+<li>Pastikan fi maksimum anda sekurang-kurangnya 30% lebih tinggi daripada fi maksimum transaksi yang anda gantikan. Sebagai contoh, jika fi anda yang sebelumnya ialah 150 Gwei, pilih jumlah yang lebih hampir dengan 200 Gwei kali ini. </li>
+</ul>
+<p><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Semak penjejak gas seperti </span><a style="background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;" href="https://etherscan.io/gastracker" target="_self">Stesen Gas Etherscan</a><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"> atau </span><a style="background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;" href="https://ethgasstation.info/" target="_self" rel="undefined">ETH</a><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"> untuk mendapatkan panduan tentang fi maksimum yang dicadangkan. </span></p>
+</li>
+</ol>
+</div>
+<div class="tab is-hidden">
+<ol>
+<li>
+<p><strong>Dalam Tetapan &gt; Lanjutan, hidupkan 'Transaksi tersuai nonce'.</strong></p>
+</li>
+<li>
+<p><strong>Hantar transaksi baharu.</strong> Dalam transaksi baharu, hantar KEPADA anda sendiri, maksudnya, alamat awam MetaMask anda. <strong>Isikan 'Nonce Tersuai' dengan nonce yang sama dengan transaksi yang masih belum diselesaikan</strong>.</p>
+<p>Untuk mencari tetapan nonce tersuai dalam aplikasi, pergi ke skrin pengesahan transaksi, yang muncul selepas anda memasukkan kuantiti token dan penerima. Tekan 'Edit' untuk mengubahnya:</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927068442907" alt="MetaMask transaksi tersuai nonce Mudah alih" width="315" height="631"></p>
+</li>
+<li>
+<p>Kini anda perlu memastikan tetapan gas anda dikonfigurasikan supaya transaksi penggantian anda diproses. Daripada skrin pengesahan transaksi, ketik nilai gas yang ditandakan:</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927041593755" alt="Gas termaju MetaMask mengawal mudah alih" width="476" height="190"></p>
+<p>Sekarang akses 'Pilihan lanjutan' daripada menu yang muncul.</p>
+</li>
+<li>
+<p>Dari sini, anda boleh melaraskan gas dengan tepat untuk memastikan transaksi anda diambil. Anda kini akan melihat skrin yang kelihatan seperti ini:</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927063201691" alt="Gas termaju MetaMask mengawal mudah alih" width="315" height="554"></p>
+<p>Dari sini, selaraskan tetapan gas. Ikut arahan ini untuk memastikan transaksi anda di pilih:</p>
+<ul>
+<li>Tetapkan <strong>had gas</strong> <em>anda setanding dengan atau lebih tinggi sedikit</em> daripada transaksi asal anda.</li>
+<li>Tetapkan <strong>fi keutamaan maksimum</strong> anda kepada <em>sekurang-kurangnya 10% lebih tinggi</em> (dalam Gwei) daripada fi gas transaksi asal (belum selesai) (cth. jika transaksi tersebut mempunyai fi gas sebanyak 30 Gwei, tetapkan fi keutamaan maksimum pada transaksi penggantian/pembatalan kepada 33-35 Gwei).</li>
+<li>Pastikan <strong>yuran maksimum</strong> anda adalah <em>sekurang-kurangnya 30% lebih tinggi</em> daripada yuran maksimum transaksi yang anda gantikan. Sebagai contoh, jika yuran anda yang sebelumnya ialah 150 Gwei, pilih jumlah yang lebih hampir dengan 200 Gwei kali ini. </li>
+</ul>
+<p>Semak penjejak gas seperti <a href="https://etherscan.io/gastracker" target="_self">Stesen Gas ETH</a> atau <a href="https://ethgasstation.info/" target="_self">Etherscan</a> untuk panduan tentang yuran maksimum yang dicadangkan.</p>
+</li>
+</ol>
+</div>
+</div>

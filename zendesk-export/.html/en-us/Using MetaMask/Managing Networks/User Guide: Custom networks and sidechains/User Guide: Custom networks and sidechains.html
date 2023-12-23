@@ -1,0 +1,113 @@
+<div class="callout callout--success">
+<h4 id="01GRVFH3WQZAEN1PPJ4PTRJNH1">New to crypto and web3?</h4>
+<p>Head to <a href="https://learn.metamask.io/">MetaMask Learn</a> for a straightforward learning experience designed specifically for newcomers to web3. It's completely free, available in multiple languages, and includes useful tools such as simulations to help you find your feet with MetaMask.</p>
+</div>
+<p>As the Ethereum ecosystem grows, a very popular option for building new technologies is to build a <strong>custom network</strong>, or a <em><strong>sidechain </strong>— </em>in other words, another blockchain or network that is compatible with Ethereum — and then allow users to transfer tokens, or value of some kind, between the networks.</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/18553679937435" alt="Sidechain network diagram" width="700" height="237"></p>
+<p>There are many <a href="https://support.metamask.io/hc/en-us/articles/4415750833691" target="_self">prominent examples</a>, and as Ethereum <a href="https://ethereum.org/en/developers/docs/scaling/" target="_self">scales</a>, they will no doubt grow and evolve. MetaMask has been, and continues to be, a crucial linchpin allowing users to move more or less seamlessly between networks.</p>
+<p>That said, <strong>there are some significant, and common, pitfalls when dealing with sidechains</strong> that you <strong><em>want to avoid</em></strong><strong>. </strong>This article is written to be a non-definitive guide to best practices when dealing with EVM-compatible chains. We can't hope to capture all the nuances of dealing with every instance of every sidechain; the following are general guidelines. <strong>Troubleshooting tips are further down.</strong></p>
+<p> </p>
+<h2 id="01GRVG7X8Q6NFCXCJNC3HYAAQ6">Best practices</h2>
+<ol>
+<ol>
+<li>
+<h3 id="01GRVG7X8QMW7W6167Q1RB7EBV">Do your due diligence</h3>
+<ul>
+<li aria-level="1">
+<strong>Not all networks are safe.</strong><span style="font-weight: 400;"> In order to offer e.g. cheaper and faster transactions, custom networks usually have different security and reliability guarantees than mainnet. Try to understand the risks before moving significant value to a custom network.</span>
+</li>
+<li aria-level="1"><span style="font-weight: 400;"><strong>Make sure you trust the network provider. </strong>A malicious network provider can lie about the state of the blockchain, withhold transactions, and record your network activity and IP address.</span></li>
+</ul>
+</li>
+<li>
+<h3 id="01GRVG7X8Q7RKV4TTE161MR4K3">Ensure accurate and correct custom network information</h3>
+<ul>
+<li aria-level="1">
+<strong>Find the network on <a href="https://chainlist.wtf/" target="_self" rel="undefined">https://chainlist.wtf/</a> to add it to MetaMask automatically. </strong>You can also add custom networks to MetaMask manually using a few other methods: see our instructions <a href="https://support.metamask.io/hc/en-us/articles/360043227612">here.</a>
+</li>
+<li style="font-weight: 400;" aria-level="1">
+<strong>Always verify custom network information. </strong><span style="font-weight: 400;">When a website asks you to add a custom network, how do you know that you can trust the information? We have some recommendations in our </span><a href="https://support.metamask.io/hc/en-us/articles/360057142392"><span style="font-weight: 400;">verification guide</span></a><span style="font-weight: 400;">.</span>
+</li>
+</ul>
+</li>
+<li>
+<h3 id="01GRVG7X8QVHC3EBHR8KMFJ3F5">Always use established bridges or portals to move tokens between networks</h3>
+<ul>
+<li>
+<strong>MetaMask cannot track transactions between networks.</strong><span style="font-weight: 400;"> You are responsible for understanding how any cross-network transactions or deposits work. Make sure you trust the network operator and any Ethereum address you send funds to.</span>
+</li>
+</ul>
+</li>
+<li>
+<h3 id="01GRVG7X8QPEBA05AMWW0WGFVN">NEVER send tokens directly from one network to another</h3>
+<ul>
+<li><span class="wysiwyg-color-red90">If you attempt to send cryptoassets directly from one network or chain to another, this will most likely result in <strong>permanent and irreversible asset loss</strong></span></li>
+<li>
+<strong>Although a custom network may be Ethereum-compatible, they are not the same as the Ethereum Mainnet.</strong><span style="font-weight: 400;"> You may have the same Ethereum addresses on all networks, but your assets and transactions are specific to each network, unless the custom network provider allows you to move funds in to and out of it.</span>
+</li>
+<li>
+<strong>This means you probably have to use a bridge to move assets from one chain or another</strong>. Read more about <a href="https://support.metamask.io/hc/en-us/articles/4836913606683" target="_self">bridges</a> here.</li>
+</ul>
+</li>
+<li>
+<h3 id="01GRVG7X8QMD0Q6R25EM77W9T7">Be aware of the limitations of technical support</h3>
+<p>MetaMask is a powerful tool that is open to the world to build upon. That means that many other networks and dapps have, and will, use MetaMask as the link between their dapp and you, the user. That does not mean that MetaMask offers technical support for all of those products and protocols. If you are interacting with a non-Consensys, non-MetaMask third party, seek technical assistance from them first unless you are sure that what you're experiencing is a problem with MetaMask.</p>
+<p>Additionally, some popular decentralized exchanges and dapps are, as mentioned, <em>protocols</em> — that is, they are smart contracts, software programs that live on the Ethereum blockchain and do not have any centralized authority who <em>runs </em>them the way a traditional website or service is run. They are purely peer-to-peer interaction. <strong>This means they may not offer technical support </strong>beyond a users' forum, Slack, or Discord channel. Again, see point #1 above. </p>
+</li>
+<li>
+<h3 id="01GRVG7X8QBAF9WJQEFW3KBW1G">Understand how gas works on different networks</h3>
+<p><span style="font-weight: 400;">When using or interacting with a sidechain or non-Ethereum mainnet network, please keep in mind that <strong>transaction fees are always paid in the native token currency of the network</strong>, for example: </span></p>
+<ul>
+<li><span style="font-weight: 400;">You need BNB to pay gas fees on Binance </span></li>
+<li><span style="font-weight: 400;">On Polygon you would use MATIC</span></li>
+</ul>
+<p><span style="font-weight: 400;">Make sure you have enough native tokens if you planning to perform send or swap transactions.</span></p>
+</li>
+</ol>
+</ol>
+<p> </p>
+<h2 id="01GRVG7X8QASM5NZCERWT2VHWS">
+<span style="font-weight: 400;">F</span><span style="font-weight: 400;">AQs</span><span class="wysiwyg-underline"><span style="font-weight: 400;"><br></span></span>
+</h2>
+<h3 id="01GRVG7X8Q2PQZ38V1R679AN42"><a href="https://consensys.net/blog/metamask/how-to-bridge-your-assets-to-arbitrum-using-metamask/">Bridging assets to Arbitrum using MetaMask </a></h3>
+<h3 id="01GRVG7X8QFMHYKSS021TN4MJ2"><a href="https://consensys.net/blog/metamask/how-to-bridge-tokens-from-ethereum-to-optimism-with-metamask/">How to use the Optimism Bridge </a></h3>
+<h3 id="01GRVG7X8QQGDR0Y01SX5HPJ4A"><a href="https://support.metamask.io/hc/en-us/articles/360059408871" target="_self" rel="undefined">Sending assets to Binance (BNB Smart Chain)</a></h3>
+<h3 id="01GRVG7X8QB1ZQVX8J8H7WDA0Z" class="article-title" title="How to send tokens from BSC to Ethereum or other chains"><a href="https://support.metamask.io/hc/en-us/articles/4404464724635">How to send tokens from BSC to Ethereum or other chains</a></h3>
+<h3 id="01GRVG7X8R6W759NX35PNVYWZB"><a href="https://support.metamask.io/hc/en-us/articles/360060861011">Does MetaMask support Polkadot?</a></h3>
+<h3 id="01GRVG7X8RQK3G6P7CMH9XX2GP" class="article-title" title="Tips for using MetaMask and Ronin wallets successfully"><a href="https://support.metamask.io/hc/en-us/articles/4403684463899-Tips-for-using-MetaMask-and-Ronin-wallets-successfully">Tips for using MetaMask and Ronin wallets successfully</a></h3>
+<p> </p>
+<h2 id="01GRVG7X8R3BM0KVQ6F8Y919PV">Troubleshooting</h2>
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>I can't see my tokens on [name of network].</strong></div>
+<div class="accordion__item-content">
+<ul>
+<li>Are you connected to the correct network in MetaMask? If you don't see the one you need, add it using these <a href="https://support.metamask.io/hc/en-us/articles/360043227612" target="_self">one of these methods</a>.</li>
+<li>Did you transfer the tokens correctly? (See points 2 &amp; 3 above)</li>
+<li>Have you <a href="https://support.metamask.io/hc/en-us/articles/360015489031" target="_self" rel="undefined">added the token</a> to MetaMask?</li>
+</ul>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>How do I get ETH on mainnet?</strong></div>
+<div class="accordion__item-content">
+<p>See <a href="https://support.metamask.io/hc/en-us/articles/360058239311" target="_self">here</a>.</p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>How do I get [custom network token] on [mainnet or custom network]? How do I move them between chains?</strong></div>
+<div class="accordion__item-content">
+<ul>
+<li>This is a big topic, with lots of nuances. Certain sidechain tokens, such as MATIC (Polygon network), can be purchased on Ethereum mainnet through MetaMask Swaps.</li>
+<li>Keep in mind that regardless of where you buy a token, <strong>you may still have to move the tokens through a bridge or portal to move them between mainnet and the sidechain.</strong>
+</li>
+</ul>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>I'm getting the "Internal JSON-RPC error". What do I do?</strong></div>
+<div class="accordion__item-content">
+<p>See <a href="https://support.metamask.io/hc/en-us/articles/360059289871" target="_self">here</a>.</p>
+</div>
+</div>
+</div>

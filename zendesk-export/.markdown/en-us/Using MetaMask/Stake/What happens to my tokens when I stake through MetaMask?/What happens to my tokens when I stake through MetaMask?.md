@@ -1,0 +1,2 @@
+When you stake ETH or MATIC through MetaMask, we route your transaction (minus any fees) to your selected staking provider. Your tokens are deposited into their protocol, and you receive *liquid staking tokens* directly from them in return. These tokens, such as Lido’s *stETH* and *stMATIC*, Rocket Pool’s *rETH*, or Stader Lab's *MaticX*, represent your proportional claim to tokens in their protocol.
+

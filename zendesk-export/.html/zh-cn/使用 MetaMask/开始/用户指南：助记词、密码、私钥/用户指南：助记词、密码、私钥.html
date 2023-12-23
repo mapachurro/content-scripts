@@ -1,0 +1,90 @@
+<div class="callout callout--success">
+<h4 id="01GRVFH3WQZAEN1PPJ4PTRJNH1">加密货币和 web3 的新手？</h4>
+<p>前往 <a href="https://learn.metamask.io/">MetaMask Learn</a> 获得专为 web3 新手设计的直接学习体验。完全免费，提供多种语言版本，并包含有用的工具，例如模拟，帮助您熟悉 MetaMask。</p>
+</div>
+<h3 id="01GRVGEW4EQZ7VT1237VC9BKE3">在本文中：</h3>
+<ul>
+<li><a href="#h_01FYVAXCSH95CQ08Q0P2VJA5HV" target="_self">MetaMask 的安全性与传统网络账户有何不同</a></li>
+<li><a href="#h_01FYVAXJQT914HCHEYFPNMEJEA" target="_self">什么是助记词？</a></li>
+<li><a href="#h_01FYVAXSE5C9E4YBCSWT2F2RBQ" target="_self">助记词注意事项</a></li>
+<li><a href="#h_01FYVAXZYWJENFWG9K9CJTQFK7" target="_self">助记词常见问题</a></li>
+<li><a href="#h_01FYVAY5K22PX6926537V8B4SX" target="_self">密码和 MetaMask</a></li>
+<li><a href="#h_01FYVAYH3ZZ8VW8BPDDADWRC8E" target="_self">私钥常见问题</a></li>
+</ul>
+<h2 id="01GRVGEW4E7099BPXHWT90NE3Z"> </h2>
+<h2 id="h_01FYVAXCSH95CQ08Q0P2VJA5HV">
+<strong>MetaMask：一种不同的账户安全性</strong><strong>模式</strong>
+</h2>
+<p><a href="https://metamask.zendesk.com/hc/en-us/articles/360015489611">公共区块链技术</a>与传统的在线技术相比，使用一套截然不同的工具来保护用户数据。我们大多数人都习惯于使用应用程序或服务创建账户，例如，能够写信给支持人员以重置密码或用户名。我们已经习惯了应用程序保存我们的数据，大概是保存在属于该公司的某种计算机上。</p>
+<p>嗯...MetaMask 并非如此。MetaMask 有三种不同类型的<strong>秘密</strong>，以不同的方式使用，确保您的钱包和账户的私密和安全：助记词、密码和私钥。我们将一次性详细介绍这些秘密。</p>
+<p> </p>
+<h2 id="h_01FYVAXJQT914HCHEYFPNMEJEA"><strong>助记词介绍</strong></h2>
+<p>支撑 MetaMask 的其中一种关键技术以及加密空间中大多数与用户账户相关的工具（你会看到我在那里做了什么）是<em>助记词 (seed phrase)</em>，在 MetaMask 中，称为<em>助记词 (Secret Recovery Phrase)</em>。</p>
+<h4 id="01GRVGEW4EJKM4MWCW27PZP6FV"><strong>您的所有账户都是从您的助记词中以数学计算得出。您可以把助记词想象成一个钥匙圈，钥匙圈套着私钥，数量不限，而每个私钥控制一个账户。</strong></h4>
+<p>现在，技术上的解释：根据称为比特币改进提案 39（即 <a href="https://en.bitcoin.it/wiki/BIP_0039">BIP-39</a>）的标准，我们今天所知道的助记词经过编码以用于比特币。简单来说，就是从特定的<a href="https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt">词语列表</a>中选择一系列高度随机的词语。 在 MetaMask 和许多其他与以太坊兼容的技术中，助记词中有 12 个单词。Brave 浏览器生成的一些较旧的助记词和一些硬件钱包使用 24 个词的助记词。</p>
+<p>每个词语对应一系列数字，按<strong>特定顺序</strong>摆放之后，代表了一种更加用户友好的方式，用于记住一个非常长的数字。然后，这个数字用于<em>最终确定</em>生成您的账户，人们称其为确定性钱包。在计算机科学，确定性用于描述一个流程（通常是某种类型的算法）<em>始终</em>产生相同的结果。换句话说，<strong>您的助记词将始终生成从中衍生的相同一组账户。</strong>. </p>
+<p> </p>
+<h3 id="01GRVGEW4ETY4B98KWX25FAQXR">这里有一些重要的特性需要注意：</h3>
+<ul>
+<li>
+<strong>助记词是控制钱包的秘密</strong>。 如果有人掌握此秘密，就能完完全全访问钱包。<strong>MetaMask 并不保留您的助记词：</strong><strong><a href="https://metamask.zendesk.com/hc/en-us/articles/360059952212">您的钱包由您保管。</a></strong> MetaMask 代表<strong>绝不会</strong>向您索要您的助记词，即使是在客户支持场景中，也是如此。如果确实有人索要，则很可能会试图诈骗您或窃取您的资金。</li>
+<li>您的助记词<strong>在本地使用，以派生私钥，</strong>，一个账户/地址一个私钥。账户存储在区块链上，私钥解锁账户。</li>
+<li>
+<strong>如果您卸载应用程序</strong>或扩展，数据的本地版本则会消失（<a href="https://metamask.zendesk.com/hc/en-us/articles/360018766351">保管库</a>除外），但是您使用本地版本 MetaMask 执行的交易都将记录在区块链上。因此，交易应当会反映在<a href="https://metamask.zendesk.com/hc/en-us/articles/360057536611">区块浏览器</a>以及另一个 MetaMask 实例上，前提是您<a href="https://metamask.zendesk.com/hc/en-us/articles/360015289612">使用相同的助记词还原</a> （<strong>单词保持相同的顺序</strong>）。 这意味着只要您拥有助记词，则始终能够卸载 MetaMask 并还原您的钱包。</li>
+<li>
+<strong>在您的钱包中，您可以拥有大量的独立账户。</strong> 当 MetaMask 从助记词创建或还原您的钱包时，最初仅生成第一个账户。然而，在日后的 MetaMask 实例中，<a href="https://metamask.zendesk.com/hc/en-us/articles/360015489271">您所创建的附加账户可以重新创建</a>。<strong>由于钱包是<em>确定性的</em>，始终可以按照相同的顺序，重新创建相同的账户。有关此问题的更多信息，请参看下面的常见问题。</strong>注意：但是，无论如何，附加的账户（除了第一个自动标记为“账户 1”的账户之外）将<strong><em>不会</em></strong>自动重新添加到您的账户中。请在<a href="https://metamask.zendesk.com/hc/en-us/articles/360015489271-How-to-add-missing-accounts-after-restoring-with-Secret-Recovery-Phrase#:~:text=If%20you%20have,automatically%20re%2Dadded." target="_self">此处</a>查看我们的解释，以了解详情。</li>
+<li>
+<strong>可以从其他兼容以太坊的技术中，<a href="https://metamask.zendesk.com/hc/en-us/articles/360015489331">将账户导入</a> MetaMask 钱包。</strong> 为此，要使用该特定账户的<em>私钥</em>。然而，<strong>MetaMask 在另一个实例中不会自动还原此账户；您将不得不手动重新添加</strong>。因此，如果您已经手动导入账户，<strong>请按照处理助记词的相同方式，记下私钥，</strong>以便能够日后重新导入账户。</li>
+</ul>
+<p> </p>
+<h2 id="h_01FYVAXSE5C9E4YBCSWT2F2RBQ"><strong>MetaMask 助记词注意事项</strong></h2>
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>必做：</strong></div>
+<div class="accordion__item-content">
+<ul>
+<li>
+<strong>在安全的地方写下助记词</strong>。 我们无法准确告诉您具体位置，因为这取决于您的具体情况。<ul>
+<li>手写助记词的重要作用在于不会在网上被盗。例如，如果您将其存储在联网云存储文件夹的文件中，理论上可能会被盗。</li>
+</ul>
+</li>
+<li>仔细检查您的拼写，确保按照给出的相同顺序写下每个单词。</li>
+<li>如需帮助，请联系 MetaMask 客户支持的<a href="https://metamask.zendesk.com/hc/en-us/articles/360058230211" target="_self">官方渠道</a>。</li>
+</ul>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>禁忌：</strong></div>
+<div class="accordion__item-content">
+<ul>
+<li>将其保存在容易被发现或容易被黑客入侵的位置；例如在名为“助记词”的云保存文档或电子邮件中；贴在计算机上的便利贴上。</li>
+<li>向他人提供您的助记词，即使他们表示来自 MetaMask 客户支持部门。</li>
+<li>更改单词的顺序。</li>
+</ul>
+</div>
+</div>
+</div>
+<p> </p>
+<h2 id="h_01FYVAXZYWJENFWG9K9CJTQFK7"><strong>助记词：常见问题</strong></h2>
+<h3 id="01GRVGEW4EZ5K54JBY75E9VJSZ">我的助记词还原了另一个账户！<strong><br></strong>
+</h3>
+<p>请在<a href="https://metamask.zendesk.com/hc/en-us/articles/360058120992" target="_self">此处</a>查看关于此主题的知识库文章。 此外，请在<a href="https://community.metamask.io/t/restored-metamask-no-coins-are-showing/878/107?u=jacob.cantele">此处</a>查看社区主题，了解更多背景信息。</p>
+<h3 id="01GRVGEW4EWBN34MEMP09CHQF0">其他助记词常见问题：</h3>
+<p><a href="https://metamask.zendesk.com/hc/en-us/articles/360015290032">如何显示助记词</a></p>
+<p><a href="https://metamask.zendesk.com/hc/en-us/articles/360018766351" target="_self" rel="undefined">如何还原助记词</a></p>
+<p><a href="https://metamask.zendesk.com/hc/en-us/articles/360060331752">从另一个钱包软件导入助记词：衍生路径</a></p>
+<p><a href="https://metamask.zendesk.com/hc/en-us/articles/4867408571803">钱包迁移指南</a></p>
+<p><a href="https://metamask.zendesk.com/hc/en-us/articles/360015489331">如何导入账户</a></p>
+<p><a href="https://metamask.zendesk.com/hc/en-us/articles/360057536611">如何在区块链浏览器上查看我的钱包活动</a></p>
+<p><a href="https://metamask.zendesk.com/hc/en-us/articles/360060826432">助记词是什么，如何保证钱包安全？</a></p>
+<p> </p>
+<h2 id="h_01FYVAY5K22PX6926537V8B4SX"><strong>密码和 MetaMask</strong></h2>
+<p>MetaMask 使用密码只有一个目的：保护应用程序本身；换句话说，打开应用程序，无论是移动应用程序还是浏览器内扩展。使用助记词还原或创建钱包之后，就将不再需要助记词（<strong>尽管您应备份并妥善保管助记词</strong>）。您将使用密码（或在移动设备上，更常见的是生物识别身份验证，如面部识别或指纹）来解锁应用程序。有关更多详情，请查看<a href="https://metamask.zendesk.com/hc/en-us/articles/4405451730331">此处</a>的文章。</p>
+<p> </p>
+<h2 id="h_01FYVAYH3ZZ8VW8BPDDADWRC8E"><strong>私钥</strong></h2>
+<p>虽然助记词用于创建和还原您的整个 MetaMask 钱包，包括该钱包中创建的所有账户，但每个账户都有自己的<em>私钥</em>。 此密钥可用于将该账户（且仅该账户）导入到不同的钱包中。同样，可以将来自其他加密技术的单个账户导入到您的 MetaMask 钱包中。</p>
+<h3 id="01GRVGEW4FFY9TB79BMN3M0B0H">私钥常见问题：</h3>
+<p><a href="https://metamask.zendesk.com/hc/en-us/articles/360015289932">什么是导入的账户？</a></p>
+<p><a href="https://metamask.zendesk.com/hc/en-us/articles/360015489331">如何导入账户</a></p>
+<p><a href="https://metamask.zendesk.com/hc/en-us/articles/360015289632">如何导出账户的私钥</a></p>
+<p><a href="https://metamask.zendesk.com/hc/en-us/articles/360058485292">是否可以将 Coinbase 钱包账户导入到 MetaMask 钱包？</a></p>

@@ -1,0 +1,27 @@
+<p>eth_sign is a transaction signing method that is now disabled by default in MetaMask. Interacting with dapps that use this method may put your funds at risk, so you should only turn it on (in Settings &gt; Advanced) when you are absolutely sure that you want to use it.</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/17358130003995" alt="MetaMask_eth_sign_settings.png" width="315" height="240"></p>
+<h2>What is eth_sign?</h2>
+<p><code>eth_sign</code> is one of several transaction signing methods built into MetaMask. </p>
+<p>Signing transactions is a fundamental function of your wallet: you use your public and private key pair to generate cryptographic signatures that immutably verify that you are the originator of the transaction. To request your signature, developers add methods to their code that are triggered at specific times. eth_sign is one example.</p>
+<p>You can read more about transaction signing in the <a href="https://docs.metamask.io/guide/signing-data.html">MetaMask docs</a>.</p>
+<p> </p>
+<h2>Why is it disabled by default? </h2>
+<p>eth_sign is one of the oldest signing methods that MetaMask still supports. Back in the early days of MetaMask when it was originally designed, web3 was quite different from the present day. There were fewer standards for signatures, so eth_sign was developed with a fairly simple, open-ended structure. </p>
+<p>The main thing to note about eth_sign is that it allows the website you're on to request that you sign an <em>arbitrary hash</em>. In this mathematical context, 'arbitrary' means unspecified; your signature could be applied by the requesting dapp to pretty much anything. eth_sign is therefore unsuitable to use with sources that you don't trust.</p>
+<p>Additionally, the way eth_sign is designed means that the contents of the message you're signing are not human-readable. It's impossible to check up on <em>what you're actually signing</em>, making it particularly dangerous. </p>
+<p> </p>
+<h2>Should I turn it on?</h2>
+<p>Firstly: <strong>if you're in contact with someone asking you to enable eth_sign, you should be very, very wary</strong>. There are several much-improved signing methods available in MetaMask for dapps, and the vast majority of pages should be using these more secure alternatives. </p>
+<p>If you're not being asked to turn on eth_sign for a specific purpose, but you're still considering it anyway, please be careful. <strong>Do your due diligence on the dapp</strong> that requires it, and consider your actions fully before taking them:</p>
+<ul>
+<li>Does the dapp/protocol have a named, contactable team?</li>
+<li>Do other verifiably independent users vouch for its trustworthiness?</li>
+<li>Is the transaction in question worth the risk? </li>
+<li>Are you being confronted with something that, on reflection, is probably too good to be true? </li>
+</ul>
+<p>This is not a decision you should take lightly if you value your assets. Even if you're confident, your wallet could still be compromised or funds stolen. This is why we disable eth_sign by default.</p>
+<p>These are just example considerations; we have other resources to help you assess the trustworthiness of web3 third parties <a href="https://support.metamask.io/hc/en-us/articles/10143114273563" target="_self">here</a> and <a href="https://support.metamask.io/hc/en-us/articles/4403988839451" target="_self">here</a>. If you want to read more about various phishing and scam methods you could encounter—which could feasibly be using eth_sign—check out our <a href="https://support.metamask.io/hc/sections/11294597751963" target="_self">Staying Safe in Web3 database</a>. </p>
+<p> </p>
+<h2>Why not just remove it altogether? </h2>
+<p>eth_sign is still available to use in MetaMask because <strong>removing it would make some dapps and websites unusable</strong>. It's also in use in many well-intentioned ways, particularly by developers or users of internal-facing dapps that <em>can </em>completely trust the transactions they're signing because they know who they're working with. </p>
+<p>Most protocols should have upgraded to newer, improved signing methods, so it's unlikely that disabling eth_sign will impact your day-to-day activities in web3. </p>

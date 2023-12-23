@@ -1,0 +1,20 @@
+<div class="callout callout--info">
+<h4 class="callout__title">Check here first!</h4>
+<p>See the troubleshooting steps <a href="https://support.metamask.io/hc/en-us/articles/360028059272" target="_self">here</a>. This advice applies to normal transactions <em>and </em>Swaps transactions, so make sure you've taken a look at them before you attribute the issue to the possibilities listed below. </p>
+</div>
+<p><span style="font-weight: 400;">Please note: this article is for MetaMask Swaps performed with the swap button within our app or extension.</span><strong> For all other swap inquiries, please contact the third-party swap system you used, as they will have a better understanding of their system's intricacies, nuances, and issues.</strong></p>
+<p><span style="font-weight: 400;">There are two main reasons why a swap might end up with less "value" in terms of dollar (fiat) amount.</span></p>
+<ol>
+<li>
+<strong>Price slippage:</strong> <span style="font-weight: 400;">Every swap has a preset price slippage limit. This limit prevents the swap from completing at an unfavorable price if the price changes after your order is submitted. Let's say the slippage is set to 5%, and you bought 100 tokens. The price could change, but you will not receive fewer than 95 tokens. If you want to change your slippage tolerance, head to Advanced Options whilst you're configuring the swap.</span>
+</li>
+</ol>
+<p class="wysiwyg-text-align-center"><span style="font-weight: 400;"><img src="https://support.metamask.io/hc/article_attachments/10023496271131" alt="MetaMask user guide_swaps slippage" width="375" height="216"></span></p>
+<ol start="2">
+<li>
+<strong style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Price difference (or price impact):</strong><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"> <span style="font-weight: 400;">Before approving a swap quote, check to see if there is a price difference warning. This warning generally appears if there is low liquidity for a given token, and/or if your order size is large. For more detail on how this phenomenon works, see our <a href="https://consensys.net/blog/metamask/price-impact-the-first-gotcha-of-defi-markets/" target="_self">blog post</a>. It is important to review this warning to see the difference in the value of the token you currently hold and the value of the token you are swapping to. Our warning for this will look something like this: </span></span>
+</li>
+</ol>
+<p class="wysiwyg-text-align-center"><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"><span style="font-weight: 400;"><img src="https://support.metamask.io/hc/article_attachments/10023529748507" alt="MetaMask price difference warning" width="374" height="112"></span></span></p>
+<p><span style="font-weight: 400;">MetaMask Swaps fetches multiple quotes from various DeFi protocols. When you execute a swap through MetaMask, you interact directly with the liquidity source that offered the best price for your requested trade. MetaMask does its best to optimize each transaction before the swap is submitted.</span></p>
+<p><span style="font-weight: 400;">However, MetaMask cannot guarantee that every transaction will be successful because the market and network conditions can vary dramatically, especially when highly volatile assets are traded.</span></p>

@@ -1,0 +1,62 @@
+<p><strong>この記事は、次の場合に使用します。<br></strong></p>
+<ul>
+<li><strong>シークレットリカバリーフレーズを持っている</strong></li>
+<li><strong>シークレットリカバリーフレーズ/ウォレットをMetaMaskにインポートしたい</strong></li>
+</ul>
+<div class="callout callout--danger">
+<h4 class="callout__title">警告:</h4>
+<p>Secret Recovery PhraseをMetaMaskにインポートすると、既存のMetaMaskデータすべてが消去されます。つまり、MetaMaskで1つのウォレットを使用していて、別のウォレットをインポートすると、最初のウォレットに関連するすべてのデータが上書きされ、アクセスできなくなります。</p>
+<p>続行する前に、シークレットリカバリーフレーズ<em>と</em>あらゆる秘密鍵（ハードウェアウォレット、インポートされたアカウントから）を<a href="https://support.metamask.io/hc/en-us/articles/360015290032-How-to-reveal-your-Secret-Recovery-Phrase">バックアップ</a>していることを確認してください。そうすればアカウントは安全になります。</p>
+</div>
+<div class="tabs">
+<div class="tabs-menu">
+<span class="tabs-link is-active">新しいインストール</span> <span class="tabs-link">既存のインストール</span>
+</div>
+<div class="tab">
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Extension</strong></div>
+<div class="accordion__item-content">
+<ol>
+<li>
+<p>MetaMaskの新しいインストールの設定中に、「Import an existing wallet」（既存のウォレットをインポート）をクリックします。</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/13174191781275" alt="MetaMask SRPによるデスクトップPCでの復元" width="650" height="470"></p>
+</li>
+<li>
+<p>プロンプトに従ってSecret Recovery Phraseを入力します。各単語を別のボックスに入力します。各単語は必ず小文字で入力し、スペースは入れません。</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/13174140779035" alt="MetaMask SRPによるデスクトップPCでの復元" width="650" height="471"></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Mobile</strong></div>
+<div class="accordion__item-content">
+<ol>
+<li>
+<p>MetaMaskをインストールする際、「Import using Secret Recovery Phrase」（Secret Recovery Phraseを使用してインポート）ボタンをクリックします。</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/13312657792539" alt="MetaMask SRPによるスマートフォンでの復元" width="315" height="631"></p>
+</li>
+<li>
+<p>1つのテキストフィールドにフレーズ全体を入力します。12単語すべてを正しい順序、小文字、各単語間にスペースを1つ入れて入力します。最終単語の後には余分なスペースを残さないでください。次のように表示されます。</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/13074718803995" alt="MetaMask SRPによるスマートフォンでの復元" width="315" height="631"></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="tab is-hidden">
+<p>既存のMetaMaskインストールの場合、シークレットリカバリーフレーズからの復元を可能にするボタンにアクセスするには、<strong><a href="https://support.metamask.io/hc/en-us/articles/4556918516763-How-to-reset-your-wallet" target="_self">ウォレットをリセット</a>する必要があります</strong>。</p>
+<h3>複数のアカウントを復元するにはどうすればいいですか。</h3>
+<p>１つのシークレットリカバリーフレーズのもとで作成された<strong>複数のアカウント</strong>を持っている場合、特定の環境でのみ自動的に復元されます。<strong>インポートされたアカウントやハードウェアウォレットには適用されない</strong>ことにご注意ください。これらは、いつでも手動で再度追加する必要があります。</p>
+<p>MetaMaskは可能な限り、以前のアカウントを昇順にチェックし、アカウントの追加を試みます（インポートされていない場合を想定）。Ethereum Mainnnet上のETHの残高がゼロでない場合に、アカウントが追加されます。しかし、0ETHのアカウントに遭遇すると、このプロセスは終了し、それ以上は追加されません。</p>
+<p>しかし、自動で追加されなかったとしても、探しているものに到達するまで、<a href="https://support.metamask.io/hc/en-us/articles/360015489271" target="_self">re-adding accounts</a>（アカウントの再追加）により、簡単にアカウントを取り戻すことができます。<strong style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">元のインストールに持っていた古い各アカウントは、新しいアカウントを「creating」（作成）することにより追加しなければなりません。</strong></p>
+<p>探しているアドレスが見つからない場合は、間違ったSecret Recovery Phraseを持っているか、再インポートする必要のある外部JSONあるいは秘密鍵を持っているかのどちらかです。</p>
+<div class="callout callout--warning">
+<h4 class="callout__title">復元後、トークンを追加する必要があります</h4>
+<p>ウォレットの復元は、基本的にそのMetaMaskインスタンス上にゼロから始めることを意味するため（ただし、もちろん、オンチェーン履歴は完全に変更されません）、トークンを再追加する必要があります。</p>
+<p><strong>トークンを復元し表示させるには</strong>、<strong><a href="https://support.metamask.io/hc/en-us/articles/360015489031" target="_self" rel="undefined">こちらのガイド</a></strong>をご覧ください。</p>
+</div>
+</div>
+</div>

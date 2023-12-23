@@ -1,0 +1,43 @@
+<p>ウェブサイトが<span style="font-weight: 400;">、カスタムネットワーク</span><span style="font-weight: 400;">をMetaMaskに追加するように要求した場合、MetaMaskがそのネットワークとのやり取りの使用する情報が表示されます。MetaMaskはこの情報についていくつかの基本的な検証を行い、間違っていたり、おかしなことがある場合には警告を発します。MetaMaskはまた、同じネットワークを複数回追加すること防ぐこともできます。 ただし、</span><span style="font-weight: 400;"></span><strong>MetaMaskはカスタムネットワークを検証しません</strong><span style="font-weight: 400;">し、MetaMaskの検証がチェックアウトしたとしても、ネットワークが悪意のあるものであったり、要求したウェブサイトによって誤って伝えられている可能性があります。</span></p>
+<p><span style="font-weight: 400;"><strong>カスタムネットワークの詳細と概要については、<a href="https://support.metamask.io/hc/en-us/articles/4404424659995">こちら</a>のユーザーガイドをご覧ください。</strong></span></p>
+<p><span style="font-weight: 400;">トランザクションを行うEthereumアドレスを検証するのはあなたの責任であるように、MetaMaskに追加するカスタムネットワークもあなたの責任で検証してください。この記事では、検証する方法についていくつかのアドバイスを紹介します。</span></p>
+<p><span style="font-weight: 400;">ウェブサイトがカスタムネットワークを追加するように要求した場合、MetaMaskは次の確認画面を表示します。</span></p>
+<p class="wysiwyg-text-align-center"><span style="font-weight: 400;"><img src="https://support.metamask.io/hc/article_attachments/360087917091/custom-network.png" alt="custom-network.png" width="360" height="671"></span></p>
+<p> </p>
+<p><span style="font-weight: 400;">この確認画面では </span>、<strong>ウェブサイトが提供したネットワーク情報</strong>を表示します<span style="font-weight: 400;">。<em>この情報が正確であるという保証はありません</em>。従って、ウェブサイトを信用するのと同程度だけその情報を信用すべきです。</span></p>
+<p><span style="font-weight: 400;">確認画面で、「View all details」（すべての詳細を表示）をクリックし、ウェブサイトが提供したネットワーク情報すべてを表示させることができます。それには以下が含まれます。</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1">
+<span style="font-weight: 400;"><strong>Network Name（ネットワーク名）</strong>。</span><span style="font-weight: 400;">MetaMaskがネットワークと関連付ける名前です。</span>
+</li>
+<li style="font-weight: 400;" aria-level="1">
+<strong>Network URL（ネットワークURL）。</strong><span style="font-weight: 400;">MetaMaskがネットワークにアクセスするのに使用するURL。</span>
+</li>
+<li style="font-weight: 400;" aria-level="1">
+<strong>Chain ID（チェーンID）。</strong><span style="font-weight: 400;">MetaMaskがネットワークのトランザクションに署名するのに使用するチェーンID。</span>
+</li>
+<li style="font-weight: 400;" aria-level="1">
+<strong>Currency Symbol（通貨シンボル）。</strong><span style="font-weight: 400;">MetaMaskがネットワークのネイティブ通貨用に使用する通貨シンボル。</span><ul>
+<li style="font-weight: 400;" aria-level="3"><span style="font-weight: 400;">例えば、Ethereum Mainnetでは、通貨シンボルはETH、Gnosis Chainでは、シンボルは、xDAI（合併後もそのままです）です。</span></li>
+</ul>
+</li>
+<li style="font-weight: 400;" aria-level="1">
+<strong>Block Explorer URL（ブロックエクスプローラURL）（オプション）。</strong><span style="font-weight: 400;">MetaMaskがアカウント、トランザクションなどを調べるためにダイレクトするURLです。</span><a href="https://etherscan.io"><span style="font-weight: 400;">etherscan.io</span></a>と同様のものですが、<span style="font-weight: 400;">問題のカスタムネットワークに使用します。</span>
+</li>
+</ul>
+<p><span style="font-weight: 400;">ネットワーク情報の正確性について疑問を持つ何らかの理由がある場合、次の手順を踏んで検証を行うことを推奨します。</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1">
+<span style="font-weight: 400;"><a href="https://chainlist.wtf/" target="_self" rel="undefined">Chainlist</a>にアクセス</span><span style="font-weight: 400;">し、提供されたチェーンIDおよび／あるいはネットワーク名を検索します。一部の情報が一致しないとMetaMaskが表示する場合は、Chainlist上で問題を特定することができるはずです。カスタムネットワークがChainlistに全く載っていない場合は、そのカスタムネットワークがとても新しいものか、あるいは品質に疑わしい可能性があるかのどちらかです。</span>
+</li>
+<li style="font-weight: 400;" aria-level="1">
+<span style="font-weight: 400;">ネットワーク名をGoogle検索し、次の質問に答えてみてください。答えに「はい」が多ければ、ネットワークが合法的なものと信じるべき理由が多いということです。</span><span style="font-weight: 400;">多くの詐欺や、偽のソーシャルメディアチャネルが、特にTelegramに存在することにご注意ください。</span>
+</li>
+<ul>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">そのネットワークにはウェブサイトがありますか。ある場合、そのウェブサイトは合法的ものに見えますか。そのウェブサイトにネットワークの詳細が記されていますか。</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">そのネットワークは、公式のTwitterあるいは他のソーシャルメディアアカウントをもっていますか。フォロワーが多くいますか。評判がよさそうですか。ネットワークについて何と発言していますか。</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">ネットワークを維持している人を特定することはできますか。その人たちはソーシャルメディアに露出していますか。その人たちにはフォロワーが多くいますか 。</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">そのネットワークについてのニュース記事がありますか。</span></li>
+</ul>
+</ul>
+<p><span style="font-weight: 400;">ほとんどのネットワークでは、それらが合法的なものかどうか、ウェブサイトが正確な情報を提供しているかどうかは一目瞭然です。これらの手順を踏んだうえでまだ確信が持てない場合は、ネットワーク追加を求めるリクエストを拒否し、さらなる調査を行い、おそらく後で再度試してみるべきでしょう。</span></p>

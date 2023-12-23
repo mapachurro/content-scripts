@@ -1,0 +1,62 @@
+<p><strong>The information in this article is applicable to Ethereum mainnet <em>and </em>other networks, such as BSC and Polygon. <br></strong></p>
+<p>If the gas price has been set too low when attempting to carry out a transaction, this sort of error can occur:</p>
+<p class="wysiwyg-indent2">"Transaction &lt;<em>your transaction # here</em>&gt; failed! Error: [ethjs-query] while formatting outputs from RPC '{"value": {"code":-32000,"message":"transaction underpriced"}}'"</p>
+<p>This can happen when attempting to make a swap via a DEX (decentralized exchange) or simply when sending tokens to an address.</p>
+<p>In order to successfully complete the transaction, you should issue a new transaction whilst<strong> raising the amount of gas you pay. </strong>However, before you do so, check on the relevant block explorer (e.g. <a href="https://etherscan.io/" target="_self">Etherscan</a>, <a href="https://bscscan.com/" target="_self">BscScan</a>, <a href="https://polygonscan.com/" target="_self">Polygonscan</a> etc.) to make sure you are not generating an increasingly longer queue of pending transactions. </p>
+<p><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">To do this:</span></p>
+<div class="tabs tabs--colored-1">
+<div class="tabs-menu">
+<span class="tabs-link is-active">Extension</span> <span class="tabs-link">Mobile</span>
+</div>
+<div class="tab">
+<ol>
+<li>
+<p>Start a new transaction, using the same recipient details and token amount as the original (assuming you want them to remain the same) and hit 'Next'.</p>
+</li>
+<li>
+<p>Click on the 'Market' icon located above your gas details, and then hit 'Advanced':</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/17276432323483" alt="MetaMask find advanced gas controls extension" width="315" height="529"></p>
+</li>
+<li>
+<p>You'll now be presented with a set of fields you can adjust, resembling the below:</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/17276432325147" alt="MetaMask advanced gas fee settings" width="315" height="529"></p>
+<p class="wysiwyg-text-align-left">Here you should:</p>
+<ul>
+<li class="wysiwyg-text-align-left">
+<strong>Input a comparable or slightly higher gas limit</strong> than you did for the transaction that failed</li>
+<li class="wysiwyg-text-align-left">Raise the <span class="wysiwyg-underline"><strong>max priority fee</strong></span> at least <strong>10% higher (in gwei) than the <span class="wysiwyg-underline">gas fee</span> of the failed transaction </strong>
+</li>
+<li class="wysiwyg-text-align-left">Set your <span class="wysiwyg-underline"><strong>max fee</strong></span> at least <strong>30% higher</strong> than that of the failed transaction.</li>
+</ul>
+</li>
+</ol>
+<p>If you are trying to cancel that pending transaction altogether, you need to send 0 ETH (or equivalent currency) to your own address with the same nonce as the pending transaction. See our <a href="https://support.metamask.io/hc/en-us/articles/360015489251-How-to-speed-up-or-cancel-a-pending-transaction" target="_self">article on cancelling transactions</a> for more guidance.</p>
+</div>
+<div class="tab is-hidden">
+<ol>
+<li>
+<p>Click the wallet actions button in the center of the tab bar. This will bring up a pop-up menu, where you can select the 'Send' button.</p>
+</li>
+<li>
+<p>Input the details of your transaction, such as the recipient address and the quantity of tokens you want to send. These details should be the same as the original (failed) transaction, assuming you still want to send the same amount to the same address. Tap 'Next'. You should now see the screen below. Tap on the highlighted gas fee number:</p>
+</li>
+<li>
+<p>This will bring up an additional menu where you'll be presented with the options to set your gas fee low, medium, or high. Ignore these and tap 'Advanced options' instead.</p>
+</li>
+<li>
+<p>You can now customize your gas settings with more precision to ensure your new transaction goes through.</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/17276400744219" alt="MetaMask find advanced gas controls mobile" width="315" height="631"></p>
+<p>Here you should:</p>
+<ul>
+<li>
+<strong>Input a comparable or slightly higher gas limit</strong> than you did for the transaction that failed</li>
+<li>Raise the <span class="wysiwyg-underline"><strong>max priority fee</strong></span> at least <strong>10% higher (in gwei) than the <span class="wysiwyg-underline">gas fee</span> of the failed transaction </strong>
+</li>
+<li>Set your <span class="wysiwyg-underline"><strong>max fee</strong></span> at least <strong>30% higher</strong> than that of the failed transaction.</li>
+</ul>
+</li>
+</ol>
+<p>If you are trying to cancel that pending transaction altogether, you need to send 0 ETH (or equivalent currency) to your own address with the same nonce as the pending transaction. See our <a href="https://support.metamask.io/hc/en-us/articles/360015489251" target="_self">article on cancelling transactions</a> for more guidance.</p>
+</div>
+</div>
+<p>For more information on gas, see our <a href="https://support.metamask.io/hc/en-us/articles/4404600179227-User-Guide-Gas" target="_self">user guide</a>.</p>

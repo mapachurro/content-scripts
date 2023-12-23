@@ -1,7 +1,24 @@
 import requests
-import os
 import json
-import csv
+import os
+from markdownify import markdownify as md
+
+def create_filepath(title):
+    # Replace / with _
+    title = title.replace("/", "_")
+
+    # Ensure the .markdown directory exists
+    if not os.path.exists(".markdown"):
+        os.mkdir(".markdown")
+
+    # Create the article directory
+    try:
+        os.mkdir(f".markdown/{title}")
+    except FileExistsError:
+        print(f"Folder already exists")
+
+    # Return the path of the created directory
+    return f".markdown/{title}"
 
 i = 1
 response = requests.get(f"https://support.metamask.io/api/v2/help_center/articles.json?page={i}")
@@ -10,13 +27,16 @@ data = response.json()
 
 page_count = data["page_count"]
 
-file = open("articles.csv", "w", newline="")
-writer = csv.writer(file)
-writer.writerow(["Article", "URL", "Section"])
-
-for page in range(i, page_count):
+for i in range(1, page_count + 1):
     response = requests.get(f"https://support.metamask.io/api/v2/help_center/articles.json?page={i}")
     data = response.json()
     for article in data["articles"]:
-        writer.writerow([article["title"], article["html_url"], article["section_id"]])
-    i += 1
+        title = article["title"]
+        # Replace / with _ in the title
+        safe_title = title.replace("/", "_")
+        filepath = create_filepath(safe_title)
+        with open(f"{filepath}/{safe_title}.md", "w") as file:
+            md_file = md(article["body"])
+            file.write(md_file)
+        
+    print(f"Page {i} complete")
