@@ -2,6 +2,7 @@ import requests
 import json
 import os
 import time
+import re
 from bs4 import BeautifulSoup
 
 def create_filepath(title, language, section_id):
@@ -48,6 +49,28 @@ directory_b = '/path/to/your/local/image/files'
 
 # List of local image files
 image_files = get_image_files(directory_b)
+
+def sanitize_filename(filename):
+    # Replace spaces with hyphens
+    filename = filename.replace(" ", "-")
+    # Convert to lowercase
+    filename = filename.lower()
+    # Remove apostrophes
+    filename = filename.replace("'", "")
+    # Replace double dashes with single dash
+    filename = filename.replace("--", "-")
+    # Remove question marks
+    filename = filename.replace("?", "")
+    # Remove colons
+    filename = filename.replace(":", "")
+    # Remove semicolons
+    filename = filename.replace(";", "")
+    # Remove parentheses
+    filename = filename.replace("(", "").replace(")", "")
+    # Remove any other special characters
+    filename = re.sub(r'[^a-zA-Z0-9\-]', '', filename)
+    return filename
+
 for language in languages:
     i = 1
     while True:
@@ -63,8 +86,14 @@ for language in languages:
             title = article["title"]
             # Replace / with _ in the title
             safe_title = title.replace("/", "_")
-            filepath = create_filepath(safe_title, language, article["section_id"])
-            with open(f"{filepath}/{safe_title}.html", "w") as file:
+            # Sanitize the filename
+            filename = sanitize_filename(safe_title)
+            filepath = create_filepath(filename, language, article["section_id"])
+            with open(f"{filepath}/{filename}.md", "w") as file:
+                # Add front matter with original title
+                front_matter = f"---\ntitle: '{title}'\n---\n\n"
+                file.write(front_matter)
+
                 # Load article body into BeautifulSoup
                 soup = BeautifulSoup(article["body"], 'html.parser')
 
