@@ -82,26 +82,105 @@ output_dir = 'output'
 
 def sanitize_filename(name):
   name = name.replace(' ', '-')
+  name = name.replace('/', '-') 
+  name = name.replace('?', '')
+  # etc for other chars
+  
   name = re.sub(r'[^\w\s-]', '', name).strip().lower()
+  
   return name
+
+# Cache section info to reduce API calls
+section_cache = {}
+
+def get_sections(locale, parent_id):
+
+  if locale not in section_cache:
+    section_cache[locale] = {}
+
+  if parent_id in section_cache[locale]:  
+    return section_cache[locale][parent_id]
+
+  # API call
+
+  section_cache[locale][parent_id] = sections
+
+  return sections
 
 def get_categories(locale):
   url = CATEGORIES_URL.format(locale=locale)
   response = requests.get(url)
   data = response.json()
   return data['categories']
+  
+def get_sections(locale, parent_id):
+    # include locale in id to fetch correct cache, to avoid applying the wrong locale's section cache
+  key = f"{locale}_{parent_id}"
 
-def get_sections(locale, category_id):
-  url = SECTIONS_URL.format(locale=locale, category_id=category_id)
+    # Check cache
+  if key in section_cache:
+    return section_cache[key]
+
+  url = SECTIONS_URL.format(locale=locale, category_id=parent_id)
+
   response = requests.get(url)
   data = response.json()
-  return data['sections']
+
+  sections = data['sections']
+
+# Recursively search sections
+  for section in sections:
+    print(f'- {len(sections)} sections found')
+
+    subsections = section.get('subsections')
+
+    if not subsections:
+        return sections
+    
+    #Fetch subsections
+    more_sections = get_sections(locale, section['id'])
+    
+    #Merge them
+    sections.extend(more_sections)
+
+    print(f'- {len(subsections)} subsections found')
+
+# Cache results
+  section_cache[key] = sections
+
+  return sections
 
 def get_articles(locale, section_id):
-  url = ARTICLES_URL.format(locale=locale, section_id=section_id)
+
+  page = 1
+  
+  while True:
+  
+    url = ARTICLES_URL.format(locale=locale, section_id=section_id, page=page)
+    response = requests.get(url)
+    
+    data = response.json()
+    articles = data['articles']
+    
+    if not articles:
+      break
+
+    yield articles
+
+    page += 1
+
+def get_subsections(locale, section_id):
+
+  url = SECTIONS_URL.format(locale=locale, category_id=section_id)
+
+  response = requests.get(url)
+  
+  data = response.json()
+
   response = requests.get(url)
   data = response.json()
-  return data['articles']
+
+  print(data)
 
 # Loop through locales
 for locale in locales:
@@ -119,64 +198,57 @@ for locale in locales:
     os.makedirs(locale_dir, exist_ok=True)
 
   # Loop through categories
+for locale in locales:
+
+  categories = get_categories(locale)
+
+  if categories:
+
+    locale_dir = os.path.join(output_dir, locale)
+    os.makedirs(locale_dir, exist_ok=True)
+
     for category in categories:
+
+      # Sanitize category name  
+      cat_name = sanitize_filename(category['name'])
+      
+      cat_dir = os.path.join(locale_dir, cat_name)
+      os.makedirs(cat_dir, exist_ok=True)
+
+      sections = get_sections(locale, category['id'])
+
+      if sections:
+
+        for section in sections:
+          
+          subsections = get_subsections(locale, section['id'])
         
-        # Fetch sections
-        sections = get_sections(locale, category['id'])
-        print(f'- {len(sections)} sections found')
-        
-        # Check for sections
-        if sections:
+          # Sanitize section name
+          sec_name = sanitize_filename(section['name'])       
 
-            # Category dir
-                cat_dir = os.path.join(locale_dir, category['name'])
-                os.makedirs(cat_dir, exist_ok=True)
+          for subsection in subsections:
 
-                # Loop through sections
-                for section in sections:
-                        section_articles = get_articles(locale, section['id'])
-                        print(f'- {len(section_articles)} section articles')
+            # Sanitize subsection name
+            sub_name = sanitize_filename(section['name'])
 
-                        section_id = section['id']
-                        section_name = sanitize_filename(section['name'])   
+            # Use subsection name
+            sub_dir = os.path.join(cat_dir, sub_name)
+            os.makedirs(sub_dir, exist_ok=True)
 
-                        print(f"  - Section: {section_name}")
+            articles = get_articles(subsection['id'])
+    
+            for page in articles:
+                    
+                for article in page:
+  
+                # Sanitize title
+                 title = sanitize_filename(article['title'])
 
-                        # Section dir
-                        sec_dir = os.path.join(cat_dir, section['name'])
-                        os.makedirs(sec_dir, exist_ok=True)
+                 # Write file
+                 file_path = os.path.join(sub_dir, f"{title}.html")
+                 with open(file_path, 'w') as f:
+                  f.write(article['body'])
 
-                        articles = get_articles(locale, section['id'])
-                        print(f'- {len(articles)} articles found')
-
-                        if not articles:
-                            continue     
-
-                        # Create section dir
-                        sec_dir = os.path.join(cat_dir, section['name'])
-
-                        articles = get_articles(locale, section['id'])
-                
-
-                        # Write articles
-                        for article in articles:
-        
-                        # Check for empty articles
-                            if not article:
-                                print(f'No articles found for section {section_id}')
-                            continue 
-
-                        title = sanitize_filename(article['title'])
-                        body = article['body']
-                       
-                    # Write HTML file
-                file_path = os.path.join(sec_dir, f"{title}.html")
-                with open(file_path, 'w') as f:
-                  f.write(body)
-        
-                print(f"    - Wrote file: {file_path}")
-        
-                # Wait
-                time.sleep(1)
-
-print('Done!')
+                print(f"Wrote {file_path}")
+          
+print("Done!")
