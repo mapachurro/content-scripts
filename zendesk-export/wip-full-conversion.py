@@ -3,7 +3,26 @@ import json
 import os
 import time
 import re
+from markdownify import markdownify as md
 from bs4 import BeautifulSoup
+
+def get_image_files(directory):
+    image_files = []
+    for root, _, files in os.walk(directory):
+        for file in files:
+            if file.lower().endswith(('.jpg', '.jpeg', '.png', '.gif', '.svg')):
+                image_files.append(os.path.join(root, file))
+    return image_files
+
+def update_file_image_links(content, image_files, directory_b):
+    for image_file in image_files:
+        image_file_name = os.path.basename(image_file)
+        image_file_relative_path = os.path.relpath(image_file, directory_b).replace("\\", "/")
+        image_file_relative_path = re.escape(image_file_relative_path)  # Escape special characters in the path
+
+        # Update image links in the content using capture group and backreference
+        content = re.sub(r'(!\[.*\]\()(' + re.escape(image_file_name) + r')', r'\1' + image_file_relative_path, content)
+    return content
 
 def create_filepath(title, language, section_id):
     # Replace / with _
@@ -41,11 +60,80 @@ def create_filepath(title, language, section_id):
     # Return the path of the created directory
     return f".html/{language}/{category_name}/{section_name}/{title}"
 
-# List of languages you want to fetch articles in
-languages = ["en-us", "fr", "de", "es", "it"]
+    # List of languages you want to fetch articles in
+languages = [
+    "ar-eg",
+    "ar",
+    "ms",
+    "bg",
+    "ca",
+    "sr-me",
+    "da",
+    "de",
+    "de-at",
+    "de-ch",
+    "et",
+    "en-us",
+    "en-au",
+    "en-be",
+    "en-ca",
+    "en-ie",
+    "en-in",
+    "en-nz",
+    "en-ph",
+    "en-sg",
+    "en-za",
+    "en-gb",
+    "es",
+    "es-es",
+    "es-419",
+    "es-mx",
+    "fil",
+    "fr",
+    "fr-be",
+    "fr-ca",
+    "fr-ch",
+    "hr",
+    "id",
+    "it",
+    "lv",
+    "lt",
+    "hu",
+    "nl-be",
+    "nl",
+    "no",
+    "fa",
+    "pl",
+    "pt-br",
+    "pt",
+    "ro",
+    "ro-ro",
+    "sk",
+    "sl",
+    "sr",
+    "fi",
+    "sv",
+    "th",
+    "tr",
+    "vi",
+    "fr-fr",
+    "is",
+    "cs",
+    "el",
+    "ru",
+    "uk",
+    "he",
+    "hi",
+    "ja",
+    "zh-cn",
+    "zh-tw",
+    "ko"]
 
 # Directory containing the local image files
-directory_b = '/path/to/your/local/image/files'
+directory_b = './../static/img'
+
+# Print the value of directory_b
+print(directory_b)
 
 # List of local image files
 image_files = get_image_files(directory_b)
@@ -89,7 +177,7 @@ for language in languages:
             # Sanitize the filename
             filename = sanitize_filename(safe_title)
             filepath = create_filepath(filename, language, article["section_id"])
-            with open(f"{filepath}/{filename}.md", "w") as file:
+            with open(f"{filepath}/{filename}.mdx", "w") as file:
                 # Add front matter with original title
                 front_matter = f"---\ntitle: '{title}'\n---\n\n"
                 file.write(front_matter)
@@ -136,12 +224,42 @@ for language in languages:
                         tabs.append(tab_item)
 
                     tabs_div.replace_with(tabs)
+                
+                # Convert callouts to Docusaurus format
+                for callout in soup.find_all('div', class_='callout'):
+                    # Determine the type of the callout based on its classes
+                    if 'callout--info' in callout['class']:
+                        callout_type = 'info'
+                    elif 'callout--transparent' in callout['class']:
+                        callout_type = 'note'  # Map to a Docusaurus type
+                    elif 'callout--success' in callout['class']:
+                        callout_type = 'tip'  # Map to a Docusaurus type
+                    elif 'callout--warning' in callout['class']:
+                        callout_type = 'warning'
+                    elif 'callout--danger' in callout['class']:
+                        callout_type = 'danger'
+                    elif 'callout--primary' in callout['class']:
+                        callout_type = 'info'  # Map to a Docusaurus type
+                    else:
+                        callout_type = 'note'  # Default type
 
-                # Write the modified HTML to the file
-                file.write(str(soup))
+                    # Find the title and content of the callout
+                    title = callout.find(class_='callout__title').text
+                    content = callout.find('p').text
+
+                    # Create new admonition with specified format
+                    admonition = soup.new_tag('div')
+                    admonition.string = f":::{callout_type}[{title}]\n\n{content}\n\n:::"
+
+                    callout.replace_with(admonition)
+
+        # Write the modified HTML to the file
+        content = str(soup)
+        content = update_file_image_links(content, image_files, directory_b)
+        file.write(content)
             
-        print(f"Page {i} in {language} complete")
-        i += 1
+    print(f"Page {i} in {language} complete")
+    i += 1
 
-        # Wait for 1 second before making the next request
-        time.sleep(1)
+    # Wait for 1 second before making the next request
+    time.sleep(1)
