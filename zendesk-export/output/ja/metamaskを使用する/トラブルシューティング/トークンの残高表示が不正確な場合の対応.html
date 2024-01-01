@@ -1,0 +1,44 @@
+<div class="callout callout--info">
+<h4 class="callout__title">トークンがまったく表示されませんか。</h4>
+<p>この問題のトラブルシューティングについては、<a href="https://support.metamask.io/hc/en-us/articles/360059232852" target="_self">こちら</a>をご覧ください。</p>
+</div>
+<p>まず、ブロックエクスプローラーに表示されているトークン残高を確認し、MetaMaskと比較します。これを行うには、ウォレットアドレスをコピーして、現在のネットワークに対応するブロックエクスプローラー（Ethereumメインネットの場合はEtherscan、Arbitrumの場合はArbiscanなど）に貼り付けます。詳細な手順については、<a href="https://support.metamask.io/hc/en-us/articles/360057536611">こちら</a>をご覧ください。</p>
+<div class="tabs tabs--colored-1">
+<div class="tabs-menu">
+<span class="tabs-link is-active">Extension</span> <span class="tabs-link">Mobile</span>
+</div>
+<div class="tab">
+<p>MetaMask ExtensionでETHや他のトークンの残高が不正確な場合は、大変お手数ですが以下の手順を一つずつ実施し、残高が正しく表示されるかどうかをご確認ください。</p>
+<p><strong>手順を実施する前に、<a href="https://support.metamask.io/hc/en-us/articles/4404722782107-User-Guide-Secret-Recovery-Phrase-password-and-private-keys">Secret Recovery Phrase</a>が安全な場所にバックアップされていることを確認します。</strong></p>
+<ol>
+<li>インターネット接続が良好で安定していることを確認します。そうでない場合、MetaMaskに正しい残高が読み込まれない可能性があります。</li>
+<li>MetaMask Extensionをインストールしたブラウザを一旦閉じて、再度開きます。</li>
+<li>広告ブロッカーを無効にするか、VPNを使用している場合はVPNを無効にしてからMetaMaskをご利用ください。</li>
+<li>別のネットワークに切り替えてから元のネットワークに戻します。これを行うには、アプリの上部にある現在のネットワークの表示をクリックし、別のネットワークを選択してから元のネットワークに戻します。</li>
+<li>
+<a href="https://support.metamask.io/hc/en-us/articles/360038139452-MetaMask-states-Balance-may-be-outdated-displays-in-orange-or-ETH-not-added-to-balance">ブラウザのアクセス権限</a>に問題がないことを確認します。</li>
+<li>使用中のネットワークに複数のRPC URLが存在する場合は、別のRPC URLで試してみます。RPC URLを編集するには、[Settings] &gt; [Network]を選択し、問題のネットワークをクリックします。詳しくは、<a href="https://support.metamask.io/hc/en-us/articles/360043227612" target="_self">ネットワークの追加に関する記事</a>をご覧ください。</li>
+<li>他の対応ブラウザ（Firefox、Chrome、Brave、Edge）を使って、公式サイト<a href="https://metamask.io/" rel="noreferrer">（https://metamask.io）</a>からMetaMaskをインストールします。現在使用しているブラウザのみで問題が発生している場合を想定して、12文字のSecret Recovery Phraseを使ってウォレットを復元します。</li>
+</ol>
+</div>
+<div class="tab is-hidden">
+<p>MetaMask Mobileに表示されているトークンの残高が正しくないことをEtherscanで確認したら、以下の手順を実行します：</p>
+<ol>
+<li>インターネット接続が良好で安定していることを確認します。そうでない場合、トークンの値が最新のものでない可能性があります。</li>
+<li>別のネットワークに切り替えてから元のネットワークに戻します。</li>
+<li>可能であれば使用中のネットワークのRPC URLを別なものに変更します。詳しくは、<a href="https://support.metamask.io/hc/en-us/articles/360043227612" target="_self">ネットワークの追加に関する記事</a>をご覧ください。</li>
+<li>
+<a href="https://support.metamask.io/hc/en-us/articles/360015489031-How-to-add-unlisted-tokens-custom-tokens-in-MetaMask#h_01FWH499MRDT5QC4R3KNPQNRWB">こちらの手順</a>に従ってトークンを非表示にして、<a href="https://support.metamask.io/hc/en-us/articles/360015489031-How-to-add-unlisted-tokens-custom-tokens-in-MetaMask">こちらの手順</a>に従ってトークンを再度追加します。</li>
+</ol>
+<strong>問題のトークンがEthereum以外のネットワーク（BNB、AVAX、MATICなど）のネットワークネイティブトークン</strong>の場合、<a href="https://support.metamask.io/hc/en-us/articles/4502810252059-How-to-remove-networks">ネットワークを削除</a>してから<a href="https://support.metamask.io/hc/en-us/articles/360043227612-How-to-add-a-custom-network-RPC">再度追加</a>します。<br><br><strong>問題のトークンがETHの場合、<span class="wysiwyg-color-red90"><a href="https://support.metamask.io/hc/en-us/articles/4404722782107-User-Guide-Secret-Recovery-Phrase-password-and-private-keys">Secret Recovery Phrase</a>が安全な場所にバックアップされていることを確認してから</span></strong>、アプリを再インストールします。</div>
+</div>
+<p>これらの手順を試しても問題が解決しない場合は、<a href="https://support.metamask.io/hc/en-us">サポートページ</a>の「Start a Conversation」ボタンをクリックしてお問い合わせください。</p>
+<div class="callout callout--warning">
+<h4 class="callout__title">問題のトークンには、供給量や価値に影響を与えるような仕組みが組み込まれていますか。</h4>
+<p>EthereumやEVMに対応するチェーンには、多様なユーティリティを持つ膨大な種類のトークンが存在します。トークンの中には、さまざまな条件に応じて供給量や価値が動的に変動するよう設計されているものがあります：</p>
+<ul>
+<li>トークンの供給量が調整される<a href="https://support.metamask.io/hc/en-us/articles/4405497827355-User-Guide-Tokens#:~:text=Elastic%20supply%20/%20Rebase%20/%20Algorithmic%20tokens" target="_self">Rebase token（リベーストークン）</a>。</li>
+<li>さまざまな種類の取引（単純な送金、スワップ、売却など）に「税金」が適用されるトークン。これらは、「Fee on transfer（送金手数料）」トークンと呼ばれることもあります。</li>
+</ul>
+<p>表示されているトークンの残高が正しくないと結論づける前に、上記の条件がトークンに適用されていないかをご確認ください。このような情報は通常、プロジェクトのホワイトペーパーやドキュメントに記載されています。</p>
+</div>

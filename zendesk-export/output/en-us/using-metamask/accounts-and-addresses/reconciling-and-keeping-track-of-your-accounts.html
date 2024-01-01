@@ -1,0 +1,53 @@
+<h3><span style="font-weight: 400;">Many users find it useful to perform a manual analysis of their accounts, checking to make sure the transactions align with what they intended.</span></h3>
+<p><span style="font-weight: 400;">It can be useful to see how much you spent on gas fees, how your balances rose and fell over time, etc. In accounting, <strong>this is referred to as 'reconciliation'</strong>.</span></p>
+<p><span style="font-weight: 400;">MetaMask doesn't yet have this feature built-in. Instead, given the nature of blockchain technology, it's transparently available on blockchain explorers, such as <a href="https://etherscan.io/" target="_self">Etherscan</a> or <a href="https://bscscan.com/">BscScan</a> (as most block explorers are very similar under the hood, this method also applies to those of other EVM-compatible chains, such as Avalanche's Snowtrace). </span></p>
+<p> </p>
+<h2><strong>Method 1: Block explorer balance checkers</strong></h2>
+<p>Both these platforms have a built-in balance checker (click for the <a href="https://etherscan.io/balancecheck-tool" target="_self">Etherscan version</a>, or the <a href="https://bscscan.com/balancecheck-tool" target="_self" rel="undefined">BscScan version</a>), which allows you to request a snapshot of your wallet's contents at any point in the past. These services <strong>only support checks on your ETH and BNB</strong> balances, respectively, so will not be applicable if you're investigating other token balances. Other networks' block explorers are likely to have similar services, however.</p>
+<p>You can narrow down the snapshot by date, or, for even more precision (down to ca. 10-15 second timeframes), by block number: </p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12769694722843" alt="Reconciling and keeping track of your accounts balance checker"></p>
+<p>The results will look like the below — detailing the block or date, the quantity of ETH held at that time, and how that quantity compares to the current holdings in your wallet.</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/17279215726107" alt="Etherscan balance checker result"></p>
+<p><strong>If you need help locating the block number</strong> you want to search, see the methods below (applicable to Ethereum, using Etherscan). Similar routes will also apply to other EVM-compatible networks, such as BSC.</p>
+<p>Go via the account route:</p>
+<ol>
+<li>In the MetaMask Extension, click the account dropdown arrow and select the three vertical dots icon for the account you want to view on an explorer. Then, select "View on explorer":</li>
+</ol>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/17278721912603" alt="MetaMask view account on block explorer extension" width="315" height="529"></p>
+<p> </p>
+<p>On Mobile, hit the ellipses icon on the right side of the screen next to the account address and select 'View on Etherscan':</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/17278707194779" alt="MetaMask view account on block explorer mobile" width="315" height="631"></p>
+<ol start="2">
+<li>Find the transaction in your account's list. Its block number will be listed in the same row.</li>
+</ol>
+<p>Or go via the transaction route:</p>
+<ol>
+<li>Locate the transaction:
+<ul>
+<li>Extension: Access the 'Activity' tab and click on the relevant transaction. </li>
+<li>Mobile: Tap the hamburger icon and either select 'Transaction History', or select the token on your wallet landing page to view all its transactions.</li>
+</ul>
+</li>
+<li> Click/tap on the transaction and select 'View on Etherscan' (Mobile) or 'View on block explorer' (Extension).</li>
+<li>The block will be listed on the Etherscan transaction page.  </li>
+</ol>
+<p> </p>
+<h2><strong>Method 2: Downloading a spreadsheet (.csv) history of your wallet transactions</strong></h2>
+<p>(for Ethereum mainnet)</p>
+<ul>
+<li>Navigate to <a href="https://etherscan.io/" target="_self">Etherscan</a> and search for your <a href="https://support.metamask.io/hc/en-us/articles/360015289512" target="_self">wallet address</a>.</li>
+<li>Scroll down to the bottom of the page, past all your transactions.</li>
+<li>In the lower right-hand corner, there should be a link to "Download CSV Export":</li>
+</ul>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12769694768411" alt="Reconciling and keeping track of your accounts CSV" width="370" height="357"></p>
+<ul>
+<li class="wysiwyg-text-align-left">Click on this; you should be presented with a dialogue that allows you to specify the date range you're interested in looking at:<br><br>
+</li>
+</ul>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/17279180745371" alt="Etherscan download transactions CSV"></p>
+<ul>
+<li>Fill out the dates and the captcha and click 'Download'.</li>
+<li>You should have in your downloads location a file titled "export-" plus your wallet address. This file should have a complete listing of all transactions involving your wallet (except for internal transactions) for the timeframe you requested.</li>
+</ul>
+<p>See also our <a href="https://support.metamask.io/hc/en-us/articles/4406001678747-Tax-compliance-and-crypto-assets" target="_self">article regarding tax compliance</a>.</p>
+<p> </p>

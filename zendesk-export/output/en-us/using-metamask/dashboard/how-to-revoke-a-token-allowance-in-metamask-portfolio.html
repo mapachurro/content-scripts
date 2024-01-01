@@ -1,0 +1,32 @@
+<p>You can view and revoke any token allowances (also known as token approvals) in MetaMask Portfolio.</p>
+<div class="callout callout--info">
+<h4 id="h_01HEQA6P2BMFG23PH2BNDNRKPH" class="callout__title">Ethereum mainnet only</h4>
+<p>Please note that this feature is only supported for Ethereum mainnet. We'll add support for further networks when possible.</p>
+<p>To revoke approvals on networks other than Ethereum, check out our list of third-party revocation tools in this article: <a href="https://support.metamask.io/hc/en-us/articles/4446106184731">How to revoke smart contract allowances/token approvals</a></p>
+</div>
+<h2 id="h_01HEQA7KYWW30FDTT96KWXN0Y6">What is a token allowance?</h2>
+<p>Allowances are permissions that you sign to indicate consent for a dapp to access a given number of a specific token type. Usually, this is because you're interacting with a dapp that involves an operation like depositing, sending, staking, etc. — all of which require tokens to be moved <em>from</em> your account and, generally, <em>to </em>a smart contract or another <a href="https://ethereum.org/en/developers/docs/accounts/#types-of-account">externally owned account</a> (just like yours). <strong>You can read a more in-depth explainer of token allowances <a href="https://support.metamask.io/hc/en-us/articles/6174898326683">here</a>.</strong> (Note that you don't need to sign allowances for ETH — only ERC-20 and ERC-777 tokens require them.)</p>
+<p>Once an allowance is signed, its existence is recorded on the blockchain, meaning it will be valid until you sign another transaction that revokes it. Each allowance limits how many tokens of that type the dapp can access. For example, if you signed an allowance for 1,000 USDC, you could order the dapp to use up to 1,000 USDC tokens in one transaction or many — either way, the permission is valid until you've used up this allowance. </p>
+<div class="callout callout--warning">
+<h4 id="h_01HEQAV9WFTKH7DF1HK48613YG" class="callout__title">Spending caps in MetaMask</h4>
+<p>When you sign a token allowance in MetaMask, you're prompted to specify how many of the tokens you want to allow access to. We call this a "spending cap", and you can <a href="https://support.metamask.io/hc/en-us/articles/6055177143579">read more about the process here</a>. Dapps often request a default value, which in many cases is so large it essentially permits unlimited access. Unlimited token approvals, as they are known, are dangerous — signing one to a fraudulent dapp, or a legitimate dapp that is hacked, can result in all of a certain token type being drained from your wallet without you being aware.</p>
+</div>
+<h2 id="h_01HEQA7ZG8CE4FFMWDP390R1RW">How to view and revoke token allowances</h2>
+<ol>
+<li>Head to <a href="https://portfolio.metamask.io/">MetaMask Portfolio</a> and make sure your wallet is connected. </li>
+<li>
+<p>Head to 'Settings'. On a desktop browser, this is found in the drop-down menu on the top-left of the page:</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/21168254912027" alt="MetaMask_Portfolio_find_account_settings.png" width="350" height="476"></p>
+<p>On mobile, hit the hamburger icon in the top-left to access it:</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/20350882171675" alt="MetaMask Portfilio locate settings mobile" width="315" height="554"><br><br></p>
+</li>
+<li>
+<p>Select the 'Allowances' category in the settings menu.</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/20376414759323" alt="MetaMask Portfilio revoke allowance"></p>
+<p>Make sure you select the account whose allowances you want to view. You can only select one account at a time.</p>
+</li>
+<li>
+<p>Click the revoke button next to the allowance you want to revoke.</p>
+</li>
+<li>Submit the transaction in MetaMask. Since revocation requires submitting a transaction to the network, <strong>you will need pay gas fees to revoke an allowance</strong>. </li>
+</ol>

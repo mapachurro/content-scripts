@@ -1,0 +1,88 @@
+<div class="callout callout--info">
+<h4 id="h_01H90E9VGSACVGGKDM128S7Y49" class="callout__title">Have you tried MetaMask Activity?</h4>
+<p>MetaMask Activity is a new tool that can analyze your transactions and automatically suggest possible resolutions, and it has a built-in function dedicated to pending transactions. Why not try it out? See <a href="https://support.metamask.io/hc/en-us/articles/13460965279003" target="_self">here</a> for more information.</p>
+</div>
+<p>When you submit a transaction on Ethereum or a compatible network, part of the gas you pay is a bid to the network to process your transaction sooner — this element is known as the priority fee.</p>
+<p>Although MetaMask will assist you by calculating a total gas fee likely to have your transaction picked up, you can end up waiting a long time if you submit with a low gas price. For advice on what gas prices will result in a transaction being finalized in a reasonable amount of time, please refer to sources such as <a href="https://etherscan.io/gastracker" target="_self" rel="undefined">Etherscan's gas tracker</a>, or a similar tracker for whichever network you're using.</p>
+<p>Additionally, there are sometimes circumstances where something goes wrong, and a transaction is just stuck, or pending for a very long time.</p>
+<p>No matter how you got to this point, there are a few different ways to address it.</p>
+<p> </p>
+<p id="h_01H90E9VGSNV7MJ488DDXP5BWA"><strong>Before you take any further action, your first step should be to exit and close your browser completely, reopen it, and unlock MetaMask (on mobile, just close the app and reopen it). If that doesn't solve the problem, continue with the following:</strong></p>
+<p> </p>
+<h2 id="h_01H90E9VGSP9R59MQQA0QRYHN4">Speeding up a transaction</h2>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/17217043760539" alt="MetaMask speed up pending transaction extension" width="315" height="431"></p>
+<p>Try one of the options below:</p>
+<ul>
+<li>Wait until the network is willing to process transactions at this price</li>
+<li>If you haven't done so already, click that button that says '<strong>Speed up</strong>'. This will let you re-submit the same transaction, but with a higher gas fee that should allow the transaction to be processed faster. Since this process re-uses the same nonce as the original, you do not need to pay for gas twice.</li>
+</ul>
+<p>Bear in mind that <strong>speeding up the transaction will increase the amount you're spending for the transaction</strong>.</p>
+<p> </p>
+<h2 id="h_01H90E9VGT5610RHCYJGWCJ1W3">Canceling a transaction </h2>
+<h3 id="h_01H90EADT4QE94HRVVHBN8VJ0G">Method 1: In-app cancellation</h3>
+<p>If you haven't done this already, to cancel the transaction, simply select <strong>Cancel</strong>, as in the screenshot above. Please note, <strong>a cancellation can only be <em>attempted</em> if the transaction is still pending on the network. </strong>Transactions that have already been confirmed cannot be reversed.</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/17217065737499" alt="MetaMask cancel pending transaction extension" width="315" height="529"></p>
+<p> </p>
+<h3 id="h_01H90E9VGTFW3N1BB3CMPGMGXW">Method 2: Custom nonce</h3>
+<p>This process involves sending a new transaction with the same nonce (an identifying number for every transaction, derived from the phrase 'number only used once'). The transaction does not actually have to have any value — e.g. you could send 0 ETH. What matters is that you pay enough gas for the network to prioritize it. </p>
+<p>When using this method, <strong>you will need to work backwards from the oldest pending transaction in the queue that you want to cancel</strong>. For example, you cannot attempt to cancel a transaction with a nonce of 10 before canceling nonce 9. </p>
+<p>Note also that you <em>may </em>be able to cancel multiple transactions at once if they have the same nonce. Since a nonce—by definition—can only be used once, cancelling one of them will cancel all that have the same nonce. </p>
+<p><em>The screenshots below were taken at different times, so the gas fees shown in them can vary, even from step to step. Don't let this put you off! When you do this yourself, MetaMask will automatically update in real time to show market rates.</em></p>
+<div class="tabs tabs--colored-1">
+<div class="tabs-menu">
+<span class="tabs-link is-active">Extension</span> <span class="tabs-link">Mobile</span>
+</div>
+<div class="tab">
+<ol>
+<li>
+<p>In advanced settings, turn on <strong>Customize transaction nonce</strong><strong>.</strong> You'll need this turned on so you can send a replacement transaction (using the same nonce). Find out how to locate a transaction's nonce <a href="https://support.metamask.io/hc/en-us/articles/15752269372699" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/17217065740571" alt="MetaMask customize transaction nonce settings" width="315" height="332"></p>
+</li>
+<li>
+<p><strong>Send a new transaction</strong>. In the new transaction, send <strong>TO</strong> yourself, meaning your MetaMask public address. <strong>Fill in 'Custom Nonce' with the same nonce as the transaction that is still pending</strong>:</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/14731609986843" alt="Metamask custom transaction nonce Extension" width="315" height="529"></p>
+</li>
+<li>
+<p>Next to the displayed gas fee on the transaction confirmation screen, you'll see a button that reads 'Market' (it can also read 'Low' or 'Aggressive' depending on your last used setting). Click it, and then click 'Advanced' at the bottom: </p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/14731706474011" alt="MetaMask advanced gas controls find" width="315" height="529"></p>
+<p>To make sure your cancellation request is picked up as a priority, and before the original, <strong>you will need to pay more for gas</strong>. On this screen, follow these instructions:</p>
+<ul>
+<li>Set your <strong>gas limit</strong> <em>comparable to or slightly higher</em> than your original transaction.</li>
+<li>Set your<strong> priority fee</strong> to <em>at least 10% higher</em> (in Gwei) than the gas fee of the original (pending) transaction (e.g. if that transaction had a gas fee of 30 Gwei, set the max priority fee in the replacement/cancellation transaction to 33-35 Gwei).</li>
+<li>Make sure your <strong>max fee</strong> is at least 30% higher than the max fee of the transaction you're replacing. For example, if your previous fee was 150 Gwei, choose something nearer 200 Gwei this time. </li>
+</ul>
+<p><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Check a gas tracker such as </span><a style="background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;" href="https://etherscan.io/gastracker" target="_self">Etherscan's</a><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"> or </span><a style="background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;" href="https://ethgasstation.info/" target="_self" rel="undefined">ETH Gas Station</a><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;"> for guidance on recommended max fees. </span></p>
+</li>
+</ol>
+</div>
+<div class="tab is-hidden">
+<ol>
+<li>
+<p><strong>In Settings &gt; Advanced, turn on 'Customize transaction nonce'.<br></strong></p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/17217043774619" alt="MetaMask customize transaction nonce settings mobile" width="315" height="358"></p>
+<p><strong> </strong></p>
+</li>
+<li>
+<p><strong>Send a new transaction.</strong> In the new transaction, send TO yourself, meaning your MetaMask public address. <strong><a href="https://support.metamask.io/hc/en-us/articles/7417499333531" target="_self">Set the nonce</a> to the same nonce as the transaction that is still pending</strong>.</p>
+<p>To find the custom nonce setting in the app, get to the transaction confirmation screen, which appears after you've entered the token quantity and recipient. Hit 'Edit' to change it:</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927068442907" alt="MetaMask custom transaction nonce Mobile" width="315" height="631"></p>
+</li>
+<li>
+<p>Now you need to make sure your gas settings are configured so that your replacement transaction is processed. From the transaction confirmation screen, tap the highlighted gas value:</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927041593755" alt="MetaMask advanced gas controls mobile" width="476" height="190"></p>
+<p>Now access 'Advanced options' from the menu that appears.</p>
+</li>
+<li>
+<p>From here, you can precisely adjust gas to make sure your transaction is picked up. You'll now be looking at a screen that looks like this:</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927063201691" alt="MetaMask advanced gas controls mobile" width="315" height="554"></p>
+<p>From here, adjust the gas settings. Follow these instructions to make sure your transaction is picked up:</p>
+<ul>
+<li>Set your <strong>gas limit</strong> <em>comparable to or slightly higher</em> than your original transaction.</li>
+<li>Set your <strong>max priority fee</strong> to <em>at least 10% higher</em> (in Gwei) than the gas fee of the original (pending) transaction (e.g. if that transaction had a gas fee of 30 Gwei, set the max priority fee in the replacement/cancellation transaction to 33-35 Gwei).</li>
+<li>Make sure your <strong>max fee</strong> is <em>at least 30% higher</em> than the max fee of the transaction you're replacing. For example, if your previous fee was 150 Gwei, choose something nearer 200 Gwei this time.</li>
+</ul>
+<p>Check a gas tracker such as <a href="https://etherscan.io/gastracker" target="_self">Etherscan's</a> or <a href="https://ethgasstation.info/" target="_self">ETH Gas Station</a> for guidance on recommended max fees.</p>
+</li>
+</ol>
+</div>
+</div>

@@ -1,0 +1,58 @@
+<div class="callout callout--success">
+<h4 id="01GRVFH3WQZAEN1PPJ4PTRJNH1">Baru ke cypto dan web3?</h4>
+<p>Pergi ke <a href="https://learn.metamask.io/">MetaMask Learn</a> untuk pengalaman pembelajaran mudah yang direka khusus untuk pendatang baharu di web3. Ia percuma sepenuhnya, tersedia dalam pelbagai bahasa, dan termasuk alat berguna seperti simulasi untuk membantu anda mencari kaki anda dengan MetaMask.</p>
+</div>
+
+<h4 id="01GRVFZVD9WXPHNGSGH5X5AD96"><em>Artikel ini mengandungi penerangan dan pautan kepada sumber yang berpusatkan transaksi dan sebab ia gagal, dan lebih ke bawah, pautan kepada senario biasa transaksi yang gagal serta cara menanganinya:</em></h4>
+<ul>
+<li><a href="#h_01G79J04D0EN1VD8VS7C7J7KD1" target="_self">Anatomi transaksi blok rantai</a></li>
+<li><a href="#h_01G79J09NWA8CGR4VYC2PT5B6Y" target="_self">Masalah biasa</a></li>
+<li><a href="#h_01G79J0J8JTRPM9MRB76EN1GPP" target="_self">Pembaikan utama</a></li>
+<li><a href="#h_01G79J0RP8ZMZ1V1SKQY70TXCT" target="_self">Sumber tambahan dan langkah seterusnya</a></li>
+<li><a href="#h_01G79J18RBK27GZCF10CGN9GKP" target="_self">FAQ</a></li>
+</ul>
+<p> </p>
+<h2 id="h_01G79J04D0EN1VD8VS7C7J7KD1"><strong>Anatomi transaksi blok rantai</strong></h2>
+<p>Semasa kami membincangkan 'transaksi' di rangkaian blok rantai awam, kami biasanya sedang bercakap tentang interaksi antara dua alamat; dalam erti kata lain, token, sama ada ia boleh digunakan atau tidak, atau aset kripto lain yang 'dihantar' dari satu alamat ke alamat yang lain. Terdapat juga transaksi yang dirujuk sebagai "transaksi dalaman", yang merupakan interaksi yang berlaku antara kontrak pintar, dan sebahagian besarnya berada di luar skop artikel ini.</p>
+<div class="note note--info">
+<h4 id="01GRVFZVD9JJ5G8Z7S4AE9G1ME" class="note-title">Mahu lebih info?</h4>
+<p>Untuk maklumat lanjut tentang rangkaian blok rantai dan cara ia berfungsi secara umum, lihat <a href="https://metamask.zendesk.com/hc/en-us/articles/360015489611-Learn-the-basics-of-blockchains-and-Ethereum-miners-and-validators-gas-cryptocurrencies-and-NFTs-block-explorer-networks-etc-">artikel pengenalan kami di sini</a>, dan jika anda tersekat pada sebarang perkataan yang tidak dikenali, glosari <a href="https://consensys.net/knowledge-base/a-blockchain-glossary-for-beginners/">kami sentiasa tersedia.</a></p>
+</div>
+<p>Demi kejelasan, tiada apa yang sebenarnya <em>dihantar </em>ke mana-mana. Rangkaian blok rantai yang didayakan kontrak pintar seperti Ethereum mempunyai beberapa komponen atau fungsi yang berbeza. Salah satu daripadanya ialah apa yang kita panggil "komputer": Mesin Maya Ethereum, atau EVM, yang mampu menjalankan program ('kontrak pintar'). Tulang belakang sistem, walaubagaimanapun, adalah <em>lejar teragih</em>: <strong>bayangkan lembaran yang mengandungi, pada satu sisi, setiap alamat dompet Ethereum, dan setiap alamat mempunyai kolum untuk setiap jenis aset-kripto yang dipegang.</strong> </p>
+<p>Mari kita menggunakan contoh untuk ilustrasi. Katakan Guillaume ingin menghantar transaksi kepada Dolores. Guillaume mempunyai 1.36 ETH dalam akaunnya dan dia merancang untuk menghantar 0.5 ETH kepada Dolores. Kedengaran seperti hari yang baik untuk Dolores, walaupun dalam pasaran beruang.</p>
+<p>Guillaume membuka dompet MetaMasknya, memasukkan alamat Dolores, mengkonfigurasi parameter gas yang dia berasa selesa untuk membayar, dan menekan 'hantar'.</p>
+<p>Pada ketika ini, transaksi memasuki status pegangan sementara setempat, yang dikenali sebagai <em>kumpulan memori setempat, </em>atau <em>mempool tempatan</em>. Transaksi kemudiannya akan 'diambil' oleh nod terdekat dalam rangkaian; bergantung pada <a href="https://metamask.zendesk.com/hc/en-us/articles/360022895972-Using-advanced-gas-controls">tetapan gas</a> Guillaume, transaksinya akan diutamakan (<strong>lebih banyak yang Guillaume sanggup membayar untuk <a href="https://metamask.zendesk.com/hc/en-us/articles/4404600179227-User-Guide-Gas">setiap unit gas</a>, lebih cepat transaksinya akan diproses</strong>), dan disebarkan ke nod lain dalam rangkaian. Nod akan menjalankan tugasnya untuk mengesahkan bahawa Guillaume mempunyai ETH untuk dibelanjakan, dan kemudian akan betul-betul melakukan 'transaksi' tersebut: <strong>lejar akan diubah suai; 0.5 akan didebitkan daripada baki Guillaume, dan 0.5 akan dikreditkan kepada baki Dolores. </strong></p>
+<p><em>'Apa-apa sahaja yang dilakukan dalam kehidupan merupakan tanggungjawab sendiri dan tidak boleh diubah':</em> ETH tidak bergerak melalui rangkaian per se; ia bukan e-mel yang dihantar dari komputer Guillaume ke peti masuk MetaMask Dolores, atau apa-apa seumpamanya. Guillaume menghantar permintaan, <strong>yang telah disahkan oleh <a href="https://metamask.zendesk.com/hc/en-us/articles/4404722782107-User-guide-Secret-Recovery-Phrase-password-and-private-keys">kunci peribadinya melalui MetaMask</a></strong>, kepada rangkaian untuk mendebitkan akaunnya dan mengkreditkan akaun Dolores, dan selepas proses pengesahan diprogramkan ke dalam protokol rangkaian, ia selesai. </p>
+<h4 id="01GRVFZVD9GG3MHV265Q5QBB9S"><em>Itu sahaja yang berlaku dalam sebuah trasaksi: permintaan kepada lejar untuk mengagihkan semula sesuatu dari satu alamat ke sebuah alamat yang lain.</em></h4>
+<p> </p>
+<h2 id="h_01G79J09NWA8CGR4VYC2PT5B6Y"><strong>Apabila kesilapan berlaku</strong></h2>
+<p>Kesilapan boleh berlaku atas beberapa sebab. Lazimnya, ia 'bersifat perisian': MetaMask mempunyai pepijat, atau sesuatu telah dikonfigurasi dengan salah berkenaan rangkaian yang anda cuba gunakan; terdapat ralat sambungan.</p>
+<p>Satu <strong>isu biasa adalah pengguna, dalam percubaan untuk membayar harga yang lebih kurang untuk transaksi mereka, menetapkan had gas yang sangat rendah</strong>, dan keadaan rangkaian sangat sesak sehingga tiada ruang dalam sebarang blok untuk transaksi yang begitu "murah", kadangkala untuk masa yang sangat lama: akhirnya, transaksi ini akan menjadi "lapuk" dan perlu dibatalkan oleh pengguna. </p>
+<p><strong>Jika anda telah menghantar transaksi dan ia belum dimuktamadkan</strong>, statusnya akan ditunjukkan sebagai "belum selesai" di MetaMask. </p>
+<p><strong>Jika anda telah menghantar transaksi, dan ia gagal, kemungkinan besar puncanya adalah kekurangan gas</strong>: anda telah "kehabisan gas", dalam erti kata lain, transaksi tersebut mempunyai kos dalam gas yang, apabila didarabkan dengan harga gas, menghasilkan jumlah keseluruhan mata wang asli rangkaian yang lebih besar daripada jumlah yang anda miliki dalam dompet anda. </p>
+<div class="note note--info">
+<h4 id="01GRVFZVD9GH1B7F94WN13F3BH" class="note-title">Maklumat</h4>
+<p>Untuk maklumat lanjut tentang pengiraan gas, rujuk kepada <a href="https://metamask.zendesk.com/hc/en-us/articles/4404600179227-User-Guide-Gas">panduan gas kami di sini</a>.</p>
+</div>
+<p>Perkara ini boleh berlaku atas beberapa sebab, tetapi satu perkara yang perlu dipertimbangkan adalah transaksi apa yang sedang anda cuba melaksanakan. Menempa NFT pada masa yang paling sibuk boleh mengakibatkan kos gas yang sangat tinggi; jika anda sedang mencuba transaksi baharu atau transaksi percubaan, ia mungkin berbaloi untuk mencubanya di rangkaian ujian sebelum membayar yuran rangkaian yang sebenar.</p>
+<p> </p>
+<h2 id="h_01G79J0J8JTRPM9MRB76EN1GPP"><strong>Menyelesaikan masalah</strong></h2>
+<h3 id="01GRVFZVD9D3PVW0CHP2JYRM1A"><strong>Faktor Utama #1: Setempat atau Siarkan ke Rangkaian</strong></h3>
+<p>Semasa anda mendiagnosis isu transaksi anda, terutamanya apabila ia berkaitan dengan transaksi yang belum selesai, anda perlu melihat sama ada transaksi tersebut masih dalam mempool tempatan anda atau sama ada ia telah sampai ke rangkaian dan tersekat di sana atas apa jua sebab. Jika ia hanya berada di mempool tempatan anda, penyelesaiannya mungkin semudah mengunci dan membuka kunci dompet MetaMask anda (<strong>pastikan anda tahu kata laluan anda dan telah menyandarkan Frasa Pemulihan Rahsia anda sebelum anda berbuat demikian</strong>). Jika ia telah tiba ke rangkaian, penyelesaiannya mungkin lebih rumit.</p>
+<p>Untuk maklumat lanjut tentang penyelesaian masalah ini, lihat pautan di bawah.<br><br></p>
+<h3 id="01GRVFZVD9J3NB03974CZWTT8A"><strong>Faktor Utama #2: Nonce</strong></h3>
+<p>Perkataan ini boleh membawa maksud beberapa perkara yang berbeza. Ia adalah penguncupan "nombor hanya digunakan sekali", dan dalam konteks ini, ia secara kasarnya bermaksud 'nombor transaksi', bermula dari transaksi pertama yang dibuat oleh alamat penghantaran. Anda boleh menghadapi masalah sebenar jika, sebagai contoh, anda melancarkan dua transaksi berbeza daripada kejadian MetaMask yang berbeza dengan alamat dompet yang sama pada masa yang sama. <strong>Transaksi alamat anda perlu berada dalam susunan tertib menaik mengikut nonce. </strong> Walau bagaimanapun, sama seperti nonces mampu menyebabkan transaksi tersekat, ia juga boleh menjadi kunci untuk melepaskan transaksi.</p>
+<p>Untuk maklumat lanjut tentang teknik tersebut, <a href="https://metamask.zendesk.com/hc/en-us/articles/360015489251-How-to-Speed-Up-or-Cancel-a-Pending-Transaction">lihat di sini</a>.</p>
+<p> </p>
+<h2 id="h_01G79J0RP8ZMZ1V1SKQY70TXCT"><strong>Langkah-langkah Seterusnya</strong></h2>
+<h3 id="01GRVFZVD9Q63NF0SYR69AWPG6"><em>Jika anda mempunyai transaksi yang gagal atau belum selesai, rujuk kepada sumber berikut untuk mendapatkan bantuan.</em></h3>
+<h4 id="01GRVFZVD9NFGVSXR55JG8EYQK"><a href="https://metamask.zendesk.com/hc/en-us/articles/360015488931">Cara menghantar token dari dompet MetaMask anda</a></h4>
+<h4 id="01GRVFZVD9N387HEW5ZJ53MK5Z"><a href="https://metamask.zendesk.com/hc/en-us/articles/360015489251-How-to-Speed-Up-or-Cancel-a-Pending-Transaction">Cara mempercepatkan atau membatalkan transaksi yang belum selesai</a></h4>
+<h4 id="01GRVFZVD9TWRFF00FPPWFFYSD" class="article-title" title='Mengapakah transaksi saya gagal dengan ralat "Kehabisan Gas"? Bagaimanakah saya menyelesaikannya?'><a href="https://metamask.zendesk.com/hc/en-us/articles/360038849792-Why-did-my-transaction-fail-with-an-Out-of-Gas-error-How-can-I-fix-it-">Mengapakah transaksi saya gagal dengan ralat "Kehabisan Gas"?</a></h4>
+<h4 id="01GRVFZVD9XJVVHQK3J9F5Q4Z8"><a href="https://metamask.zendesk.com/hc/en-us/articles/360053394291-Uniswap-support-and-troubleshooting-tips">Penyelesaian Masalah Uniswap</a></h4>
+<h4 id="01GRVFZVD9V5KZ7999CR0DHGGZ"><a href="https://metamask.zendesk.com/hc/en-us/articles/4404600179227-User-Guide-Gas">Panduan Pengguna: Gas</a></h4>
+<h4 id="01GRVFZVD9RDMNCVPMRVY7ZVGP"><a href="https://metamask.zendesk.com/hc/en-us/articles/360059957352-Can-I-reverse-an-already-confirmed-transaction-">Bolehkah saya menterbalikkan transaksi yang telah disahkan?</a></h4>
+<p> </p>
+<h2 id="h_01G79J18RBK27GZCF10CGN9GKP"><strong>FAQ</strong></h2>
+<h4 id="01GRVFZVD9XESKW1CA31WM5PWS">
+<em>S: Sebuah akaun dalam dompet saya mengandungi transaksi yang belum selesai atau masih dalam barisan. Bolehkah saya memulakan transaksi yang lain dari akaun yang berbeza dalam dompet yang sama?<br></em>J: Ya, anda boleh. Nonce dikira berdasarkan setiap akaun, bukan setiap dompet.</h4>

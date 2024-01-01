@@ -1,0 +1,17 @@
+<h3>Come calcolare il prezzo del gas</h3>
+<p>Se sei sulla rete Ethereum principale puoi controllare <a href="https://etherscan.io/gastracker" target="_self" rel="undefined">lo strumento del gas di Etherscan</a> per una stima del prezzo del gas di oggi.  Tieni presente che il prezzo del gas oscilla. Fai sempre riferimento alla stazione di servizio per vedere i prezzi correnti del gas.</p>
+<p>La rete Ethereum richiede gas per eseguire transazioni. Quando invii token, interagisci con un contratto, invii ETH o fai qualsiasi altra cosa sulla blockchain, devi pagare per quel calcolo. Tale pagamento viene calcolato in gas e il gas viene sempre pagato in ETH.</p>
+<p>Paghi il calcolo, indipendentemente dal fatto che la transazione abbia esito positivo o meno. Anche se la transazione non va a buon fine, i miner o i validatori devono finalizzare ed eseguire la transazione, il che richiede potenza di calcolo. Devi pagare per quel calcolo, proprio come pagheresti per una transazione andata a buon fine.</p>
+<p> </p>
+<h3>Come recuperare il gas limite</h3>
+<p>Sai quanto costa ogni unità di gas, ma quante unità di gas devi spendere? Se si tratta di una semplice transazione, ad esempio l'invio di ETH o di un token ERC-721 a un altro indirizzo, dovresti spendere 21.000 unità di gas. Se fai qualcosa di più complesso, uno strumento adatto è un block explorer, come <a href="https://etherscan.io/">etherscan.io</a>. Vai al contratto con cui vuoi interagire e inizia a esaminare le transazioni che sono state effettuate con il contratto. Avrai un'idea migliore della quantità di gas effettivamente utilizzata dagli altri utenti.</p>
+<div class="callout callout--success">
+<h4 class="callout__title">Calcolatore gas</h4>
+<p>Esistono alcuni strumenti che ti permettono di stimare quanto ti costerà il gas in valuta fiat prima di effettuare una transazione. Un esempio è il <a href="https://www.cryptoneur.xyz/gas-fees-calculator">Calcolatore del costo in gas di Cryptoneur</a> che ti permette di inserire i dettagli della tua transazione e di ottenere il costo stimato del gas nella tua valuta locale e in base alla domanda corrente di una determinata rete (puoi scegliere tra le principali reti compatibili con il sistema EVM).</p>
+</div>
+<h3>
+<br>Struttura complessiva del costo in gas</h3>
+<p>A partire da <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1559.md">EIP-1559</a>, il costo complessivo pagato dal creatore di una transazione viene calcolata nel seguente modo: <strong>((costo base + costo per priorità) x unità di gas consumato)</strong>. </p>
+<p>Per ulteriori informazioni, leggi <a href="https://support.metamask.io/hc/en-us/articles/4404600179227">qui</a>.</p>
+<p> </p>
+<p><strong>Tieni presente che non si tratta di un costo che MetaMask riceve, quindi non possiamo rimborsarlo.</strong> Questa costo viene pagata ai miner o ai validatori per finalizzare la transazione, convalidarla in un blocco e proteggere la blockchain.</p>

@@ -1,0 +1,43 @@
+<p><span style="font-weight: 400;">Когда веб-сайт предлагает добавить </span><span style="font-weight: 400;">кастомную сеть</span><span style="font-weight: 400;"> в MetaMask, вам предоставляется информация, которую MetaMask будет использовать для взаимодействия с сетью. MetaMask выполняет базовую проверку этой информации и предупредит вас, если что-то покажется неправильным или необычным. MetaMask также не позволит повторно добавить одну и ту же сеть. Однако, </span><strong>MetaMask не проверяет кастомные сети</strong><span style="font-weight: 400;">. Даже если добавление сети в MetaMask проходит успешно, сеть может быть вредоносной или неверно представленной веб-сайтом, запросившим ее.</span></p>
+<p><span style="font-weight: 400;"><strong>Для получения дополнительной информации о кастомных сетях см. наше руководство пользователя <a href="https://support.metamask.io/hc/en-us/articles/4404424659995">здесь</a>.</strong></span></p>
+<p><span style="font-weight: 400;">Точно так же, как вы несете ответственность за проверку адресов Ethereum, с которыми вы совершаете транзакции, вы несете ответственность и за проверку любых кастомных сетей, которые вы добавляете в MetaMask. В этой статье мы поделимся некоторыми советами о том, как это сделать.</span></p>
+<p><span style="font-weight: 400;">Когда веб-сайт отправляет запрос на добавление кастомной сети, MetaMask отображает следующее подтверждение:</span></p>
+<p class="wysiwyg-text-align-center"><span style="font-weight: 400;"><img src="https://support.metamask.io/hc/article_attachments/360087917091/custom-network.png" alt="custom-network.png" width="360" height="671"></span></p>
+<p> </p>
+<p><span style="font-weight: 400;">Это подтверждение показывает </span><strong>информацию о сети, предоставленную веб-сайтом</strong><span style="font-weight: 400;">. <em>Нет гарантии, что эта информация верна</em>. Поэтому, вы должны доверять информации в той же степени, что и веб-сайту.</span></p>
+<p><span style="font-weight: 400;">Если вы нажмете «Просмотреть все подробности» в подтверждении, вы увидите всю информацию о сети, предоставленную веб-сайтом, включая:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1">
+<span style="font-weight: 400;"><strong>Название сети</strong>: </span><span style="font-weight: 400;">Название, которое MetaMask будет ассоциировать с сетью.</span>
+</li>
+<li style="font-weight: 400;" aria-level="1">
+<strong>Адрес сети: </strong><span style="font-weight: 400;">Адрес, который MetaMask будет использовать для доступа к сети.</span>
+</li>
+<li style="font-weight: 400;" aria-level="1">
+<strong>Chain ID: </strong><span style="font-weight: 400;">Chain ID — идентификатор, который MetaMask будет использовать для подписи транзакций в сети.</span>
+</li>
+<li style="font-weight: 400;" aria-level="1">
+<strong>Символ валюты: </strong><span style="font-weight: 400;">Символ валюты, который MetaMask будет использовать для нативной валюты сети.</span><ul>
+<li style="font-weight: 400;" aria-level="3"><span style="font-weight: 400;">Например, для Ethereum Mainnet символ валюты — ETH, а для Gnosis Chain — xDAI (сохранен после их слияния).</span></li>
+</ul>
+</li>
+<li style="font-weight: 400;" aria-level="1">
+<strong>Адрес обозревателя блоков (необязательно): </strong><span style="font-weight: 400;">Адрес, на который MetaMask направит вас для проверки аккаунтов, транзакций и т. п. Эквивалент </span><a href="https://etherscan.io"><span style="font-weight: 400;">etherscan.io</span></a><span style="font-weight: 400;">, но для рассматриваемой сети.</span>
+</li>
+</ul>
+<p><span style="font-weight: 400;">Если вы по какой-либо причине не уверены в правильности информации о сети, мы рекомендуем вам предпринять следующие шаги для ее проверки:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1">
+<span style="font-weight: 400;">Перейдите в <a href="https://chainlist.wtf/" target="_self" rel="undefined">Chainlist </a></span><span style="font-weight: 400;">и найдите предоставленный chain ID и/или имя сети. Если MetaMask указывает на несовпадение информации, вы сможете определить проблему в Chainlist. Если кастомная сеть вообще не указана в Chainlist, она либо очень новая, либо, возможно, сомнительного качества.</span>
+</li>
+<li style="font-weight: 400;" aria-level="1">
+<span style="font-weight: 400;">Погуглите название сети и попытайтесь ответить на следующие вопросы. Чем чаще вы отвечаете «да», тем больше у вас оснований полагать, что сеть является легитимной. </span><span style="font-weight: 400;">Имейте в виду, что существует множество мошенников и поддельных каналов в социальных сетях, особенно в Telegram.</span>
+</li>
+<ul>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Есть ли у сети сайт? Если да, то выглядит ли он легитимным? Указаны ли там сведения о сети?</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Есть ли у сети официальный аккаунт в Твиттере или другой социальной сети? У них много подписчиков? Они кажутся авторитетными? Что люди говорят о сети?</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Знаете ли вы (не обязательно лично) кого-нибудь, кто поддерживает сеть? Заметны ли они в социальных сетях? У них много подписчиков?</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Есть ли новостные статьи о сети?</span></li>
+</ul>
+</ul>
+<p><span style="font-weight: 400;">Для большинства сетей должно быть совершенно очевидно, являются ли они легитимными или нет, и предоставляет ли веб-сайт точную информацию или нет. Если вы все еще сомневаетесь, отклоните запрос на добавление сети, проведите дополнительное исследование и, возможно, повторите попытку позже.</span></p>

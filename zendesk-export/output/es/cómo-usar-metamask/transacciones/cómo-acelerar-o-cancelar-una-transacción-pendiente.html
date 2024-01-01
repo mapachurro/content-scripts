@@ -1,0 +1,86 @@
+<p>Cuando envía una transacción en Ethereum o en una red compatible, parte del gas que paga es una oferta a la red para que procese antes tu transacción: esta oferta se conoce como tarifa de prioridad. Aunque MetaMask le ayudará calculando una tarifa de gas total que probablemente haga que tu transacción sea recogida, es posible que tenga que esperar mucho tiempo si envía la transacción con un precio de gas bajo. Para consejos sobre qué precios de gas resultarán en que una transacción se finalice dentro de un tiempo razonable, consulte a fuentes como el <a href="https://etherscan.io/gastracker" target="_self" rel="undefined">rastreador de gas de Etherscan</a>, o un rastreador similar para la red que esté utilizando.</p>
+<p>Además, a veces hay circunstancias en las que algo sale mal, y una transacción simplemente está atascada o pendiente por un tiempo muy largo.</p>
+<p>No importa cómo llegue a este punto, hay varias maneras para abordarlo.</p>
+<p> </p>
+<h3>Antes de realizar cualquier otra acción, el primer paso debe ser salir y cerrar el navegador por completo, volver a abrirlo y desbloquear MetaMask (en el móvil, basta con cerrar la aplicación y volverla a abrir). Si eso no resuelve el problema, continúe con lo siguiente:</h3>
+<p> </p>
+<h2><strong>Agilizar una transacción</strong></h2>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927043481371" alt="MetaMask agiliza la transacción" width="315" height="533"></p>
+<p>Pruebe una de las opciones a continuación:</p>
+<ul>
+<li>Espere hasta que la red esté dispuesta a procesar transacciones a este precio</li>
+<li>Si aún no lo ha hecho, haga clic en ese botón que dice <strong>Acelerar</strong>. Esto te permitirá volver a enviar la misma transacción pero con una tarifa de gas más elevada, lo que debería agilizar el procesamiento. Dado que este proceso reutiliza el mismo nonce que el original, no es necesario pagar dos veces por el gas.</li>
+</ul>
+<p>Hay que tener en cuenta que <strong>acelerar la transacción aumentará la cantidad que se gasta por la misma</strong>.</p>
+<p> </p>
+<h2><strong>Cancelación de una transacción - Método 1: Cancelación dentro de la aplicación</strong></h2>
+<p>Si aún no ha hecho esto, para cancelar la transacción, simplemente seleccione <strong>Cancelar</strong>, como en la captura de pantalla anterior. Tenga en cuenta, <strong>una cancelación solo se puede <em>intentar</em> si la transacción aún está pendiente en la red.</strong> Las transacciones que ya se han confirmado no se pueden revertir.</p>
+<p> </p>
+<h2><strong>Cancelación de una transacción - Método 2: Nonce personalizado</strong></h2>
+<p>Este proceso consiste en enviar una nueva transacción con el mismo nonce (un número de identificación para cada transacción, derivado de la expresión "número que solo se utiliza una vez"). La transacción no tiene que tener ningún valor; por ejemplo, se podría enviar 0 ETH. Lo que importa es que pague gas suficiente para que la red la priorice.</p>
+<p>Cuando utilice este método, <strong>deberá retroceder desde la transacción pendiente más antigua de la cola que desee cancelar</strong>. Por ejemplo, no se puede intentar cancelar una transacción con un nonce de 10 antes de cancelar una de nonce 9.</p>
+<p><em>Las capturas de pantalla que aparecen a continuación se tomaron en momentos diferentes, por lo que las tarifas de gas que se muestran en ellas pueden variar, incluso de un paso a otro. ¡No deje que esto te desanime! Cuando hagas esto tú mismo, MetaMask se actualizará automáticamente en tiempo real, mostrando las tarifas del mercado.</em></p>
+<div class="tabs tabs--colored-1">
+<div class="tabs-menu">
+<span class="tabs-link is-active">Extensión</span> <span class="tabs-link">Móvil</span>
+</div>
+<div class="tab">
+<ol>
+<li>
+<p>En configuraciones avanzadas, active <strong>Personalizar nonce de la transacción</strong> y <strong>Controles avanzados de gas.</strong> Este último le permitirá manipular el gas que paga y asegurarse de que su transacción de cancelación se procese antes de la original que desea cancelar.</p>
+<div class="callout callout--info">
+<h4 class="callout__title">Aviso:</h4>
+<p>MetaMask Extension tiene actualmente una función experimental disponible llamada <a href="https://metamask.io/1559/">Enhanced Gas Fee UI</a> (no confundir con <a href="https://support.metamask.io/hc/en-us/articles/360022895972" target="_self">los controles avanzados de gas</a>) Estos pasos se pueden realizar tanto si está activada esta opción como si no, pero tenga en cuenta que tendrán un aspecto diferente. Los siguientes pasos no utilizan Enhanced Gas UI. Ten en cuenta:</p>
+<ul>
+<li>Si tiene activado Enhanced Gas UI, también deberá tener activado "Personalizar el nonce de transacción".</li>
+<li>Si no tiene activada la interfaz Enhanced Gas UI, deberá tener activadas las opciones "Controles avanzados de gas" y "Personalizar el nonce de transacción".</li>
+</ul>
+</div>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927064113947" alt="Configuración avanzada de MetaMask" width="640" height="329"></p>
+</li>
+<li>
+<p><strong>Envíe una transacción nueva</strong>. En la transacción nueva, envíela <strong>A</strong> sí mismo, o sea a su dirección pública de MetaMask. <strong>Llene el blanco de 'Nonce personalizado' con el mismo nonce que la transacción que aún está pendiente</strong>:</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927064259483" alt="Metamask_custom_transaction_nonce_Extension.png" width="315" height="529"></p>
+</li>
+<li>
+<p>Ahora pulsa "Editar" junto a "Tarifa de gas" (si tienes activada la interfaz experimental <a href="https://support.metamask.io/hc/en-us/articles/360022895972-Using-advanced-gas-controls#:~:text=%C2%A0-,Enhanced%20Gas%20UI,-Since%20the%20introduction" target="_self">IU de gas avanzada</a>, aparecerá como "Mercado"). Ahora verá las opciones a continuación:</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927065407515" alt="Extensión de los controles de gas avanzados de MetaMask" width="315" height="529"></p>
+<p>Para asegurarse de que su solicitud de cancelación se recoja como prioridad, y antes de la original, <strong>tendrá que pagar a por más gas</strong>. Siga estas instrucciones:</p>
+<ul>
+<li>Configure el <strong>límite de gas</strong> a una cantidad <em>comparable o un poco más alto</em> que la transacción original.</li>
+<li>Fije su <strong>tarifa de prioridad máxima</strong> a <em>al menos un 10% más</em> (en Gwei) que la tarifa de gas de la transacción original (pendiente) (por ejemplo, si esa transacción tuvo una tarifa de gas de 30 Gwei, fije la tarifa de prioridad máxima en la transacción de reemplazo o de cancelación a 33-35 Gwei).</li>
+<li>Asegúrese de que su tarifa máxima sea al menos un 30% más alta que la tarifa máxima de la transacción que está reemplazando. Por ejemplo, si su tarifa anterior era de 150 Gwei, elija algo más cerca de 200 Gwei esta vez.</li>
+</ul>
+<p><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">Consulte un rastreador de gas como</span> <a style="background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;" href="https://etherscan.io/gastracker" target="_self">el de Etherscan,</a> <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">o</span> <a style="background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;" href="https://ethgasstation.info/" target="_self" rel="undefined">la estación de gas de ETH</a> <span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">para obtener orientación sobre las tarifas máximas recomendadas.</span></p>
+</li>
+</ol>
+</div>
+<div class="tab is-hidden">
+<ol>
+<li>
+<p><strong>En Configuración &gt; Avanzada, activa "Personalizar el nonce de transacción".</strong></p>
+</li>
+<li>
+<p><strong>Envía una nueva transacción.</strong> En la transacción nueva, envíela A sí mismo, o sea a su dirección pública de MetaMask. <strong>Rellene "Personalizar el nonce" con el mismo nonce que la transacción que aún está pendiente</strong>.</p>
+<p>Para encontrar la configuración personalizada de nonce en la aplicación, vaya a la pantalla de confirmación de la transacción que aparece después de haber ingresado la cantidad de tokens y el destinatario. Pulse "Editar" para cambiarlo:</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927068442907" alt="MetaMask personalizar nonce de transacción Móvil" width="315" height="631"></p>
+</li>
+<li>
+<p>Ahora tiene que asegurarse de que los ajustes de su gas están configurados para que se procese la transacción de reemplazo. En la pantalla de confirmación de la transacción, pulse el valor de gas que aparece resaltado:</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927041593755" alt="MetaMask controles de gas avanzados móvil" width="476" height="190"></p>
+<p>Ahora acceda a "Opciones avanzadas" desde el menú que se despliega.</p>
+</li>
+<li>
+<p>Desde aquí, se puede ajustar con precisión el gas para asegurarse de que su transacción es recogida. Ahora verá una pantalla parecida a esta:</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927063201691" alt="MetaMask controles de gas avanzados móvil" width="315" height="554"></p>
+<p>Desde aquí, ajuste la configuración del gas. Siga estas instrucciones para garantizar que su transacción sea procesada:</p>
+<ul>
+<li>Configure el <strong>límite de gas</strong> a una cantidad <em>comparable o un poco más alto</em> que la transacción original.</li>
+<li>Fije su <strong>tarifa de prioridad máxima</strong> a <em>al menos un 10% más</em> (en Gwei) que la tarifa de gas de la transacción original (pendiente) (por ejemplo, si esa transacción tuvo una tarifa de gas de 30 Gwei, fije la tarifa de prioridad máxima en la transacción de reemplazo o de cancelación a 33-35 Gwei).</li>
+<li>Asegúrese de que su <strong>tarifa máxima</strong> es <em>al menos un 30 % superior</em> a la tarifa máxima de la transacción que está reemplazando. Por ejemplo, si su tarifa anterior era de 150 Gwei, elija algo cercano a 200 Gwei en esta ocasión.</li>
+</ul>
+<p>Consulte un rastreador de gas como <a href="https://etherscan.io/gastracker" target="_self">Etherscan</a> o <a href="https://ethgasstation.info/" target="_self">ETH Gas Station</a> para obtener orientación sobre las tarifas máximas recomendadas.</p>
+</li>
+</ol>
+</div>
+</div>

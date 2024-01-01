@@ -1,0 +1,44 @@
+<p><span style="font-weight: 400;">When a website requests that you add a </span><span style="font-weight: 400;">custom network</span><span style="font-weight: 400;"> to MetaMask, you are presented with the information MetaMask will use to interact with the network. MetaMask performs some basic validation of this information, and will warn you if anything seems wrong or unusual. MetaMask will also prevent the same network from being added more than once. However, </span><strong>MetaMask does not verify custom networks</strong><span style="font-weight: 400;">, and even if MetaMask’s validation checks out, the network could be malicious or misrepresented by the website that requested it.</span></p>
+<p><span style="font-weight: 400;"><strong>For more information and an introduction to custom networks, see our User Guide <a href="https://support.metamask.io/hc/en-us/articles/4404424659995">here</a>.</strong></span></p>
+<p><span style="font-weight: 400;">Just like it’s your responsibility to verify the Ethereum addresses you transact with, it is also your responsibility to verify any custom networks you add to MetaMask. In this article, we will share some advice about how to do that.</span></p>
+<p><span style="font-weight: 400;">When a website makes a request to add a custom network, MetaMask displays the following confirmation:</span></p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/16213839779227" alt="MetaMask add new network approval" width="315" height="507"></p>
+<p> </p>
+<p><span style="font-weight: 400;">This confirmation shows </span><strong>the network information that the website provided</strong><span style="font-weight: 400;">. <em>There is no guarantee that this information is correct</em>. Therefore, you should trust the information to the same degree that you trust the website.</span></p>
+<p><span style="font-weight: 400;">If you click “View all details” in the confirmation, you can see all of the network information provided by the website, which includes:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1">
+<span style="font-weight: 400;"><strong>Network Name</strong>: </span><span style="font-weight: 400;">The name that MetaMask will associate with the network.</span>
+</li>
+<li style="font-weight: 400;" aria-level="1">
+<strong>Network URL: </strong><span style="font-weight: 400;">The URL that MetaMask will use to access the network.</span>
+</li>
+<li style="font-weight: 400;" aria-level="1">
+<strong>Chain ID: </strong><span style="font-weight: 400;">The chain ID that MetaMask will use to sign transactions for the network.</span>
+</li>
+<li style="font-weight: 400;" aria-level="1">
+<strong>Currency Symbol: </strong><span style="font-weight: 400;">The currency symbol that MetaMask will use for the network’s native currency.</span>
+<ul>
+<li style="font-weight: 400;" aria-level="3"><span style="font-weight: 400;">For example, for the Ethereum Mainnet, the currency symbol is ETH, and for the Gnosis Chain, the symbol is xDAI (retained following their merger).</span></li>
+</ul>
+</li>
+<li style="font-weight: 400;" aria-level="1">
+<strong>Block Explorer URL (optional): </strong><span style="font-weight: 400;">The URL that MetaMask will direct you to in order to inspect your accounts, transactions etc. The equivalent of </span><a href="https://etherscan.io"><span style="font-weight: 400;">etherscan.io</span></a><span style="font-weight: 400;">, but for the network in question.</span>
+</li>
+</ul>
+<p><span style="font-weight: 400;">If you are for any reason unsure about the correctness of the network information, we recommend that you take the following steps to verify it:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1">
+<span style="font-weight: 400;">Visit <a href="https://chainlist.wtf/" target="_self" rel="undefined">Chainlist </a></span><span style="font-weight: 400;">and search for the provided chain ID and/or name of the network. If MetaMask is saying that some information isn’t matching, you should be able to identify the problem on Chainlist. If the custom network is not listed at all on Chainlist, it is either extremely new, or possibly of questionable quality.</span>
+</li>
+<li style="font-weight: 400;" aria-level="1">
+<span style="font-weight: 400;">Google the name of the network, and try to answer the following questions. The more you can answer with “yes”, the more reason you have to believe that the network is legitimate. </span><span style="font-weight: 400;">Be advised that there are many scams and fake social media channels, especially on Telegram.</span>
+</li>
+<ul>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Does the network have a website? If so, does it seem legitimate? Does it list the network details?</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Does the network have an official Twitter or other social media account? Do they have a lot of followers? Do they seem reputable? What are people saying about the network?</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Can you identify any of the people who maintain the network? Are they visible on social media? Do they have a lot of followers?</span></li>
+<li style="font-weight: 400;" aria-level="2"><span style="font-weight: 400;">Are there any news articles about the network?</span></li>
+</ul>
+</ul>
+<p><span style="font-weight: 400;">For most networks, it should be pretty obvious whether they are legitimate or not, and whether the website is providing accurate information or not. If you’re still unsure after completing these steps, you should reject the request to add the network, do more research, and perhaps try again later.</span></p>

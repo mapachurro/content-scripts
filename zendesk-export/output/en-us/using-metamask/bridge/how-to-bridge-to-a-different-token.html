@@ -1,0 +1,81 @@
+<p>You can now use the MetaMask Portfolio Bridge to not only move your tokens to a different network, but swap them into a different token of your choice, all as part of the same transaction. </p>
+<div class="callout callout--info">
+<h4 id="h_01HDGHG24W5ZHGG0BHVZ7H3RW0" class="callout__title">Note:</h4>
+<p>You might see this practice referred to elsewhere as "cross-chain swaps".</p>
+</div>
+<p>This means a process that would normally require up to three transactions is all rolled into one: you can bridge and swap simultaneously, saving you time and gas fees.</p>
+<p>Additionally, this feature significantly increases the number of tokens available to bridge. Previously it was only possible to bridge a select number of native tokens and stablecoins. Now, If the token pair is available for a swap on our providers' protocols and has sufficient liquidity, you can bridge to it.  </p>
+<h2 id="h_01HDGHE2NMHT7FMZARBMJ789RW">How to bridge to a different token</h2>
+<p>The bridging process is <em>almost</em> identical to the standard bridging process (moving a token to its equivalent on another chain). All you need to do differently to bridge to a different token is to select it when configuring your transfer. Here's how to do it:</p>
+<ol>
+<li>Navigate to <a href="https://portfolio.metamask.io/bridge">portfolio.metamask.io/bridge</a>, and make sure your wallet is connected. Select the account that contains the tokens you want to bridge.</li>
+<li>
+<p>Select the network that your preferred source token is on, and then choose the token underneath 'You send':</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/20032391130651" alt="MetaMask Portfolio bridge select send token" width="551" height="304"></p>
+</li>
+<li>
+<p>Select the destination network. </p>
+<p>As a wise man (?) once said: "This is where the fun begins!". The "fun" being that you can now select the token you want to swap to by opening the dropdown menu underneath 'You receive':</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/20032391136283" alt="MetaMask Portfolio bridge select received token" width="551" height="304"></p>
+<p>Choose your preferred token from the list, and the dapp will start sourcing quotes.</p>
+</li>
+<li>
+<p>After a short wait, the best value quote will be displayed. If you're happy with the quote, you can:</p>
+<ul>
+<li>
+<strong>Confirm</strong> the bridge, if you're transferring a network/native token such as ETH, or;</li>
+<li>
+<strong>Approve the token</strong>, if you're bridging an ERC-20 token or equivalent.</li>
+</ul>
+<p>Approving a token enables Portfolio to access the relevant tokens in your account and include them in the transaction. You can expand the quote details by hitting the drop-down arrow on the right, or select 'Choose a different quote' to take a look at your other options:</p>
+<p><em>You can read more about token approvals <a href="https://support.metamask.io/hc/en-us/articles/6174898326683">here</a>, and setting spending caps for approvals <a href="https://support.metamask.io/hc/en-us/articles/6055177143579">here</a>. </em></p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/20032400208923" alt="MetaMask Portfolio bridge review quote" width="600" height="137"></p>
+<p>Click 'Approve token' or 'Confirm' to proceed.</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/20032391139099" alt="MetaMask Portfolio bridge confirm" width="500" height="87"></p>
+</li>
+<li>
+<p>You're now ready to submit the transaction using MetaMask. Follow the prompts in your wallet to sign the transaction and complete the process.</p>
+</li>
+</ol>
+<p> </p>
+<h2 id="h_01HDGHT72G0D67E4XDA0W3A8RF">FAQs</h2>
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>How does it work?</strong></div>
+<div class="accordion__item-content">
+<p>Multi-step bridging resembles a normal transaction using the Bridge feature in MetaMask Portfolio, but with swap transactions added either side of the actual bridge transaction. Crucially, however, Portfolio bundles all of these actions into one transaction in MetaMask, so you only need to sign once.</p>
+<p>Just like with a regular bridge transfer using Portfolio, the bridging and swapping involved in your transfer are completed by our bridge aggregators, LI.FI and Socket.</p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>How much does it cost?</strong></div>
+<div class="accordion__item-content">The fees you will pay on each transaction include:
+<ul>
+<li>The gas fee (<em>not </em>collected by MetaMask)</li>
+<li>The MetaMask fee of 0.875%, calculated from the original value of tokens you want to bridge. </li>
+<li>The difference in the value of the token you send vs. the value of tokens you receive on the destination network. This includes any fees charged by the bridge providers, as well as gas fees on the destination network.</li>
+</ul>
+<p>The total you'll receive on the destination network is displayed in your quote. Note that the MetaMask fee is calculated first, and other costs are then subtracted from the remaining value in order to reach the final amount you'll receive.</p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>How long does the transaction take?</strong></div>
+<div class="accordion__item-content">The estimated transaction time is displayed in the quote before you confirm. The estimate varies based on the tokens, networks, and bridge providers involved in the transaction. </div>
+<div class="accordion__item-content">If you’ve already waited over three hours and your transfer is still in progress, please contact MetaMask Support by clicking the ‘Support’ button in the bottom left of the dapp. </div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Does this feature use MetaMask Swaps?</strong></div>
+<div class="accordion__item-content">No. The token swaps executed as part of multi-step bridging are carried out by LI.FI and Socket. </div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>What tokens can I bridge?</strong></div>
+<div class="accordion__item-content">
+<p>Before multi-step bridging, you could only use the MetaMask Portfolio Bridge feature for a handful of native tokens and networks, and some stablecoins. Now, you can bridge <em>to </em>any token available on our aggregators' exchanges. If the token has sufficient liquidity and is swappable, you can bridge to it.</p>
+<p>For this reason, we cannot provide an exhaustive list of what you can and cannot bridge. For the most up-to-date list, input your intended transfer into Portfolio and see what's available. </p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>What providers are fulfilling the transaction?</strong></div>
+<div class="accordion__item-content">Multi-step bridge transfers are completed using our bridge aggregators, LI.FI and Socket. They, in turn, use various bridge and swap providers to construct quotes. </div>
+</div>
+</div>

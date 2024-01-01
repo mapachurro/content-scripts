@@ -93,17 +93,22 @@ def sanitize_filename(name):
 # Cache section info to reduce API calls
 section_cache = {}
 
-def get_sections(locale, parent_id):
+def get_sections(locale, category_id):
 
-  if locale not in section_cache:
-    section_cache[locale] = {}
+  key = f"{locale}_{category_id}"
 
-  if parent_id in section_cache[locale]:  
-    return section_cache[locale][parent_id]
+  if key in section_cache:
+    return section_cache[key]
 
   # API call
+  url = SECTIONS_URL.format(locale=locale, category_id=category_id)
+  
+  response = requests.get(url)
 
-  section_cache[locale][parent_id] = sections
+  sections = response.json()['sections']
+
+  # Cache 
+  section_cache[key] = sections
 
   return sections
 
@@ -111,144 +116,108 @@ def get_categories(locale):
   url = CATEGORIES_URL.format(locale=locale)
   response = requests.get(url)
   data = response.json()
+  print(f'Locale: {locale}, Categories: {data}')  # print response data
   return data['categories']
-  
-def get_sections(locale, parent_id):
-    # include locale in id to fetch correct cache, to avoid applying the wrong locale's section cache
-  key = f"{locale}_{parent_id}"
 
-    # Check cache
-  if key in section_cache:
-    return section_cache[key]
+downloaded_articles = []
 
-  url = SECTIONS_URL.format(locale=locale, category_id=parent_id)
+try:
+  with open('downloaded.json') as f:
+    downloaded_articles = json.load(f)
+    downloaded_articles = set(downloaded_articles)
+except FileNotFoundError:
+   pass # File not created yet
+   
+# Run script
 
-  response = requests.get(url)
-  data = response.json()
-
-  sections = data['sections']
-
-# Recursively search sections
-  for section in sections:
-    print(f'- {len(sections)} sections found')
-
-    subsections = section.get('subsections')
-
-    if not subsections:
-        return sections
-    
-    #Fetch subsections
-    more_sections = get_sections(locale, section['id'])
-    
-    #Merge them
-    sections.extend(more_sections)
-
-    print(f'- {len(subsections)} subsections found')
-
-# Cache results
-  section_cache[key] = sections
-
-  return sections
+with open('downloaded.json', 'w') as f:
+  json.dump(downloaded_articles, f) 
 
 def get_articles(locale, section_id):
 
   page = 1
-  
   while True:
-  
     url = ARTICLES_URL.format(locale=locale, section_id=section_id, page=page)
+    
+    print(f"Requesting {url}")
+    
     response = requests.get(url)
-    
     data = response.json()
+
     articles = data['articles']
-    
+
     if not articles:
-      break
+        break
+    
+    for article in articles:
+        if article['id'] in downloaded_articles:
+           continue
+        
+        # Add article id to set
+        downloaded_articles.add(article['id'])
 
-    yield articles
+        yield article
 
-    page += 1
+    # Increment page number    
+    page += 1  
 
-def get_subsections(locale, section_id):
+    # Check for next_page
+    if not data.get('next_page'):
+        break
 
-  url = SECTIONS_URL.format(locale=locale, category_id=section_id)
+    time.sleep(1)
 
-  response = requests.get(url)
-  
-  data = response.json()
+  # Convert article set to list
+  downloaded_articles_list = list(downloaded_articles)
+  # Save list to JSON
+  with open('downloaded.json', 'w') as f:
+   json.dump(downloaded_articles_list, f)
+ 
+def write_articles(locale, section_dir, articles):
 
-  response = requests.get(url)
-  data = response.json()
+  for article in articles:
+    # Sanitize title
+    title = sanitize_filename(article['title'])
 
-  print(data)
+    # Write file
+    file_path = os.path.join(section_dir, f"{title}.html")
+    with open(file_path, 'w') as f:
+        f.write(article['body'])
+
+    print(f"Wrote article '{title}' to {file_path}")
 
 # Loop through locales
 for locale in locales:
-
-  print(f'Processing {locale}')
-
+  
   # Fetch categories
   categories = get_categories(locale)
 
-  if categories:
+  if not categories:
+    continue
 
-    print(f'- {len(categories)} categories found')
+  print(f'Processing {locale}')
 
-    locale_dir = os.path.join(output_dir, locale)
-    os.makedirs(locale_dir, exist_ok=True)
+  locale_dir = os.path.join(output_dir, locale)
+  os.makedirs(locale_dir, exist_ok=True)
+
+  print(f'- {len(categories)} categories found')
 
   # Loop through categories
-for locale in locales:
-
-  categories = get_categories(locale)
-
-  if categories:
-
-    locale_dir = os.path.join(output_dir, locale)
-    os.makedirs(locale_dir, exist_ok=True)
-
-    for category in categories:
-
-      # Sanitize category name  
-      cat_name = sanitize_filename(category['name'])
-      
-      cat_dir = os.path.join(locale_dir, cat_name)
-      os.makedirs(cat_dir, exist_ok=True)
-
-      sections = get_sections(locale, category['id'])
-
-      if sections:
-
-        for section in sections:
-          
-          subsections = get_subsections(locale, section['id'])
-        
-          # Sanitize section name
-          sec_name = sanitize_filename(section['name'])       
-
-          for subsection in subsections:
-
-            # Sanitize subsection name
-            sub_name = sanitize_filename(section['name'])
-
-            # Use subsection name
-            sub_dir = os.path.join(cat_dir, sub_name)
-            os.makedirs(sub_dir, exist_ok=True)
-
-            articles = get_articles(subsection['id'])
+  for category in categories:
     
-            for page in articles:
-                    
-                for article in page:
-  
-                # Sanitize title
-                 title = sanitize_filename(article['title'])
+    cat_dir = os.path.join(locale_dir, sanitize_filename(category['name']))
+    os.makedirs(cat_dir, exist_ok=True)
 
-                 # Write file
-                 file_path = os.path.join(sub_dir, f"{title}.html")
-                 with open(file_path, 'w') as f:
-                  f.write(article['body'])
+    sections = get_sections(locale, category['id'])
 
-                print(f"Wrote {file_path}")
+    for section in sections:
+
+      section_dir = os.path.join(cat_dir, sanitize_filename(section['name'])) 
+      os.makedirs(section_dir, exist_ok=True)
+
+      #Write articles
+      articles = list(get_articles(locale, section['id']))
+      print(f'Section directory: {section_dir}')
+      write_articles(locale, section_dir, articles)
           
 print("Done!")

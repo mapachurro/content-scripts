@@ -1,0 +1,94 @@
+<h2>Getting MetaMask Logs</h2>
+<p>To help us deliver better support, we might ask you to provide your MetaMask state logs to further analyze the issues you face. These logs tell us:</p>
+<ul>
+<li>Your account addresses</li>
+<li>Your sent transaction history</li>
+<li>Your internal UI State</li>
+</ul>
+<p>They don’t reveal:</p>
+<ul>
+<li>Your Private Keys</li>
+<li>Your Secret Recovery Phrase</li>
+</ul>
+<p><span class="wysiwyg-color-black">Despite this,</span><span class="wysiwyg-color-red"><strong> DO NOT POST YOUR LOGS PUBLICLY.</strong></span></p>
+<p>There are four types of logs that we might ask you to provide:</p>
+<div class="tabs tabs--colored-1">
+<div class="tabs-menu">
+<span class="tabs-link is-active">State logs</span> <span class="tabs-link">Chrome popup logs</span> <span class="tabs-link">Chrome background logs</span> <span class="tabs-link">Chrome crash logs</span>
+</div>
+<div class="tab">
+<div class="accordion accordion--default">
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Extension</strong></div>
+<div class="accordion__item-content">
+<p>If you've had an issue sending transactions or found a visual glitch in the rendering of MetaMask, we might ask you for a state log. To get them:</p>
+<ol>
+<li>Open MetaMask and click on the three vertical dots in the top right corner</li>
+<li>Click on 'Settings' and then select 'Advanced'</li>
+<li>Click on 'Download state logs'</li>
+<li>Attach the file in your response to a support ticket.</li>
+</ol>
+<p> </p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/17123297633179" alt="MetaMask download state logs extension" width="315" height="529"></p>
+</div>
+</div>
+<div class="accordion__item">
+<div class="accordion__item-title"><strong>Mobile</strong></div>
+<div class="accordion__item-content">
+<ol>
+<li>In the MetaMask app, tap the gear icon in the tab bar to access the settings menu</li>
+<li>Select 'Advanced'</li>
+<li>Scroll down and tap on 'Download state logs<strong>'</strong>
+</li>
+<li>Attach the file in your response to a support ticket.</li>
+</ol>
+<p> </p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/17123297637915" alt="MetaMask download state logs mobile" width="315" height="631"></p>
+</div>
+</div>
+</div>
+</div>
+<div class="tab is-hidden">
+<p>To get logs from the popup:</p>
+<ol>
+<li>Click the MetaMask fox in the top right of your browser.</li>
+<li>Wait for the popup to open (or partially open if that's part of the bug).</li>
+</ol>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/17123267786395" alt="MetaMask inspect element" width="315" height="530"></p>
+<ol start="3">
+<li>Right-click in the newly opened popup, and select <strong>Inspect</strong>.</li>
+<li>Click <strong>Console </strong>at the top of the Inspector window.</li>
+</ol>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/9501232776603" alt="Chrome popup logs MetaMask" width="625" height="390"></p>
+<ol start="5">
+<li>Look for any strange logs, especially red errors!</li>
+<li>Share a screenshot with us.</li>
+</ol>
+</div>
+<div class="tab is-hidden">
+<p>To get logs from MetaMask's background process in Chrome:</p>
+<ol>
+<li>Right-click the MetaMask fox in the top right of your browser.</li>
+<li>Select <strong>Manage Extension</strong>.</li>
+</ol>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/17123267787035" alt="Chrome background logs" width="500" height="432"></p>
+<ol start="3">
+<li>Ensure "Developer Mode" is selected in the top right.</li>
+<li>Scroll down to MetaMask, and click the "<strong>Inspect views: background page</strong>" link.</li>
+</ol>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/9501580906779" alt="Chrome background logs MetaMask" width="626" height="228"></p>
+<ol start="5">
+<li>Click Console at the top of the Inspector window.</li>
+<li>Look for any strange logs, especially red errors!</li>
+</ol>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/9501232776603" alt="Chrome background logs MetaMask" width="625" height="390"></p>
+<p class="wysiwyg-text-align-center"> </p>
+<p>If you are using Windows OS, usually you could see the state logs in your <strong>Downloads</strong> folder.</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/9502222681627" alt="Chrome background logs" width="625" height="357"></p>
+</div>
+<div class="tab is-hidden">
+<p>If your bug involves crashing the whole browser, then having a browser console won't be much good! (It will be crashed).</p>
+<p>In these cases, you'll need to start your browser in a way that it writes its logs to the disk, so you can open that log file after the browser crashes.</p>
+<p><a href="https://www.chromium.org/for-testers/enable-logging">This process is described here</a>, and we hope to write more specific steps on this in the future. If you have to go through this process, please do record the steps, so we can have more detailed instructions here for different platforms.</p>
+</div>
+</div>

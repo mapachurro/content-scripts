@@ -1,0 +1,41 @@
+<div class="callout callout--warning">
+<h4 class="callout__title">Hinweis:</h4>
+<p><strong>Importierte</strong> Konten werden <strong>nicht</strong> erneut hinzugefügt, wenn Sie Ihr Wallet mit Ihrer geheimen Wiederherstellungsphrase wiederherstellen. <a href="https://support.metamask.io/hc/en-us/articles/360015489331" target="_self">Sie müssen manuell</a> auf die gleiche Weise hinzugefügt werden, wie Sie sie ursprünglich importiert haben.</p>
+</div>
+<p><strong>Geben Sie Ihre Wiederherstellungsphrase NICHT an andere weiter! Diese Wörter können zum Diebstahl Ihrer sämtlichen Konten benutzt werden. Sie können Ihre geheime Wiederherstellungsphrase weder bearbeiten noch ändern.</strong></p>
+<p> </p>
+<p>Wenn Sie <a href="https://support.metamask.io/hc/en-us/articles/360015289612-How-to-restore-your-MetaMask-account-from-Seed-Phrase-Secret-Recovery-Phrase" target="_self">ein Wallet</a> mit Ihrer geheimen Wiederherstellungsphrase wiederherstellen, fügt MetaMask alle zusätzlichen Konten automatisch erneut hinzu, die Sie zuvor <a href="https://support.metamask.io/hc/en-us/articles/360015289452" target="_self">erstellt</a> hatten - jedoch nur unter bestimmten Bedingungen.</p>
+<p>MetaMask versucht nach Möglichkeit, Ihre zusätzlichen Konten hinzuzufügen (vorausgesetzt, sie wurden nicht <a href="https://support.metamask.io/hc/en-us/articles/360015289932" target="_self">importiert</a>), indem es Ihre bisherigen Konten in aufsteigender Reihenfolge abfragt (d. h. Konto 2, dann Konto 3 usw.). <strong>Konten werden automatisch neu hinzugefügt, wenn sie einen ETH-Saldo ungleich Null haben</strong>. Dieser Prozess endet jedoch, wenn MetaMask auf ein Konto mit 0 ETH stößt - so dass das erste Konto mit 0 ETH (und ein darüber hinausgehendes Konto) <em>nicht</em> hinzugefügt wird.</p>
+<p>Beachten Sie, dass <strong>bei diesem Vorgang nur das Guthaben von ETH im Ethereum-Mainnet überprüft</strong> wird. Sollten Sie andere Token oder Token in anderen Netzwerken besitzen oder halten, heißt das nicht, dass Ihr Konto automatisch erneut hinzugefügt wird.</p>
+<p><strong>Sie müssen ein Konto „<a href="https://support.metamask.io/hc/en-us/articles/360015289452" target="_self">anlegen</a>”, wenn Sie alle, die nicht automatisch aufgenommen wurden, hinzufügen möchten</strong>. Sollten Sie beispielsweise einige Token auf Konto 4 haben, dieses aber nicht automatisch hinzugefügt wurde, weil diese Token nicht zum ETH im Mainnet gehören, müssen Sie nur manuell Konten hinzufügen (anhand der unten aufgeführten Schritte), bis Sie zu Konto 4 gelangen. Ihr Konto 4 <em>vor </em>der Wiederherstellung entspricht, unabhängig von der vorherigen Kontobezeichnung, Konto 4 <em>nach </em>der Wiederherstellung.</p>
+<p>Wenn Sie die Schaltfläche „Erstellen“ zum erneuten Hinzufügen von Konten verwenden müssen, machen Sie sich keine Sorgen, dass die Kontenadresse abweicht. Die Adressen werden kryptographisch <em>deterministisch</em> von Ihrem privaten Schlüssel abgeleitet, was bedeutet, dass sie immer gleich sind. Und da ein Ethereum Konto, sobald es erstellt wurde, dauerhaft existiert, können Sie einfach dort weitermachen, wo Sie aufgehört haben.</p>
+<p>Bitte befolgen Sie die nachstehenden Schritte, um Ihre anderen Konten in der ursprünglichen Reihenfolge wiederherzustellen:</p>
+<div class="tabs tabs--colored-1">
+<div class="tabs-menu">
+<span class="tabs-link is-active">Erweiterung</span> <span class="tabs-link">Mobilgerät</span>
+</div>
+<div class="tab">
+<ol>
+<li>Klicken Sie auf das Favicon in der oberen rechten Ecke des MetaMask-Dropdown-Menüs</li>
+<li>
+<p>Möchten Sie Ihre MetaMask-Konten in der ursprünglichen Reihenfolge wiederherstellen, klicken Sie auf „Konto erstellen”.</p>
+</li>
+<li>
+<p>Sofern die Konten bereits benannt wurden, können Sie sie im folgenden Schritt erneut benennen, bevor Sie auf „<strong>Erstellen</strong>” klicken.</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/9026739981083/How_to_add_missing_accounts_after_restoring_with_Secret_Recovery_Phrase.gif" alt="How_to_add_missing_accounts_after_restoring_with_Secret_Recovery_Phrase.gif" width="315" height="529"></p>
+</li>
+</ol>
+</div>
+<div class="tab is-hidden">
+<ol>
+<li>
+<p>Das Menü wird durch Tippen auf das Hamburger-Symbol oben links auf dem Bildschirm aufgerufen. Tippen Sie auf den Dropdown-Pfeil neben Ihrem Kontonamen:</p>
+</li>
+<li>
+<p>Tippen Sie auf „Neues Konto erstellen”:</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/9027058464027/How_to_add_missing_accounts_after_restoring_with_Secret_Recovery_Phrase_Mobile.gif" alt="How_to_add_missing_accounts_after_restoring_with_Secret_Recovery_Phrase_Mobile.gif" width="315" height="681"></p>
+</li>
+</ol>
+</div>
+</div>
+<p>Können Sie die gesuchten Adressen immer noch nicht sehen, wurden sie wahrscheinlich mit einer anderen geheimen Wiederherstellungsphrase erstellt, oder Sie hatten ein importiertes Konto, das Sie noch mit Private Keys oder JSON erneut importieren müssen. Wie Sie ein <a href="https://support.metamask.io/hc/en-us/articles/360015489331-Importing-an-Account" target="_self">Konto importieren, entnehmen Sie bitte diesem Artikel</a>.</p>

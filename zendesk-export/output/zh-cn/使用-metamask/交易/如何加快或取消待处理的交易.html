@@ -1,0 +1,86 @@
+<p>您在以太坊或兼容网络上提交交易时，您支付的部分 Gas 是为了让网络加快处理您的交易，此要素即称为优先费。尽管 MetaMask 会协助您，计算出有助加快您交易的总 gas 费，但如果您以较低的 gas 价格提交，最终可能会等待很长时间。欲知在合理时间内完成交易需要多少 Gas 价格，请参阅<a href="https://etherscan.io/gastracker" target="_self" rel="undefined">Etherscan 的 Gas 追踪器</a>或您所用网络的类似追踪器等来源。</p>
+<p>此外，错误难免发生，交易停滞或等待很长时间。</p>
+<p>无论怎样，有几种不同的解决方法。</p>
+<p> </p>
+<h3>您进一步采取行动之前，第一步应该是退出并完全关闭浏览器，然后重新打开浏览器，解锁 MetaMask（在移动设备上，只需关闭应用程序，然后重新打开）。如果这不能解决问题，请继续执行以下操作：</h3>
+<p> </p>
+<h2><strong>加快交易进度</strong></h2>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927043481371" alt="MetaMask 加快交易" width="315" height="533"></p>
+<p>请尝试以下选项：</p>
+<ul>
+<li>等到网络愿意以这个价格处理交易</li>
+<li>如果您尚未这样做，请单击<strong>加快</strong>按钮。这样您可以重新提交同一交易，虽然会收取更高的 Gas 费，但可以更快处理交易。由于此过程重复使用与原始随机数相同的随机数，因此您无需支付两次 gas 费用。</li>
+</ul>
+<p>请记住，<strong>加快交易速度会增加您为交易花费的金额</strong>。</p>
+<p> </p>
+<h2><strong>取消交易 - 方法一：应用程序内取消</strong></h2>
+<p>如果您尚未这样做，想取消交易，只需选择<strong>“取消”</strong>，如上面的屏幕截图所示。请注意，<strong>只有当交易在网络上仍是待处理状态时，才能<em>尝试</em>取消。</strong>已确认的交易无法撤销。</p>
+<p> </p>
+<h2><strong>取消交易 - 方法二：自定义随机数</strong></h2>
+<p>此过程会发送具有相同随机数的新交易（随机数是指每笔交易的标识号，源自短语“仅使用一次的数字”）。该笔交易实际上不必具有价值，例如，您可以发送 0 个 ETH。重要的是，您向该网络支付了足够的 Gas 费，因而您的请求能够得到优先处理。</p>
+<p>您在使用此方法时，<strong>需要在要取消的队列中，从最早的待处理交易开始倒退</strong>。 例如，必须取消随机数为 9 的交易，才能取消随机数为 10 的交易。</p>
+<p><em>下面的截图在不同时间截取，其中所示 gas 费用各有不同，甚至每一步都不同。 不要因此而感到为难！您自己执行此操作时，MetaMask 将自动实时更新，以显示市场汇率。</em></p>
+<div class="tabs tabs--colored-1">
+<div class="tabs-menu">
+<span class="tabs-link is-active">扩展版</span> <span class="tabs-link">移动版</span>
+</div>
+<div class="tab">
+<ol>
+<li>
+<p>在“高级设置”中，启用<strong>“自定义交易随机数”</strong>和<strong>“高级 Gas 控制”</strong>。在后面那项设置中，您可以控制所支付的 Gas 费，确保先处理取消交易，再处理原始交易取消。</p>
+<div class="callout callout--info">
+<h4 class="callout__title">注：</h4>
+<p>MetaMask 扩展版目前有一个实验性功能，称为<a href="https://metamask.io/1559/">增强型 Gas 费用户界面</a>（不要与<a href="https://support.metamask.io/hc/en-us/articles/360022895972" target="_self">高级 gas 控制</a>弄混了）。 无论您是否开启了这项功能，都可以执行这些步骤，但请记住它们看起来会有所不同。以下步骤没有使用增强型 Gas 用户界面。请记住：</p>
+<ul>
+<li>如果您打开了增强型 Gas 用户界面，仍然需要打开“定制交易随机数”。</li>
+<li>如果您没有打开增强型 Gas 用户界面，则需要同时打开“高级 gas 控制”和“定制交易随机数”。</li>
+</ul>
+</div>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927064113947" alt="MetaMask 高级设置" width="640" height="329"></p>
+</li>
+<li>
+<p><strong>发送新交易</strong>。在新交易中，发送<strong>给</strong>您自己，即您的 MetaMask 公共地址。<strong>使用与待处理交易相同的随机数，填写“自定义随机数”</strong>：</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927064259483" alt="Metamask_custom_transaction_nonce_Extension.png" width="315" height="529"></p>
+</li>
+<li>
+<p>现在点击“Gas 费”旁边的“编辑”按钮（如果您开启了实验<a href="https://support.metamask.io/hc/en-us/articles/360022895972-Using-advanced-gas-controls#:~:text=%C2%A0-,Enhanced%20Gas%20UI,-Since%20the%20introduction" target="_self">性功能“增强型 Gas 用户界面</a>”，则显示为“市场”）。现在，您将看到以下选项：</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927065407515" alt="MetaMask Gas 控制扩展" width="315" height="529"></p>
+<p>为了确保优先处理您的取消申请，而且在原始交易之前，<strong>您需要支付更多 Gas 费</strong>。遵循这些指示：</p>
+<ul>
+<li>将您的<strong>Gas 限额</strong>设置为与原始交易<em>相当或略高</em>。</li>
+<li>将您的<strong>最大优先费</strong>设置为<em>至少比原始（待处理）交易的 Gas 费高 10%</em>（以 Gwei 为单位）（例如，如果该笔交易的 Gas 费为 30Gwei，则将替换/取消交易的最大优先费设置为 33-35 Gwei）。</li>
+<li>确保您的最高费用至少比替换交易的最高费用高 30%。例如，如果您之前的费用是 150 Gwei，那么这次选择更接近 200 Gwei 的费用。</li>
+</ul>
+<p><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">查看 Gas 追踪器，例如 </span><a style="background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;" href="https://etherscan.io/gastracker" target="_self">Etherscan 追踪器</a><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">或 </span><a style="background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;" href="https://ethgasstation.info/" target="_self" rel="undefined">ETH Gas 站，</a><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">以获取关于最高费用建议的指导。</span></p>
+</li>
+</ol>
+</div>
+<div class="tab is-hidden">
+<ol>
+<li>
+<p><strong>在设置 &gt; 高级，开启“定制交易随机数”。</strong></p>
+</li>
+<li>
+<p><strong>发送新交易。</strong>在新交易中，发送给您自己，即您的 MetaMask 公共地址。<strong>使用与待处理交易相同的随机数，填写“自定义随机数”</strong>。</p>
+<p>要在应用程序中找到自定义随机数设置，请进入交易确认屏幕。您输入代币数量和接收人之后，便会出现此屏幕。点击“编辑”以更改：</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927068442907" alt="MetaMask 自定义交易随机数移动版" width="315" height="631"></p>
+</li>
+<li>
+<p>现在您需要确保您的 gas 设置已配置，以便处理您的替换交易。在交易确认屏幕上，点击突出显示的 gas 值：</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927041593755" alt="MetaMask 高级 Gas 控制移动版" width="476" height="190"></p>
+<p>现在，从出现的菜单中，访问“高级选项”。</p>
+</li>
+<li>
+<p>在这里，您可以精确调整 gas，以确保加快您的交易。您现在将看到如下所示的屏幕：</p>
+<p class="wysiwyg-text-align-center"><img src="https://support.metamask.io/hc/article_attachments/12927063201691" alt="MetaMask 高级 Gas 控制移动版" width="315" height="554"></p>
+<p>在这里调整 gas 设置。请按照以下说明，确保加快您的交易：</p>
+<ul>
+<li>将您的<strong>Gas 限额</strong>设置为与原始交易<em>相当或略高</em>。</li>
+<li>将您的<strong>最大优先费</strong>设置为<em>至少比原始（待处理）交易的 Gas 费高 10%</em>（以 Gwei 为单位）（例如，如果该笔交易的 Gas 费为 30Gwei，则将替换/取消交易的最大优先费设置为 33-35 Gwei）。</li>
+<li>确保您的最高费用至少比替换交易的最高费用<strong>高</strong><em> 30%</em>。例如，如果您之前的费用是 150 Gwei，那么这次选择更接近 200 Gwei 的费用。</li>
+</ul>
+<p>查看 Gas 追踪器，例如 Eth<a href="https://etherscan.io/gastracker" target="_self">ersc</a>an 追踪器或 <a href="https://ethgasstation.info/" target="_self">ETH G</a>as 站，以获取关于最高费用建议的指导。</p>
+</li>
+</ol>
+</div>
+</div>
