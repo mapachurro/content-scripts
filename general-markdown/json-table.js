@@ -1,5 +1,7 @@
 const fs = require('fs');
 
+//This script takes the .json object for the Linea token list (https://raw.githubusercontent.com/Consensys/linea-token-list/main/json/linea-mainnet-token-fulllist.json) and formats it into a Markdown table, associating Ethereum addresses and Linea addresses with the appropriate columns.
+
 // Read your json file
 fs.readFile('tokens.json', 'utf8', function(err, data) {
   if (err) throw err;
