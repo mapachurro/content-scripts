@@ -1,3 +1,5 @@
+//This appears to be a script to sanitize frontmatter, and maybe put it in double quotes? Probably not useful.
+
 const fs = require('fs');
 const path = require('path');
 const glob = require('glob');

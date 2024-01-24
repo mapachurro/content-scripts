@@ -1,3 +1,5 @@
+//I assume this replaces spaces in titles with dashes.
+
 const fs = require('fs');
 const path = require('path');
 

@@ -1,3 +1,5 @@
+///This is another frontmatter formatting script. Not sure it's relevant. It appears to specifically be handling slugs--maybe Zendesk slugs? Or adding Docusaurus slugs
+
 const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');

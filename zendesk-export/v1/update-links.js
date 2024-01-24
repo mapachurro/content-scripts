@@ -1,3 +1,5 @@
+//This appears to sanitize links to other articles, and convert them to markdown-format links. This might be useful.
+
 const fs = require('fs');
 const path = require('path');
 
